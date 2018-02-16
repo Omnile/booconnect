@@ -10,12 +10,22 @@ This will be the central repo for the Booconnect App.
     php artisan make:key
   ```
   
-3. Run the database migration command.
+3. Setup the database in the '.env' file
+```php
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=homestead
+    DB_USERNAME=homestead
+    DB_PASSWORD=secret
+```
+
+4. Run the database migration command.
   ```bash
     php artisan migrate
   ```
   
-4. Compile the frontend assets:
+5. Compile the frontend assets:
   Note: To compile the frontend assets, first ensure that npm is installed on your local machine. I'll assume you have it installed.
   
   Install dependencies using NPM
