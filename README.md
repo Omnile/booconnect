@@ -3,11 +3,14 @@
 This will be the central repo for the Booconnect App.
 
 ## Setup
+
+For this setup directions, I'll asume that you have NodeJS and PHP 7.* already setup and configured.
+
 1. For now, clone this repo on your local machine and copy the .env.example to .env
 
 2. Generate the application key.
   ```bash
-    php artisan make:key
+    php artisan key:generate
   ```
   
 3. Setup the database in the '.env' file.
