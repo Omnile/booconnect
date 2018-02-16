@@ -10,15 +10,16 @@ This will be the central repo for the Booconnect App.
     php artisan make:key
   ```
   
-3. Setup the database in the '.env' file
-```php
-    DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=homestead
-    DB_USERNAME=homestead
-    DB_PASSWORD=secret
-```
+3. Setup the database in the '.env' file.
+  Replace the database configuration data with your local database specific configuration data.
+  ```php
+      DB_CONNECTION=mysql
+      DB_HOST=127.0.0.1
+      DB_PORT=3306
+      DB_DATABASE=homestead
+      DB_USERNAME=homestead
+      DB_PASSWORD=secret
+  ```
 
 4. Run the database migration command.
   ```bash
