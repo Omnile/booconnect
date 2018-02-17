@@ -41,4 +41,9 @@ For this setup directions, I'll asume that you have NodeJS and PHP 7.* already s
   ```bash
     npm run dev;
   ```
+6. Run tests. If it's all green, then you are right on track.
+  ```
+    composer test
+  ```
+  
 
