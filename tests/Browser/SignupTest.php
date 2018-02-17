@@ -8,6 +8,7 @@ use Tests\DuskTestCase;
 
 class SignupTest extends DuskTestCase
 {
+    // use RefreshDatabase;
     use DatabaseMigrations;
 
     protected $clearCookiesBetweenTests = true;
@@ -15,6 +16,8 @@ class SignupTest extends DuskTestCase
     protected $email;
     protected $password;
     protected $name;
+    protected $gender;
+    protected $username;
 
     public function setup()
     {
@@ -25,6 +28,8 @@ class SignupTest extends DuskTestCase
         $this->email = $user->email;
         $this->password = $user->password;
         $this->name = $user->name;
+        $this->gender = $user->gender;
+        $this->username = $user->username;
     }
 
     /** @test */
@@ -35,6 +40,8 @@ class SignupTest extends DuskTestCase
             $browser->visit('/register')
                 ->type('email', $this->email)
                 ->type('name', $this->name)
+                ->select('gender', $this->gender)
+                ->type('username', $this->username)
                 ->type('password', $this->password)
                 ->type('password_confirmation', $this->password)
                 ->press('.btn')
