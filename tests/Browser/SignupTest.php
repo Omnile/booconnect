@@ -19,6 +19,7 @@ class SignupTest extends DuskTestCase
     protected $lastname;
     protected $gender;
     protected $username;
+    protected $phone;
 
     public function setup()
     {
@@ -32,6 +33,7 @@ class SignupTest extends DuskTestCase
         $this->lastname = $user->lastname;
         $this->gender = $user->gender;
         $this->username = $user->username;
+        $this->phone = $user->phone;
     }
 
     /** @test */
@@ -45,6 +47,7 @@ class SignupTest extends DuskTestCase
                 ->type('lastname', $this->lastname)
                 ->select('gender', $this->gender)
                 ->type('username', $this->username)
+                ->type('phone', $this->phone)
                 ->type('password', $this->password)
                 ->type('password_confirmation', $this->password)
                 ->press('.btn')
