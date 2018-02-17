@@ -23,6 +23,13 @@ class CreateResturantsTable extends Migration
             $table->string('user_id');
             $table->string('image')->default('/images/resturant_default_image.svg');
             $table->string('cover')->default('/images/resturant_default_cover.svg');
+
+            $table->string('place');
+            $table->string('city');
+            $table->string('state');
+            $table->string('country');
+            $table->string('address');
+
             $table->string('website')->nullable();
             $table->string('description');
             $table->timestamps();
