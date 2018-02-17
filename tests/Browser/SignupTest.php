@@ -15,7 +15,8 @@ class SignupTest extends DuskTestCase
 
     protected $email;
     protected $password;
-    protected $name;
+    protected $firstname;
+    protected $lastname;
     protected $gender;
     protected $username;
 
@@ -27,7 +28,8 @@ class SignupTest extends DuskTestCase
 
         $this->email = $user->email;
         $this->password = $user->password;
-        $this->name = $user->name;
+        $this->firstname = $user->firstname;
+        $this->lastname = $user->lastname;
         $this->gender = $user->gender;
         $this->username = $user->username;
     }
@@ -39,7 +41,8 @@ class SignupTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->visit('/register')
                 ->type('email', $this->email)
-                ->type('name', $this->name)
+                ->type('firstname', $this->firstname)
+                ->type('lastname', $this->lastname)
                 ->select('gender', $this->gender)
                 ->type('username', $this->username)
                 ->type('password', $this->password)
