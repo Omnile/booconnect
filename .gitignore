@@ -14,3 +14,4 @@ yarn-error.log
 database/sqlite*
 database/database.sqlite.tet
 database/database.sqlite.test
+public/docs/
