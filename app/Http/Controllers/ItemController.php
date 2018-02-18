@@ -46,8 +46,7 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        return collect(compact('item'))
-            ->union($item->ratings()->paginate(20));
+        return $item->load('pictures');
     }
 
     /**

@@ -30,4 +30,9 @@ class Item extends Model
     {
         return $this->hasMany(Order::class);
     }
+
+    public function pictures()
+    {
+        return $this->morphOne(Picture::class, 'imageable');
+    }
 }
