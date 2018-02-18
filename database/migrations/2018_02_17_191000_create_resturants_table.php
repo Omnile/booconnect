@@ -21,6 +21,7 @@ class CreateResturantsTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('user_id');
+
             $table->string('image')->default('/images/resturant_default_image.svg');
             $table->string('cover')->default('/images/resturant_default_cover.svg');
 
@@ -32,6 +33,11 @@ class CreateResturantsTable extends Migration
 
             $table->string('website')->nullable();
             $table->string('description');
+
+            $table->boolean('phone_verified')->default(false);
+            $table->boolean('email_verified')->default(false);
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -12,9 +12,9 @@ class ResturantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Resturant $resturants)
     {
-        //
+        return $resturants->withCount('items')->paginate(20);
     }
 
     /**
@@ -46,7 +46,8 @@ class ResturantController extends Controller
      */
     public function show(Resturant $resturant)
     {
-        //
+        return collect(compact('resturant'))
+            ->union($resturant->items()->paginate(20));
     }
 
     /**
