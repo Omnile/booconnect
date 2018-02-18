@@ -12,9 +12,9 @@ class Resturant extends Model
         return $this->hasMany(Item::class);
     }
 
-    public function ratings()
+    public function rating()
     {
-        return $this->hasMany(Rating::class);
+        return $this->morphMany(Rating::class, 'ratable');
     }
 
     public function transactions()
