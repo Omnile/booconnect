@@ -17,12 +17,13 @@ class CreateItemsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('resturant_id');
-            $table->string('image');
+            $table->string('image')->default('/images/item_default_image.svg');
             $table->string('description');
             $table->float('price');
-            $table->integer('user_id');
-            $table->integer('measurement');
+            $table->integer('user_id')->unsigned();
+            $table->string('measurement');
             $table->integer('quantity');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -12,9 +12,9 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Item $items)
     {
-        //
+        return $items->paginate(20);
     }
 
     /**
@@ -46,7 +46,8 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        //
+        return collect(compact('item'))
+            ->union($item->ratings()->paginate(20));
     }
 
     /**
