@@ -12,3 +12,5 @@ npm-debug.log
 yarn-error.log
 .env
 database/sqlite*
+database/database.sqlite.tet
+database/database.sqlite.test
