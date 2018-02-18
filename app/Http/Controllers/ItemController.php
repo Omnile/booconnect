@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use App\Item;
 use Illuminate\Http\Request;
 
+/**
+ * @resource Items
+ *
+ * Items sold in resturants registered on BooConnect
+ */
 class ItemController extends Controller
 {
     /**
+     * List Items
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -39,6 +45,7 @@ class ItemController extends Controller
     }
 
     /**
+     * Show Item
      * Display the specified resource.
      *
      * @param  \App\Item  $item

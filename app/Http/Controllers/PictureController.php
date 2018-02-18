@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Picture;
 use Illuminate\Http\Request;
 
+/**
+ * @resource Pictures
+ *
+ * Pictures resource endpoints
+ */
 class PictureController extends Controller
 {
     /**

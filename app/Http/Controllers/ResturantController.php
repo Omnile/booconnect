@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Resturant;
 use Illuminate\Http\Request;
 
+/**
+ * @resource Resturant
+ *
+ * Lists resturants registered on booconnect
+ */
 class ResturantController extends Controller
 {
     /**

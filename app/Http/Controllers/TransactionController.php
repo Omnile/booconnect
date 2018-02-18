@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Transaction;
 use Illuminate\Http\Request;
 
+/**
+ * @resource Transaction
+ *
+ * Lists all transactions
+ */
 class TransactionController extends Controller
 {
     /**

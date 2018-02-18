@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use App\Rating;
 use Illuminate\Http\Request;
 
+/**
+ * @resource Rating
+ *
+ * Rating resource endpoints
+ */
 class RatingController extends Controller
 {
     /**
+     * List all ratings
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

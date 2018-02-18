@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use App\Order;
 use Illuminate\Http\Request;
 
+/**
+ * @resource Orders
+ *
+ * Orders resource endpoints
+ */
 class OrderController extends Controller
 {
     /**
+     * List all orders
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
