@@ -26,4 +26,9 @@ class Resturant extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function pictures()
+    {
+        return $this->morphOne(Picture::class, 'imageable');
+    }
 }
