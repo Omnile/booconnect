@@ -16,3 +16,16 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/customer', [
+            'uses' => 'CustomerController@create'
+        ]);
+
+Route::get('/customer/{customer}', [
+            'uses' => 'CustomerController@show'
+        ]);
+
+//Activation route
+Route::post('/customer/activation/{id}', [
+            'uses' => 'CustomerController@activate'
+        ]);
