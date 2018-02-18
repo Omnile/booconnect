@@ -13,9 +13,9 @@ class LoginTest extends DuskTestCase
 
     protected $clearCookiesBetweenTests = true;
 
-    protected $email;
+    // protected $email;
     protected $password;
-    protected $name;
+    protected $username;
 
     public function setup()
     {
@@ -25,8 +25,8 @@ class LoginTest extends DuskTestCase
             'password' => Hash::make($password = 'google'),
         ])->first();
 
-        $this->email = $user->email;
-        $this->name = $user->name;
+        // $this->email = $user->email;
+        $this->username = $user->username;
         $this->password = $password;
     }
 
@@ -36,7 +36,7 @@ class LoginTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) {
             $browser->visit('/login')
-                ->type('email', $this->email)
+                ->type('username', $this->username)
                 ->type('password', $this->password)
                 ->press('.btn')
                 ->assertRouteIs('home')

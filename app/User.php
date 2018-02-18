@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'password', 'username', 'gender', 'phone',
+        'firstname', 'lastname', 'password', 'username', 'gender', 'phone',
     ];
 
     /**
@@ -30,5 +30,10 @@ class User extends Authenticatable
     public function pictures()
     {
         return $this->morphOne(Picture::class, 'imageable');
+    }
+
+    public function resturant()
+    {
+        return $this->hasOne(Resturant::class);
     }
 }

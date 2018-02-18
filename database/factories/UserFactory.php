@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Hash;
 
 $factory->define(App\User::class, function (Faker $faker) {
     return [
+        // 'email' => $faker->unique()->safeEmail,
         'firstname' => $faker->firstName(),
         'lastname' => $faker->lastName(),
-        'email' => $faker->unique()->safeEmail,
         'phone' => $faker->unique()->phoneNumber(),
         'username' => $faker->unique()->username,
         'gender' => array_random(['male', 'female']),

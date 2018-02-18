@@ -13,7 +13,7 @@ class SignupTest extends DuskTestCase
 
     protected $clearCookiesBetweenTests = true;
 
-    protected $email;
+    // protected $email;
     protected $password;
     protected $firstname;
     protected $lastname;
@@ -27,7 +27,7 @@ class SignupTest extends DuskTestCase
 
         $user = factory(\App\User::class, 1)->make()->first();
 
-        $this->email = $user->email;
+        // $this->email = $user->email;
         $this->password = $user->password;
         $this->firstname = $user->firstname;
         $this->lastname = $user->lastname;
@@ -42,7 +42,7 @@ class SignupTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) {
             $browser->visit('/register')
-                ->type('email', $this->email)
+            // ->type('email', $this->email)
                 ->type('firstname', $this->firstname)
                 ->type('lastname', $this->lastname)
                 ->select('gender', $this->gender)
