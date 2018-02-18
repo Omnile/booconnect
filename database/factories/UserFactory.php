@@ -1,6 +1,7 @@
 <?php
 
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\Hash;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,9 @@ $factory->define(App\User::class, function (Faker $faker) {
         'phone' => $faker->unique()->phoneNumber(),
         'username' => $faker->unique()->username,
         'gender' => array_random(['male', 'female']),
-        'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
+        'password' => Hash::make(str_random(10)), // secret
         'remember_token' => str_random(10),
+        'phone_verified' => rand(0, 1),
+        'email_verified' => rand(0, 1),
     ];
 });

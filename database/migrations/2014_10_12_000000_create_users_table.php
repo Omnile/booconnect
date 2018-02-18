@@ -22,6 +22,11 @@ class CreateUsersTable extends Migration
             $table->string('phone')->unique();
             $table->string('password');
             $table->string('gender');
+
+            $table->boolean('phone_verified')->default(false);
+            $table->boolean('email_verified')->default(false);
+
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });
