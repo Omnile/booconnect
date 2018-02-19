@@ -15,3 +15,5 @@ database/sqlite*
 database/database.sqlite.tet
 database/database.sqlite.test
 public/docs/
+public/images
+public/img

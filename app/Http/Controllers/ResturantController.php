@@ -17,9 +17,16 @@ class ResturantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Resturant $resturants)
+    public function index(Request $request, Resturant $resturants)
     {
-        return $resturants->withCount('items')->paginate(20);
+
+        $resturants = $resturants->paginate(20);
+
+        if ($request->wantsJson()) {
+            return $resturants;
+        }
+
+        return view('resturants', compact('resturants'));
     }
 
     /**
@@ -49,10 +56,16 @@ class ResturantController extends Controller
      * @param  \App\Resturant  $resturant
      * @return \Illuminate\Http\Response
      */
-    public function show(Resturant $resturant)
+    public function show(Request $request, Resturant $resturant)
     {
-        return collect(compact('resturant'))
+        $resturant = collect(compact('resturant'))
             ->union($resturant->items()->paginate(20));
+
+        if ($request->wantsJson()) {
+            return $resturant;
+        }
+
+        return view('resturant', compact('resturant'));
     }
 
     /**

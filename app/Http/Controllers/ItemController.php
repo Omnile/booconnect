@@ -18,9 +18,15 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Item $items)
+    public function index(Request $request, Item $items)
     {
-        return $items->paginate(20);
+        $items = $items->paginate(20);
+
+        if ($request->wantsJson()) {
+            return $items;
+        }
+
+        return view('items', compact('items'));
     }
 
     /**
@@ -51,9 +57,15 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function show(Item $item)
+    public function show(Request $request, Item $item)
     {
-        return $item->load('pictures');
+        $item = $item->load('pictures');
+
+        if ($request->wantsJson()) {
+            return $item;
+        }
+
+        return view('item', compact('item'));
     }
 
     /**
