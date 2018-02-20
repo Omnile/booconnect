@@ -17,3 +17,4 @@ database/database.sqlite.test
 public/docs/
 public/images
 public/img
+"database/database.sqlite.test" 
