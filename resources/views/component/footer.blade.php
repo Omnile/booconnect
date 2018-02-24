@@ -20,10 +20,10 @@
             <div class="col-sm-3">
                 <h5 class="title">My Account</h5>
                 <ul class="list alt-list">
-                    <li><a href="my-account.html"><i class="fa fa-angle-right"></i>My Account</a></li>
-                    <li><a href="wishlist.html"><i class="fa fa-angle-right"></i>Wishlist</a></li>
-                    <li><a href="cart.html"><i class="fa fa-angle-right"></i>My Cart</a></li>
-                    <li><a href="checkout.html"><i class="fa fa-angle-right"></i>Checkout</a></li>
+                    <li><a href="/account"><i class="fa fa-angle-right"></i>My Account</a></li>
+                    <li><a href="/wishlist"><i class="fa fa-angle-right"></i>Wishlist</a></li>
+                    <li><a href="/cart"><i class="fa fa-angle-right"></i>My Cart</a></li>
+                    <li><a href="/checkout"><i class="fa fa-angle-right"></i>Checkout</a></li>
                 </ul>
             </div><!-- end col -->
             <div class="col-sm-3">

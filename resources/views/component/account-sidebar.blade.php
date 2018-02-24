@@ -1,25 +1,25 @@
 <div class="widget">
                             <h6 class="subtitle">Account Navigation</h6>
-                            
+
                             <ul class="list list-unstyled">
                                 <li>
-                                    <a href="my-account.html">My Account</a>
+                                    <a href="/account">My Account</a>
                                 </li>
                                 <li>
-                                    <a href="cart.html">My Cart <span class="text-primary">(3)</span></a>
+                                    <a href="/cart">My Cart <span class="text-primary">(3)</span></a>
                                 </li>
                                 <li>
-                                    <a href="order-list.html">My Order</a>
+                                    <a href="/orders">My Order</a>
                                 </li>
                                 <li>
-                                    <a href="wishlist.html">Wishlist <span class="text-primary">(5)</span></a>
+                                    <a href="/wishlist">Wishlist <span class="text-primary">(5)</span></a>
                                 </li>
                                 <li>
                                     <a href="user-information.html">Settings</a>
                                 </li>
                             </ul>
                         </div><!-- end widget -->
-                        
+
                         <div class="widget">
                             <h6 class="subtitle">New Collection</h6>
                             <figure>
@@ -28,10 +28,10 @@
                                 </a>
                             </figure>
                         </div><!-- end widget -->
-                        
+
                         <div class="widget">
                             <h6 class="subtitle">Featured</h6>
-                            
+
                             @include('component.items-mini')
 
                             <hr class="spacer-10 no-border">

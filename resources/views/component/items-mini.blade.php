@@ -1,11 +1,11 @@
  <ul class="items">
-        <li> 
-            <a href="shop-single-product-v1.html" class="product-image">
+        <li>
+            <a href="/items/{{$item->id}}" class="product-image">
                 <img src="img/products/men_01.jpg" alt="Sample Product ">
             </a>
             <div class="product-details">
-                <p class="product-name"> 
-                    <a href="shop-single-product-v1.html">Product name</a> 
+                <p class="product-name">
+                    <a href="/items/{{$item->id}}">Product name</a>
                 </p>
                 <span class="price text-primary">$19.99</span>
                 <div class="rate text-warning">

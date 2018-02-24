@@ -1,16 +1,16 @@
 
     <tr>
         <td>
-            <a href="shop-single-product-v1.html">
-                <img width="60px" src="img/products/men_06.jpg" alt="product">
+            <a href="/items/{{$item->id}}">
+                <img width="60px" src="{{ $item->image }}" alt="product">
             </a>
         </td>
         <td>
-            <h6 class="regular"><a href="shop-single-product-v1.html">Lorem Ipsum</a></h6> 
-            <p>Sed aliquam tincidunt tempus</p>
+            <h6 class="regular"><a href="/items/{{$item->id}}">{{ $item->name }}</a></h6>
+            <p>{{ $item->discription }}</p>
         </td>
         <td>
-            <span>$59.99</span>
+            <span>{{ $item->formatted_price }}</span>
         </td>
         <td>
             <select class="form-control" name="select">
@@ -22,7 +22,7 @@
             </select>
         </td>
         <td>
-            <span class="text-primary">$59.99</span>
+            <span class="text-primary">{{ $item->formatted_price }}</span>
         </td>
         <td>
             <button type="button" class="close">×</button>

@@ -1,12 +1,12 @@
 
     <tr>
         <td>
-            <a href="shop-single-product-v1.html">
+            <a href="/items/{{$item->id}}">
                 <img width="60px" src="img/products/bags_07.jpg" alt="product">
             </a>
         </td>
         <td>
-            <h6 class="regular"><a href="shop-single-product-v1.html">Lorem Ipsum</a></h6>
+            <h6 class="regular"><a href="/items/{{$item->id}}">Lorem Ipsum</a></h6>
             <small>12x1.5 L</small>
         </td>
         <td>

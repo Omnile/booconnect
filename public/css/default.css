@@ -1881,7 +1881,7 @@ figure {
 /*===================
 ====Pagination=======
 ===================*/
-/*.pagination li a {
+.pagination li a {
   border: none;
   background-color: transparent;
   color: #878c94;
@@ -1903,7 +1903,7 @@ figure {
   .pagination li.disabled a:hover, .pagination li.disabled a:active, .pagination li.disabled a:focus {
     background-color: transparent;
     color: #35404f; }
-*/
+
 /*pager*/
 .pager li a {
   background-color: transparent;

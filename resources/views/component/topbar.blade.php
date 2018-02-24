@@ -13,9 +13,9 @@
                     </span>
                 </a>
                 <ul class="w-150">
-                    <li><a href="wishlist.html">Wishlist (5)</a></li>
-                    <li><a href="cart.html">My Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="/wishlist">Wishlist (5)</a></li>
+                    <li><a href="/cart">My Cart</a></li>
+                    <li><a href="/checkout">Checkout</a></li>
                 </ul>
             </li>
             <li class="linkdown">
@@ -77,8 +77,8 @@
                     </li>
                     <li>
                         <div class="cart-footer">
-                            <a href="cart.html" class="pull-left"><i class="fa fa-cart-plus mr-5"></i>View Cart</a>
-                            <a href="checkout.html" class="pull-right"><i class="fa fa-shopping-basket mr-5"></i>Checkout</a>
+                            <a href="/cart" class="pull-left"><i class="fa fa-cart-plus mr-5"></i>View Cart</a>
+                            <a href="/checkout" class="pull-right"><i class="fa fa-shopping-basket mr-5"></i>Checkout</a>
                         </div>
                     </li>
                 </ul>

@@ -2,31 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Resturant;
+use App\Item;
 use Illuminate\Http\Request;
 
-/**
- * @resource Resturant
- *
- * Lists resturants registered on booconnect
- */
-class ResturantController extends Controller
+class WishlistController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, Resturant $resturants)
+    public function index(Request $request, Item $items)
     {
-
-        $resturants = $resturants->paginate(20);
+        $items = $items->paginate(20);
 
         if ($request->wantsJson()) {
-            return $resturants;
+            return $items;
         }
 
-        return view('resturants', compact('resturants'));
+        return view('wishlist', compact('items'));
     }
 
     /**
@@ -53,28 +47,21 @@ class ResturantController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Resturant  $resturant
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, Resturant $resturant)
+    public function show($id)
     {
-        $items = $resturant->items()->paginate(20);
-        $resturant->items = $items;
-
-        if ($request->wantsJson()) {
-            return $resturant;
-        }
-
-        return view('resturant', compact('resturant', 'items'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Resturant  $resturant
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Resturant $resturant)
+    public function edit($id)
     {
         //
     }
@@ -83,10 +70,10 @@ class ResturantController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Resturant  $resturant
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Resturant $resturant)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -94,10 +81,10 @@ class ResturantController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Resturant  $resturant
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Resturant $resturant)
+    public function destroy($id)
     {
         //
     }

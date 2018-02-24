@@ -6,30 +6,17 @@
                 <div class='carousel slide product-slider' data-ride='carousel' data-interval="false">
                     <div class='carousel-inner'>
                         <div class='item active'>
-                            <figure>
-                                <img src='/img/products/men_01.jpg' alt='' />
-                            </figure>
+                            {{-- @foreach ($item->pictures as $picture)
+                                <figure>
+                                    <img src='{{ $picture->path }}' alt='' />
+                                </figure>
+                            @endforeach --}}
+
+                                <figure>
+                                    <img src='{{ $item->image }}' alt='' />
+                                </figure>
                         </div><!-- end item -->
-                        <div class='item'>
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NrmMk1Myrxc"></iframe>
-                            </div>
-                        </div><!-- end item -->
-                        <div class='item'>
-                            <figure>
-                                <img src='/img/products/men_03.jpg' alt='' />
-                            </figure>
-                        </div><!-- end item -->
-                        <div class='item'>
-                            <figure>
-                                <img src='/img/products/men_04.jpg' alt='' />
-                            </figure>
-                        </div><!-- end item -->
-                        <div class='item'>
-                            <figure>
-                                <img src='/img/products/men_05.jpg' alt=''/>
-                            </figure>
-                        </div><!-- end item -->
+
 
                         <!-- Arrows -->
                         <a class='left carousel-control' href='.product-slider' data-slide='prev'>
@@ -41,33 +28,36 @@
                     </div><!-- end carousel-inner -->
 
                     <!-- thumbs -->
-                    <ol class='carousel-indicators mCustomScrollbar meartlab'>
-                        <li data-target='.product-slider' data-slide-to='0' class='active'><img src='/img/products/men_01.jpg' alt='' /></li>
-                        <li data-target='.product-slider' data-slide-to='1'><img src='/img/products/men_02.jpg' alt='' /></li>
-                        <li data-target='.product-slider' data-slide-to='2'><img src='/img/products/men_03.jpg' alt='' /></li>
-                        <li data-target='.product-slider' data-slide-to='3'><img src='/img/products/men_04.jpg' alt='' /></li>
-                        <li data-target='.product-slider' data-slide-to='4'><img src='/img/products/men_05.jpg' alt='' /></li>
-                    </ol><!-- end carousel-indicators -->
+                    {{-- <ol class='carousel-indicators mCustomScrollbar meartlab'>
+                        @foreach ($item->pictures as $picture)
+                            <figure>
+                                <img src='{{ $picture->path }}' alt='' />
+                                <li data-target='.product-slider' data-slide-to='{{ $index }}' class='active'>
+                                    <img src='{{ $picture->path }}' alt='' />
+                                </li>
+                            </figure>
+                        @endforeach
+                    </ol> --}}<!-- end carousel-indicators -->
                 </div><!-- end carousel -->
             </div><!-- end col -->
             <!-- end sidebar -->
             <div class="col-sm-8">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2 class="title">Lorem ipsum dolor sit amet</h2>
-                            <p class="text-gray alt-font">Product code: 1032446</p>
+                        <h2 class="title">{{ $item->description }}</h2>
+                            <p class="text-gray alt-font">Product code: {{ $item->id }}</p>
 
                             <ul class="list list-inline">
-                                <li><h6 class="text-danger text-xs">$179.99</h6></li>
-                                <li><h5 class="text-primary">$79.99</h5></li>
-                                <li>
+                                {{-- <li><h6 class="text-danger text-xs">$179.99</h6></li> --}}
+                                <li><h5 class="text-primary">{{ $item->formatted_price }}</h5></li>
+                                {{-- <li>
                                     <i class="fa fa-star text-warning"></i>
                                     <i class="fa fa-star text-warning"></i>
                                     <i class="fa fa-star text-warning"></i>
                                     <i class="fa fa-star text-warning"></i>
                                     <i class="fa fa-star-half-o text-warning"></i>
                                 </li>
-                                <li><a href="javascript:void(0);">(4 reviews)</a></li>
+                                <li><a href="#">({{ $item->review->count() }} reviews)</a></li> --}}
                             </ul>
                     </div><!-- end col -->
                 </div><!-- end row -->
@@ -76,15 +66,15 @@
 
                 <div class="row">
                     <div class="col-sm-12">
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                        <ul class="list alt-list">
+                        <p>{{ $item->description }}</p>
+                        {{-- <ul class="list alt-list">
                             <li><i class="fa fa-check"></i> Lorem Ipsum dolor sit amet</li>
                             <li><i class="fa fa-check"></i> Cras aliquet venenatis sapien fringilla.</li>
                             <li><i class="fa fa-check"></i> Duis luctus erat vel pharetra aliquet.</li>
-                        </ul>
+                        </ul> --}}
                         <hr class="spacer-15">
                         <div class="row">
-                            <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
                                 <select class="form-control" name="select">
                                     <option value="" selected>Color</option>
                                     <option value="red">Red</option>
@@ -92,7 +82,7 @@
                                     <option value="blue">Blue</option>
                                 </select>
                             </div><!-- end col -->
-                            <div class="col-md-4 col-sm-6 col-xs-12">
+                            {{-- <div class="col-md-4 col-sm-6 col-xs-12">
                                 <select class="form-control" name="select">
                                     <option value="">Size</option>
                                     <option value="">S</option>
@@ -101,8 +91,8 @@
                                     <option value="">XL</option>
                                     <option value="">XXL</option>
                                 </select>
-                            </div><!-- end col -->
-                            <div class="col-md-4 col-sm-12">
+                            </div><!-- end col --> --}}
+                            <div class="col-md-6 col-sm-12">
                                 <select class="form-control" name="select">
                                     <option value="" selected>QTY</option>
                                     <option value="">1</option>
@@ -123,9 +113,9 @@
                             <li>Share this product: </li>
                             <li>
                                 <ul class="social-icons style1">
-                                    <li class="facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
-                                    <li class="twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
-                                    <li class="pinterest"><a href="javascript:void(0);"><i class="fa fa-pinterest"></i></a></li>
+                                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -143,13 +133,13 @@
             <div class="col-sm-12">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs style1 text-center" role="tablist">
-                    <li role="presentation" class="active"><a href="#additional_info" aria-controls="tab" role="tab" data-toggle="tab">Additional Info</a></li>
-                    <li role="presentation"><a href="#reviews" aria-controls="profile" role="tab" data-toggle="tab">Reviews (4)</a></li>
+                    {{-- <li role="presentation" class="active"><a href="#additional_info" aria-controls="tab" role="tab" data-toggle="tab">Additional Info</a></li> --}}
+                    <li role="presentation" class="active"><a href="#reviews" aria-controls="profile" role="tab" data-toggle="tab">Reviews (4)</a></li>
                 </ul><!-- end nav-tabs -->
 
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade in active" id="additional_info">
+                    {{-- <div role="tabpanel" class="tab-pane fade in active" id="additional_info">
                         <h5>Additional Info</h5>
                         <p>Vestibulum tellus justo, vulputate ac nunc eu, laoreet pellentesque erat.
                             Nulla in fringilla ex. Nulla finibus rutrum lorem vehicula facilisis.
@@ -179,7 +169,7 @@
                                 </dl>
                             </div><!-- end col -->
                         </div><!-- end row -->
-                    </div><!-- end tab-pane -->
+                    </div><!-- end tab-pane --> --}}
                     <div role="tabpanel" class="tab-pane fade" id="reviews">
 
                         @include('component.review', ['some' => 'data'])

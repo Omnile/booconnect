@@ -9,13 +9,19 @@
 |
  */
 
+Route::resource('/', 'RootController');
+
 Route::resource('items', 'ItemController');
 
-Route::resource('pictures', 'PictureController');
+Route::resource('cart', 'CartController');
+
+Route::resource('checkout', 'CheckoutController');
+
+Route::resource('wishlist', 'WishlistController');
+
+Route::resource('resturants', 'ResturantController');
 
 Route::group(['prefix' => 'resturants'], function () {
-
-    Route::resource('/', 'ResturantController');
 
     Route::resource('items', 'ItemController');
 });
