@@ -20,7 +20,7 @@
         <div class="icons">
             <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
             <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-gift"></i></a>
-            <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
+            <a class="icon semi-circle" href="/resturant/{{ $resturant->id }}/items/{{ $item->id }}"><i class="fa fa-search"></i></a>
         </div>
 
 
