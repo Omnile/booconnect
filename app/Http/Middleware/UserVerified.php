@@ -45,7 +45,7 @@ class UserVerified
                 );
             }
 
-            return response($this->statusCode, $this->message);
+            return redirect('verify');
         }
 
         return $next($request);

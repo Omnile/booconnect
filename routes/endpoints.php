@@ -9,19 +9,35 @@
 |
  */
 
+Route::get('/home', 'RootController@index');
+
 Route::resource('/', 'RootController');
 
 Route::resource('items', 'ItemController');
 
 Route::resource('cart', 'CartController');
 
-Route::resource('checkout', 'CheckoutController');
-
-Route::resource('wishlist', 'WishlistController');
-
 Route::resource('resturants', 'ResturantController');
 
-Route::group(['prefix' => 'resturants'], function () {
+Route::group(['middleware' => 'auth'], function () {
 
-    Route::resource('items', 'ItemController');
+    Route::resource('verify', 'VerifyController');
+
+    Route::resource('account', 'AccountController');
+
+    Route::resource('orders', 'OrderController');
+});
+
+Route::group(['middleware' => 'verified'], function () {
+
+    Route::resource('checkout', 'CheckoutController');
+
+    Route::resource('wishlist', 'WishlistController');
+});
+
+Route::get('logout', function () {
+
+    auth()->logout();
+
+    return back();
 });

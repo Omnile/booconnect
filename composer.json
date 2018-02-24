@@ -16,6 +16,10 @@
                     "reference": "355726e"
                 }
             }
+        },
+        {
+            "type": "composer",
+            "url": "https://packages.cartalyst.com"
         }
     ],
 
@@ -27,7 +31,8 @@
         "mpociot/laravel-apidoc-generator": "dev-master",
         "ovac/laravel-hubtel-payment": "^1.0",
         "ovac/laravel-hubtel-sms": "~1.0",
-        "torann/currency": "^1.0"
+        "torann/currency": "^1.0",
+        "cartalyst/cart": "2.0.*@dev"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

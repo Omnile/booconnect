@@ -2,13 +2,20 @@
 <div class="topBar">
     <div class="container">
         <ul class="topBarNav pull-right">
-            <li><a href="/login"> Login</a></li>
-            <li><a href="/register"> Register</a></li>
+
+            @if (Auth::guest())
+                <li><a href="/login"> Login</a></li>
+                <li><a href="/register"> Register</a></li>
+            @endif
             <li class="linkdown">
                 <a href="javascript:void(0);">
                     <i class="fa fa-user mr-5"></i>
                     <span class="hidden-xs">
-                        My Account
+                        @if (Auth::check())
+                            {{ Auth::user()->name }}
+                        @else
+                            My Account
+                        @endif
                         <i class="fa fa-angle-down ml-5"></i>
                     </span>
                 </a>
@@ -16,6 +23,13 @@
                     <li><a href="/wishlist">Wishlist (5)</a></li>
                     <li><a href="/cart">My Cart</a></li>
                     <li><a href="/checkout">Checkout</a></li>
+                    <li><a href="/orders">Orders</a></li>
+                    <li><a href="/account">Account</a></li>
+
+                    @if (Auth::check())
+                        <li><a href="/logout">Logout</a></li>
+                    @endif
+
                 </ul>
             </li>
             <li class="linkdown">

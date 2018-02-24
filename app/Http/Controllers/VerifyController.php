@@ -2,32 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Item;
-use App\Order;
 use Illuminate\Http\Request;
 
-/**
- * @resource Orders
- *
- * Orders resource endpoints
- */
-class OrderController extends Controller
+class VerifyController extends Controller
 {
     /**
-     * List all orders
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, Item $items)
+    public function index()
     {
-        $items = $items->paginate(20);
-
-        if ($request->wantsJson()) {
-            return $items;
-        }
-
-        return view('orders', compact('items'));
+        return view('auth.verify');
     }
 
     /**
@@ -54,10 +40,10 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Order  $order
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show($id)
     {
         //
     }
@@ -65,10 +51,10 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Order  $order
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Order $order)
+    public function edit($id)
     {
         //
     }
@@ -77,10 +63,10 @@ class OrderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Order  $order
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -88,10 +74,10 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Order  $order
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order)
+    public function destroy($id)
     {
         //
     }

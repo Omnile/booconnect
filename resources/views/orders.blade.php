@@ -3,9 +3,8 @@
 @section('contents')
 
 	<div class="container">
-		@include('component.resturant', compact('resturant', 'items'))
+		@include('component.orders', compact('items'))
 
-		{!! $resturant->links() !!}
-
+		{!! $items->links() !!}
 	</div>
 @endsection

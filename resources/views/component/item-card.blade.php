@@ -13,14 +13,14 @@
             </span>
         </div> --}}
         <figure class="layer" style="border-top-right-radius: 30%;">
-            <a href="javascript:void(0);">
+            <a href="#">
                 <img src="{{$item->image}}" alt="" style="border-top-right-radius: 30%;">
             </a>
         </figure>
         <div class="icons">
-            <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
-            <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-gift"></i></a>
-            <a class="icon semi-circle" href="/resturant/{{ $resturant->id }}/items/{{ $item->id }}"><i class="fa fa-search"></i></a>
+            <a class="icon semi-circle" href="#"><i class="fa fa-heart-o"></i></a>
+            <a class="icon semi-circle" href="#"><i class="fa fa-gift"></i></a>
+            <a class="icon semi-circle" href="/items/{{ $item->id }}"><i class="fa fa-search"></i></a>
         </div>
 
 
@@ -49,6 +49,6 @@
             {{-- <small class="amount off text-danger">{{ $item->formatted_price }}</small> --}}
             <span class="amount text-primary">{{ $item->formatted_price }}</span>
         </div>
-        <a href="javascript:void(0);"><i class="fa fa-cart-plus mr-5"></i>Add to cart</a>
+        <a href="#"><i class="fa fa-cart-plus mr-5"></i>Add to cart</a>
     </div><!-- end caption -->
 </div><!-- end thumbnail -->

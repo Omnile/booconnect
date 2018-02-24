@@ -1,5 +1,5 @@
 
-    <div class="thumbnail blog" style="border-top-left-radius: 20%;border-bottom-right-radius: 20%;">
+    <div class="thumbnail blog" style="border-top-left-radius: 20%;border-bottom-right-radius: 20%; height: 450px">
         <div class="header" style="border-top-left-radius: 20%;border-bottom-right-radius: 20%;">
             <figure>
                 <a href="/resturants/{{ $resturant->id }}">
@@ -23,7 +23,9 @@
                 <span class="category">
                     <a href="javascript:void(0);">Post Formats</a>
                 </span> --}}
+                <br>
+                <br>
+                <p>{{ $resturant->description }}</p>
             </div>
-            <p>{{ $resturant->description }}</p>
         </div><!-- end caption -->
     </div><!-- end thumbnail -->
