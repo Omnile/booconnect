@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model
 {
+    /**
+     * Casts
+     * @var [type]
+     */
+    protected $casts = ['data'=> 'json'];
+
     public function item()
     {
         return $this->hasMany(Item::class);
