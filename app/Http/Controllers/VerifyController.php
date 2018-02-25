@@ -41,7 +41,7 @@ class VerifyController extends Controller
     }
 
     /**
-     * Verify OTP
+     * Verify OTP Code
      *
      * Verify the OTP code that was sent to the authenticated user.
      *

@@ -58,4 +58,10 @@ class Item extends Model implements Buyable
     {
         return $this->morphOne(Picture::class, 'imageable');
     }
+
+    public function wishlist()
+    {
+        return $this->hasMany(Wishlist::class);
+
+    }
 }

@@ -51,7 +51,7 @@ class CartController extends Controller
     }
 
     /**
-     * Update Quantity
+     * Update Cart Item Quantity
      * Update a specific cart Item.
      *
      * @param  \Illuminate\Http\UpdateItem  $request

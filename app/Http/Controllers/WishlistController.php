@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Wishlist\AddItem;
 use App\Item;
+use App\Wishlist;
 use Illuminate\Http\Request;
 
 /**
@@ -13,13 +15,15 @@ use Illuminate\Http\Request;
 class WishlistController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get Items
+     *
+     * Get paginated list of items on wishlist
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, Item $items)
+    public function index(Request $request, Wishlist $wishlist)
     {
-        $items = $items->paginate(20);
+        $items = $wishlist->paginate(20);
 
         if ($request->wantsJson()) {
             return $items;
@@ -29,9 +33,7 @@ class WishlistController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function create()
     {
@@ -39,21 +41,26 @@ class WishlistController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Add Wishlist item
+     *
+     * Add an item to wishlist
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AddItem $request)
     {
-        //
+        $wishlist_item = Wishlist::create($request->all());
+
+        if ($request->wantsJson()) {
+            return $wishlist_item;
+        }
+
+        return redirect('items')->back();
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function show($id)
     {
@@ -61,10 +68,7 @@ class WishlistController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function edit($id)
     {
@@ -72,11 +76,7 @@ class WishlistController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function update(Request $request, $id)
     {
@@ -84,13 +84,19 @@ class WishlistController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove Item
+     *
+     * Remove an item from the set of items on tieh wishlist.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Wishlist $withlist)
     {
-        //
+        $wishlist_item = $withlist;
+
+        $withlist_item->delete();
+
+        return $withlist_item;
     }
 }
