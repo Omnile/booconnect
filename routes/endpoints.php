@@ -18,13 +18,17 @@ Route::resource('resturants', 'ResturantController');
 Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('verify', 'VerifyController');
+});
+
+/**
+ * So basically here, we use the verified middleware.
+ * Only routes specified here requires verification.
+ */
+Route::group(['middleware' => ['auth', 'verified'], function () {
 
     Route::resource('account', 'AccountController');
 
     Route::resource('orders', 'OrderController');
-});
-
-Route::group(['middleware' => 'verified'], function () {
 
     Route::resource('checkout', 'CheckoutController');
 

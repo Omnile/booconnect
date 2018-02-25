@@ -38,6 +38,12 @@ class UserVerified
     public function handle($request, Closure $next)
     {
         if ($this->notSignedIn($request) ?: $this->verificationStatus($request)) {
+            /**
+             * This should be self eplanatory. 
+             * It checks if the user is requesting 
+             * a json response or has Application/Json
+             * and gives a json response
+             */
             if ($request->expectsJson()) {
                 return response(
                     collect(['message' => $this->message()]),
@@ -45,10 +51,16 @@ class UserVerified
                     $headers = []
                 );
             }
-
+            /**
+             * Redirect the user to the verification 
+             * page if the user is not verified
+             */
             return redirect('verify');
         }
-
+        /**
+         * Continue to the requested route if the user passes
+         * the verification status test
+         */
         return $next($request);
     }
 
