@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Verify\SendCode;
+use App\Http\Requests\Verify\VerifyCode;
 use Illuminate\Http\Request;
 
 /**
@@ -12,19 +14,26 @@ use Illuminate\Http\Request;
 class VerifyController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get Status
+     *
+     * Get the Verification Status of the authenticated user
      *
      * @return \Illuminate\Http\Response
+     *
+     * NOTE: This will display the verification form
+     * if accessed from a web browser
      */
     public function index()
     {
+        if ($request->wantsJson()) {
+            return ['verification_status' => auth()->user()->phone_verified];
+        }
+
         return view('auth.verify');
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function create()
     {
@@ -32,21 +41,20 @@ class VerifyController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Verify OTP
+     *
+     * Verify the OTP code that was sent to the authenticated user.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(VerifyCode $request)
     {
         //
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function show($id)
     {
@@ -65,22 +73,32 @@ class VerifyController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Send Verification Code
+     *
+     * A temporary verification code will be sent to the user.
+     * This code will expire after 5 minuites.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SendCode $request, $id)
     {
-        //
+        $user = auth()->user();
+
+        $user->phone = $request->input('phone');
+
+        $user->sendOTP();
+
+        if ($request->wantsJson()) {
+            return ['message' => 'verification code sent to ' . $user->phone];
+        }
+
+        return redirect('verify');
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function destroy($id)
     {
