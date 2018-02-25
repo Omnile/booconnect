@@ -24,7 +24,7 @@ class SendCode extends FormRequest
     public function rules()
     {
         return [
-            'phone' => 'required|number|unique:user,phone',
+            'phone' => 'required|numeric|unique:user,phone',
         ];
     }
 }

@@ -24,8 +24,8 @@ class VerifyCode extends FormRequest
     public function rules()
     {
         return [
-            'phone' => 'required|number|unique:user,phone',
-            'token' => 'required|number|exists:user,token',
+            'phone' => 'required|numeric|unique:user,phone',
+            'token' => 'required|numeric|exists:user,token',
         ];
     }
 }

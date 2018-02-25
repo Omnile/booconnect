@@ -25,7 +25,7 @@ class AddItem extends FormRequest
     {
         return [
             'row_id' => 'required|string',
-            'qty' => 'required|number|min:1',
+            'qty' => 'required|numeric|min:1',
         ];
     }
 }

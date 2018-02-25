@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Search;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -25,7 +25,7 @@ class SearchRequest extends FormRequest
     {
         return [
             'query' => 'required|string',
-            'type' => 'nullable|string',
+            'type' => 'nullable',
         ];
     }
 }

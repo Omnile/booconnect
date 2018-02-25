@@ -2,12 +2,11 @@
 
 namespace App\BooConnect\Search;
 
-trait Searchable {
+trait Searchable
+{
 
-	public static function search($query)
-	{
-		$result = static::where('name' ,'LIKE' ,'%'. $query.'%')->get();
-
-		return $result;
-	}
+    public static function search($query)
+    {
+        return self::where('name', 'LIKE', '%' . $query . '%');
+    }
 }

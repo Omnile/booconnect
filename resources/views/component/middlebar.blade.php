@@ -8,14 +8,13 @@
                 </a>
             </div><!-- end col -->
             <div class="col-sm-7 vertical-align text-center">
-                <form>
+                <form method="GET" action="/search">
                     <div class="row grid-space-1">
                         <div class="col-sm-6">
-                            <input type="text" name="keyword" class="form-control input-lg" placeholder="Search">
+                            <input type="text" name="query" class="form-control input-lg" placeholder="Search" value="{{ request()->query('query') }}">
                         </div><!-- end col -->
                         <div class="col-sm-3">
-                            <select class="form-control input-lg" name="category">
-                                <option value="all">All Categories</option>
+                            <select class="form-control input-lg" name="type">
                                 <option value="resturants">Resturants</option>
                                 <option value="items">Items</option>
                             </select>

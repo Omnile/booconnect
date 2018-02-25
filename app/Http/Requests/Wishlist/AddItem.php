@@ -24,7 +24,7 @@ class AddItem extends FormRequest
     public function rules()
     {
         return [
-            'item_id' => 'number|required|exists:items,id|unique:wishlist,id,user_id,' . 1,
+            'item_id' => 'required|numeric|exists:items,id|unique:wishlist,id,user_id,' . 1,
         ];
     }
 }

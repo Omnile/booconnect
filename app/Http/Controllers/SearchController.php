@@ -2,48 +2,115 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\SearchRequest;
+use App\Http\Requests\Search\SearchRequest;
 use App\Item;
 use App\Resturant;
 use App\Search;
-use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * The default view that will be returned based on
+     * the type of model the client is looking for.
+     * @var string
+     */
+    protected $view = 'welcome';
+
+    /**
+     * This wil hold the set of results after the search
+     * query has been carried out
+     */
+    protected $result;
+
+    /**
+     * Search
+     *
+     * This will allow the clients to seach for items, resturants
+     * or a combination of both.
      *
      * @return \Illuminate\Http\Response
      */
     public function index(SearchRequest $request)
     {
+
         $query = $request->get('query');
         $type = $request->get('type');
 
-        //check and provide the type of model the request queries on 
-        if($type == 'Item'){
+        /**
+         * Check that the type passed in is 'items'
+         *
+         * @var string
+         */
+        if ($type == 'items') {
 
-            $result = Item::search($query);
-
-            if ($request->wantsJson()) {
-                return $result;
-            }
-            return $result;
-
-        } elseif($type == 'Resturant') {
-
-            $result = Resturant::search($query);
-
-            if ($request->wantsJson()) {
-                return $result;
-            }
-            return $result;
+            $this->result = Item::search($query)->paginate(12);
         }
 
-        //if the type is not reconized return this
-        return $type. ' type does not exist';
+        /**
+         * Check that the type passed in is 'resturants'
+         *
+         * @var string
+         */
+        if ($type == 'resturants') {
+
+            $this->result = Resturant::search($query)->paginate(12);
+        }
+
+        /**
+         * Respon to Ajax request
+         */
+        if ($request->wantsJson()) {
+            return $this->result;
+        }
+
+        return view('search', ['result' => $this->result, 'type' => $type]);
     }
 
+    /**
+     * @hideFromAPIDocumentation
+     */
+    public function create()
+    {
+        //
+    }
 
-   
+    /**
+     * @hideFromAPIDocumentation
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * @hideFromAPIDocumentation
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * @hideFromAPIDocumentation
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * @hideFromAPIDocumentation
+     */
+    public function update(Request $request)
+    {
+        //
+    }
+
+    /**
+     * @hideFromAPIDocumentation
+     */
+    public function destroy($id)
+    {
+        //
+    }
 }
