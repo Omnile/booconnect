@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AddToCartRequest;
-use App\Item;
-use Gloudemans\Shoppingcart\Facades\Cart;
+use App\Cart;
 use Illuminate\Http\Request;
 
+/**
+ * @resource Cart
+ *
+ * Shopping cart endpoints
+ */
 class CartController extends Controller
 {
     /**
@@ -14,9 +17,9 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, Item $items)
+    public function index()
     {
-        $items = $items->paginate(20);
+        $items = Cart::content();
 
         if ($request->wantsJson()) {
             return $items;
@@ -30,13 +33,9 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(AddToCartRequest $request, Item $items)
+    public function create()
     {
-        $item = $item->find($request->id);
-
-        $cartItem = array_merge($item->toArray(), $request->all());
-
-        Cart::add($cartItem)->associate('Item');
+        //
     }
 
     /**
@@ -45,7 +44,7 @@ class CartController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AddToCartRequest $request, Item $items)
+    public function store(Request $request)
     {
         $item = $item->find($request->id);
 
@@ -57,21 +56,21 @@ class CartController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Cart $cart)
     {
-        return Cart::content();
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Cart $cart)
     {
         //
     }
@@ -80,10 +79,10 @@ class CartController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Cart $cart)
     {
         //
     }
@@ -91,10 +90,10 @@ class CartController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Cart $cart)
     {
         //
     }

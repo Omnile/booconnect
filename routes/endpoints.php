@@ -9,10 +9,6 @@
 |
  */
 
-Route::get('/home', 'RootController@index');
-
-Route::resource('/', 'RootController');
-
 Route::resource('items', 'ItemController');
 
 Route::resource('cart', 'CartController');

@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+/**
+ * @resource Verify
+ *
+ * phone verification endpoints
+ */
 class VerifyController extends Controller
 {
     /**

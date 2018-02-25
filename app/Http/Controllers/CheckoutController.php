@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Item;
 use Illuminate\Http\Request;
 
+/**
+ * @resource Checkout
+ *
+ * Checkout resource endpoints
+ */
 class CheckoutController extends Controller
 {
     /**

@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+/**
+ * @resource Account
+ *
+ * Account Endpoints
+ */
 class AccountController extends Controller
 {
     /**

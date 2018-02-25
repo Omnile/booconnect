@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Item;
 use Illuminate\Http\Request;
 
+/**
+ * @resource Wishlist
+ *
+ * Item-Wishlist resource endpoints
+ */
 class WishlistController extends Controller
 {
     /**
