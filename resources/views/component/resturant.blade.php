@@ -18,5 +18,5 @@
 
 <hr>
 <div class="row">
-	@include('component.items', compact('items', 'resturant'))
+	@include('component.items', compact('resturant') + ['items' => $resturant->items])
 </div>

@@ -15,7 +15,8 @@ class OrderController extends Controller
 {
     /**
      * List all orders
-     * Display a listing of the resource.
+     *
+     * Display a paginated list of all orders.
      *
      * @return \Illuminate\Http\Response
      */
@@ -52,10 +53,7 @@ class OrderController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function show(Order $order)
     {
@@ -63,10 +61,7 @@ class OrderController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function edit(Order $order)
     {
@@ -74,11 +69,7 @@ class OrderController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function update(Request $request, Order $order)
     {
@@ -86,13 +77,16 @@ class OrderController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Cancel an order
+     *
+     * A user can cancel an order within the first NUMBER minuites after
+     * making the order.
      *
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
     public function destroy(Order $order)
     {
-        //
+        return $order->cancel();
     }
 }

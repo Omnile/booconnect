@@ -2,10 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-use Gloudemans\Shoppingcart\Facades\Cart as CartRepository;
+use Gloudemans\Shoppingcart\Facades\Cart as CartHelper;
 
-class Cart extends CartRepository
+class Cart extends CartHelper
 {
     // as you see, we can always exted :)
     // now we could add functions, and all. instead of using injection. and everything is readable and reachable.

@@ -2,15 +2,15 @@
     <tr>
         <td>
             <a href="/items/{{$item->id}}">
-                <img width="60px" src="{{ $item->image }}" alt="product">
+                <img width="60px" src="{{ $item->model->image }}" alt="product">
             </a>
         </td>
         <td>
-            <h6 class="regular"><a href="/items/{{$item->id}}">{{ $item->name }}</a></h6>
-            <p>{{ $item->discription }}</p>
+            <h6 class="regular"><a href="/items/{{$item->id}}">{{ $item->model->name }}</a></h6>
+            <p>{{ $item->model->discription }}</p>
         </td>
         <td>
-            <span>{{ $item->formatted_price }}</span>
+            <span>{{ $item->model->formatted_price }}</span>
         </td>
         <td>
             <select class="form-control" name="select">
@@ -22,7 +22,7 @@
             </select>
         </td>
         <td>
-            <span class="text-primary">{{ $item->formatted_price }}</span>
+            <span class="text-primary">{{ config('booconnect.currency') . ' ' . number_format($item->subtotal, 2) }}</span>
         </td>
         <td>
             <button type="button" class="close">×</button>

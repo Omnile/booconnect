@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\Http\Requests\Cart\AddItem;
+use App\Http\Requests\Cart\UpdateItem;
+use App\Item;
 use Illuminate\Http\Request;
 
 /**
@@ -12,88 +15,91 @@ use Illuminate\Http\Request;
  */
 class CartController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
+     * Get Items
+     * List items in the shopping cart
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $items = Cart::content();
+        $cart_items = Cart::content();
 
         if ($request->wantsJson()) {
-            return $items;
+            return $cart_items;
         }
 
         return view('cart', compact('items'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Add Item.
+     * Add and item to the shopping cart
      *
      * @return \Illuminate\Http\Response
+     */
+    public function store(AddItem $request)
+    {
+        $cart_item = Cart::add(Item::find($request->item_id), $request->qty);
+
+        if ($request->wantsJson()) {
+            return $cart_item;
+        }
+
+        return back();
+    }
+
+    /**
+     * Update Quantity
+     * Update a specific cart Item.
+     *
+     * @param  \Illuminate\Http\UpdateItem  $request
+     * @param  \App\Cart  $cart
+     * @return \Illuminate\Http\Response
+     */
+    public function update(UpdateItem $request, $cart_item)
+    {
+        $cart_item = Cart::update($cart_item, ['qty' => $request->quantity]);
+
+        if ($request->wantsJson()) {
+            return $cart_item;
+        }
+
+        return back();
+    }
+
+    /**
+     * Remove Cart Item
+     * Remove an item from the shopping cart.
+     *
+     * @param  integer  $cart_item_id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($cart_item)
+    {
+        return Cart::remove($cart_item);
+    }
+
+    /**
+     * @hideFromAPIDocumentation
+     */
+    public function show()
+    {
+        //
+    }
+
+    /**
+     * @hideFromAPIDocumentation
+     */
+    public function edit()
+    {
+        //
+    }
+    /**
+     * @hideFromAPIDocumentation
      */
     public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $item = $item->find($request->id);
-
-        $cartItem = array_merge($item->toArray(), $request->all());
-
-        Cart::add($cartItem)->associate('Item');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Cart  $cart
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Cart $cart)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Cart  $cart
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Cart $cart)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Cart  $cart
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Cart $cart)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Cart  $cart
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Cart $cart)
     {
         //
     }

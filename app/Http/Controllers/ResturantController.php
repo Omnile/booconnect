@@ -13,7 +13,9 @@ use Illuminate\Http\Request;
 class ResturantController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Query Resturants.
+     *
+     * Get a paginated result of all resturants
      *
      * @return \Illuminate\Http\Response
      */
@@ -30,9 +32,7 @@ class ResturantController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function create()
     {
@@ -40,10 +40,7 @@ class ResturantController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function store(Request $request)
     {
@@ -51,7 +48,8 @@ class ResturantController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Get Resturant
+     * A resturant resource with pagination of it's items
      *
      * @param  \App\Resturant  $resturant
      * @return \Illuminate\Http\Response
@@ -65,14 +63,11 @@ class ResturantController extends Controller
             return $resturant;
         }
 
-        return view('resturant', compact('resturant', 'items'));
+        return view('resturant', compact('resturant'));
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Resturant  $resturant
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function edit(Resturant $resturant)
     {
@@ -80,11 +75,7 @@ class ResturantController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Resturant  $resturant
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function update(Request $request, Resturant $resturant)
     {
@@ -92,10 +83,7 @@ class ResturantController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Resturant  $resturant
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function destroy(Resturant $resturant)
     {
