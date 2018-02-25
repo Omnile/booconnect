@@ -24,7 +24,7 @@ Route::group(['middleware' => 'auth'], function () {
  * So basically here, we use the verified middleware.
  * Only routes specified here requires verification.
  */
-Route::group(['middleware' => ['auth', 'verified'], function () {
+Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::resource('account', 'AccountController');
 
@@ -33,7 +33,7 @@ Route::group(['middleware' => ['auth', 'verified'], function () {
     Route::resource('checkout', 'CheckoutController');
 
     Route::resource('wishlist', 'WishlistController');
-}]);
+});
 
 Route::get('logout', function () {
 
