@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Gloudemans\Shoppingcart\Facades\Cart as CartHelper;
 
-class Cart extends Model
+class Cart extends CartHelper
 {
     //
 }
