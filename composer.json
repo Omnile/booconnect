@@ -27,8 +27,7 @@
         "laravel/tinker": "~1.0",
         "mpociot/laravel-apidoc-generator": "dev-master",
         "ovac/laravel-hubtel-payment": "^1.0",
-        "ovac/laravel-hubtel-sms": "~1.0",
-        "torann/currency": "^1.0"
+        "ovac/laravel-hubtel-sms": "~1.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
@@ -74,6 +73,9 @@
         "test": [
             "phpunit",
             "@php artisan dusk"
+        ],
+        "document": [
+            "php artisan api:generate --routePrefix='api/v1/*'"
         ]
     },
     "config": {
