@@ -18,6 +18,8 @@ Route::resource('resturants', 'ResturantController');
 Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('verify', 'VerifyController');
+
+    Route::resource('checkout', 'CheckoutController');
 });
 
 /**
@@ -29,8 +31,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('account', 'AccountController');
 
     Route::resource('orders', 'OrderController');
-
-    Route::resource('checkout', 'CheckoutController');
 
     Route::resource('wishlist', 'WishlistController');
 });
