@@ -2,11 +2,14 @@
 
 namespace App;
 
+use App\BooConnect\Search\Searchable;
 use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model implements Buyable
 {
+    use Searchable;
+
     protected $appends = ['formatted_price'];
 
     public function getFormattedPriceAttribute()
