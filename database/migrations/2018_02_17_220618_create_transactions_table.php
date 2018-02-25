@@ -21,7 +21,7 @@ class CreateTransactionsTable extends Migration
             $table->integer('item_id');
             $table->integer('user_id');
             $table->float('amount');
-            $table->json('data');
+            $table->text('data');
             $table->softDeletes();
             $table->timestamps();
         });
