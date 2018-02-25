@@ -16,7 +16,7 @@ class VerifyController extends Controller
     /**
      * Get Status
      *
-     * Get the Verification Status of the authenticated user
+     * Get verification status on authenticated user
      *
      * @return \Illuminate\Http\Response
      *
