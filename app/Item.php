@@ -2,10 +2,12 @@
 
 namespace App;
 
+use App\BooConnect\Search\Searchable;
 use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
+    use Searchable;
 
     protected $appends = ['formatted_price'];
 
