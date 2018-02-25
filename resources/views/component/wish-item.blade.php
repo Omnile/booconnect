@@ -2,15 +2,15 @@
     <tr>
         <td>
             <a href="/items/{{$item->id}}">
-                <img width="60px" src="img/products/bags_07.jpg" alt="product">
+                <img width="60px" src="{{ $item->image }}" alt="product">
             </a>
         </td>
         <td>
-            <h6 class="regular"><a href="/items/{{$item->id}}">Lorem Ipsum</a></h6>
-            <small>12x1.5 L</small>
+            <h6 class="regular"><a href="/items/{{$item->id}}">{{ $item->name }}</a></h6>
+            <small>{{ $item->measurement }}</small>
         </td>
         <td>
-            <span class="text-primary">$29.99</span>
+            <span class="text-primary">{{ $item->formatted_price }}</span>
         </td>
         <td>
             <a href="javascript:void(0)" class="btn btn-default round btn-sm"><i class="fa fa-cart-plus mr-5"></i> Add to cart</a>

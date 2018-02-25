@@ -74,14 +74,16 @@
                         </ul> --}}
                         <hr class="spacer-15">
                         <div class="row">
-                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            {{-- <div class="col-md-6 col-sm-6 col-xs-12">
                                 <select class="form-control" name="select">
-                                    <option value="" selected>Color</option>
+                                    <option value="" selected>Size</option>
+                                    @foreach ($item->sizes as $element)
+                                    @endforeach
                                     <option value="red">Red</option>
                                     <option value="green">Green</option>
                                     <option value="blue">Blue</option>
                                 </select>
-                            </div><!-- end col -->
+                            </div><!-- end col --> --}}
                             {{-- <div class="col-md-4 col-sm-6 col-xs-12">
                                 <select class="form-control" name="select">
                                     <option value="">Size</option>

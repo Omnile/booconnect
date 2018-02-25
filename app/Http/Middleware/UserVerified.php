@@ -3,8 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Auth\Middleware\Auth;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * This middleware should determine if a route can be accessed
@@ -82,7 +83,7 @@ class UserVerified
      */
     public function verificationStatus(Request $request)
     {
-        if (!$request->user()->verified) {
+        if ($request->user() && $request->user->verified) {
             $this->message = 'Please verify the phone number in your account.';
 
             return $this->message;

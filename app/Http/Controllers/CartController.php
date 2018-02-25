@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddToCartRequest;
 use App\Item;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -28,9 +30,13 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(AddToCartRequest $request, Item $items)
     {
-        //
+        $item = $item->find($request->id);
+
+        $cartItem = array_merge($item->toArray(), $request->all());
+
+        Cart::add($cartItem)->associate('Item');
     }
 
     /**
@@ -39,9 +45,13 @@ class CartController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AddToCartRequest $request, Item $items)
     {
-        //
+        $item = $item->find($request->id);
+
+        $cartItem = array_merge($item->toArray(), $request->all());
+
+        Cart::add($cartItem)->associate('Item');
     }
 
     /**
@@ -52,7 +62,7 @@ class CartController extends Controller
      */
     public function show($id)
     {
-        //
+        return Cart::content();
     }
 
     /**

@@ -12,7 +12,9 @@
             <div class="table-responsive">
                 <table class="table">
                     <tbody>
-                        @include('component.wish-item')
+                        @foreach ($items as $item)
+                            @include('component.wish-item', compact('item'))
+                        @endforeach
                     </tbody>
                 </table><!-- end table -->
             </div><!-- end table-responsive -->
