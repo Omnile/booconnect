@@ -33,7 +33,7 @@ Route::group(['middleware' => ['auth', 'verified'], function () {
     Route::resource('checkout', 'CheckoutController');
 
     Route::resource('wishlist', 'WishlistController');
-});
+}]);
 
 Route::get('logout', function () {
 
