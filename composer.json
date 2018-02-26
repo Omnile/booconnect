@@ -75,7 +75,15 @@
             "@php artisan dusk"
         ],
         "document": [
-            "php artisan api:generate --routePrefix='api/v1/*'"
+            "php artisan api:generate --routePrefix='api/v1/*' --header='Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBmNWRhOGM4ZDg1Y2Q3OTcwNTM'"
+        ],
+        "sdd": [
+            "php artisan migrate:refresh --seed;",
+            "composer document;",
+            "cd public/docs;",
+            "git add .;",
+            "git commit -m 'Update Documentation 📒';",
+            "git push"
         ]
     },
     "config": {
