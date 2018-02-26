@@ -5,6 +5,7 @@ language_tabs:
 - javascript
 
 includes:
+- errors
 
 search: true
 
