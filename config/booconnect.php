@@ -23,7 +23,7 @@ return [
      */
 
     'seed' => [
-        'max' => env('BOOCONNECT_SEED_MAX_ITEMS', 100),
+        'max' => (int) env('BOOCONNECT_SEED_MAX_ITEMS', 100),
     ],
 
 ];
