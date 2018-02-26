@@ -6,7 +6,7 @@ use App\Item;
 use Illuminate\Http\Request;
 
 /**
- * @resource Checkout
+ * Resource Checkout
  *
  * Checkout resource endpoints
  */
