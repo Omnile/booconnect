@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Cart;
+namespace App\Http\Requests\Account;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AddItem extends FormRequest
+class UpdateAccount extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,12 @@ class AddItem extends FormRequest
     public function rules()
     {
         return [
-            'row_id' => 'required|string|max:255',
-            'qty' => 'required|numeric|min:1',
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'password' => 'required|string|min:6|confirmed',
+            'username' => 'required|string|min:4',
+            'gender' => 'required|string|min:4',
+            'phone' => 'required|string|min:4',
         ];
     }
 }

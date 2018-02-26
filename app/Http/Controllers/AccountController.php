@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Account\UpdateAccount;
 use Illuminate\Http\Request;
 
 /**
@@ -68,13 +69,15 @@ class AccountController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update Account
+     *
+     * Update the authenticated user account
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(UpdateAccount $request)
     {
         return $this->store($request);
     }

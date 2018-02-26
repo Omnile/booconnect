@@ -12,14 +12,13 @@ use Illuminate\Http\Request;
  */
 class PictureController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
-    public function index(Picture $pictures)
+    public function index()
     {
-        return $pictures->paginate(20);
+        //
     }
 
     /**
@@ -33,10 +32,7 @@ class PictureController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function store(Request $request)
     {
@@ -44,10 +40,7 @@ class PictureController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Picture  $picture
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function show(Picture $picture)
     {
@@ -55,10 +48,7 @@ class PictureController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Picture  $picture
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function edit(Picture $picture)
     {
@@ -66,11 +56,7 @@ class PictureController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Picture  $picture
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function update(Request $request, Picture $picture)
     {
@@ -78,10 +64,7 @@ class PictureController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Picture  $picture
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function destroy(Picture $picture)
     {

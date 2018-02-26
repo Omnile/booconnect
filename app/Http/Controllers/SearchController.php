@@ -7,6 +7,11 @@ use App\Item;
 use App\Resturant;
 use App\Search;
 
+/**
+ * Resource Search
+ *
+ * Search for either Resturants or Items
+ */
 class SearchController extends Controller
 {
     /**

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Cart;
+namespace App\Http\Requests\Rating;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AddItem extends FormRequest
+class AddRating extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class AddItem extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,8 +24,10 @@ class AddItem extends FormRequest
     public function rules()
     {
         return [
-            'row_id' => 'required|string|max:255',
-            'qty' => 'required|numeric|min:1',
+
+            'rating' => 'required|numeric|min:1|max:5',
+            'ratable_id' => 'required|numeric',
+            'rateable_type' => 'string',
         ];
     }
 }

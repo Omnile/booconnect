@@ -32,6 +32,20 @@ class OrderController extends Controller
     }
 
     /**
+     * Cancel an order
+     *
+     * A user can cancel an order within the first NUMBER minuites after
+     * making the order.
+     *
+     * @param  \App\Order  $order
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Order $order)
+    {
+        return $order->cancel();
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -42,10 +56,7 @@ class OrderController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function store(Request $request)
     {
@@ -74,19 +85,5 @@ class OrderController extends Controller
     public function update(Request $request, Order $order)
     {
         //
-    }
-
-    /**
-     * Cancel an order
-     *
-     * A user can cancel an order within the first NUMBER minuites after
-     * making the order.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Order $order)
-    {
-        return $order->cancel();
     }
 }

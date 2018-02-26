@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Rating\AddRating;
+use App\Item;
 use App\Rating;
+use App\Resturant;
 use Illuminate\Http\Request;
 
 /**
@@ -14,52 +17,100 @@ class RatingController extends Controller
 {
     /**
      * List all ratings
-     * Display a listing of the resource.
+     *
+     * List ratings related to either an item or resturant
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(RatingsRequest $request)
     {
-        //
+        if ($input->get('ratable_type') == 'item') {
+
+            $ratings = Item::find($input->get('ratable_id'))->rating->paginate(20);
+        }
+
+        if ($input->get('ratable_type') == 'resturant') {
+
+            $ratings = Resturant::find($input->get('ratable_id'))->rating->paginate(20);
+        }
+
+        if ($request->wantsJson()) {
+            return $items;
+        }
+
+        return view('ratings', compact('items'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Add Rating
      *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
+     * Add rating to an item or resturant
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AddRating $request)
     {
-        //
+
+        $rating = Rating::create($request->all());
+
+        if ($request->wantsJson()) {
+            return $rating;
+        }
+
+        return redirect($input->get('ratable_type') . '/' . $input->get('ratable_id'))->back();
     }
 
     /**
-     * Display the specified resource.
+     * Get Rating
+     *
+     * Get a single rating review
      *
      * @param  \App\Rating  $rating
      * @return \Illuminate\Http\Response
      */
     public function show(Rating $rating)
     {
-        //
+        if ($request->wantsJson()) {
+            return $rating;
+        }
+
+        return view('components.rating', compact('rating'));
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Delete a rating review
+     *
+     * Delete a rating for either an item or resturant
      *
      * @param  \App\Rating  $rating
      * @return \Illuminate\Http\Response
+     */
+    public function destroy(Rating $rating)
+    {
+        if ($rating->user_id !== auth()->user()->id) {
+            return response(402);
+        }
+
+        $rating->delete();
+
+        if ($request->wantsJson()) {
+            return $rating;
+        }
+
+        return redirect()->back();
+    }
+
+    /**
+     * @hideFromAPIDocumentation
+     */
+    public function create()
+    {
+
+    }
+
+    /**
+     * @hideFromAPIDocumentation
      */
     public function edit(Rating $rating)
     {
@@ -67,24 +118,9 @@ class RatingController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Rating  $rating
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function update(Request $request, Rating $rating)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Rating  $rating
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Rating $rating)
     {
         //
     }

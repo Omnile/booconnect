@@ -17,7 +17,7 @@ class CartController extends Controller
 {
 
     /**
-     * Get Items
+     * Get Cart Items
      * List items in the shopping cart
      *
      * @return \Illuminate\Http\Response
@@ -34,7 +34,7 @@ class CartController extends Controller
     }
 
     /**
-     * Add Item.
+     * Add Cart Item.
      * Add and item to the shopping cart
      *
      * @return \Illuminate\Http\Response
