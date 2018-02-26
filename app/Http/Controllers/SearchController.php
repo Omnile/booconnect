@@ -8,7 +8,7 @@ use App\Resturant;
 use App\Search;
 
 /**
- * Resource Search
+ * @resource Search
  *
  * Search for either Resturants or Items
  */
