@@ -12,6 +12,6 @@ class ItemsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Item::class, 200)->create();
+        factory(Item::class, config('booconnect.seed.max'))->create();
     }
 }

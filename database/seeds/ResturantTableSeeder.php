@@ -12,6 +12,6 @@ class ResturantTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Resturant::class, 100)->create();
+        factory(Resturant::class, config('booconnect.seed.max'))->create();
     }
 }

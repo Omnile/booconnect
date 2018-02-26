@@ -10,7 +10,7 @@ $factory->define(App\Resturant::class, function (Faker $faker) {
         'registration_no' => rand(1000, 99999),
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
-        'user_id' => rand(1, 100),
+        'user_id' => rand(1, config('booconnect.seed.max')),
         'city' => $faker->city,
         'state' => $faker->state,
         'country' => $faker->country,

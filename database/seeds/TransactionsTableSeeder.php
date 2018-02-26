@@ -12,6 +12,6 @@ class TransactionsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Transaction::class, 500)->create();
+        factory(Transaction::class, config('booconnect.seed.max'))->create();
     }
 }

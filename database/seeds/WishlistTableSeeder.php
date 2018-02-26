@@ -12,7 +12,7 @@ class WishlistTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Wishlist::class, 100)->create();
+        factory(Wishlist::class, config('booconnect.seed.max'))->create();
         //
     }
 }

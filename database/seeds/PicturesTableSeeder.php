@@ -12,6 +12,6 @@ class PicturesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Picture::class, 300)->create();
+        factory(Picture::class, config('booconnect.seed.max'))->create();
     }
 }
