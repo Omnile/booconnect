@@ -39,7 +39,6 @@ class Kernel extends HttpKernel
             /**
              * Middleware plugins
              */
-            \Torann\Currency\Middleware\CurrencyMiddleware::class,
         ],
 
         'api' => [
