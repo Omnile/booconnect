@@ -22,7 +22,7 @@ deploy_document(){
 	# composer document;
 
 	# Seed the database for the api documentation
-	php artisan migrate:refresh --seed,
+	php artisan migrate:refresh --seed;
 
 	# Run the api documentation generator
 	composer document;
@@ -38,7 +38,7 @@ deploy_document(){
 	rm -rf !*.git;
 
 	# copy the generated document folder into the empty github folder
-	mv  -v ../public/docs/* ./;
+	mv  -fv ../public/docs/* ./;
 
 	# copy all files from the sami generated folder into the api folder
 	# mv  -v ../build/sami/* ./api/;
