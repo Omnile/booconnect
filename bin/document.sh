@@ -1,23 +1,13 @@
 #!/bin/sh
 # bin/ci.sh
 
-echo ""
-# get sami if it does not exist.
-# [ -e sami.phar ] && echo "Sami found\r\n" || curl -O http://get.sensiolabs.org/sami.phar | php;
-
-# get couscous if it does not exist.
-# [ -e couscous.phar ] && echo "Couscous found\r\n" || curl -O http://couscous.io/couscous.phar | php;
-
-# Remove the last deployment if it exists
-rm -rf ./boodoc;
-
-echo "Generating Documentation\r\n";
-
 # Check that the commits has been made
 if git diff-index --quiet HEAD --; then
     if [[ "$(git push --porcelain)" == *"Done"* ]]
 	then
-		echo "git push was successful!"
+		echo "Local changes were pushed."
+
+		deploy_document
 	fi
 else
     echo "Please commit and push your changes first."
@@ -25,6 +15,19 @@ fi
 
 
 deploy_document(){
+
+	echo ""
+	# get sami if it does not exist.
+	# [ -e sami.phar ] && echo "Sami found\r\n" || curl -O http://get.sensiolabs.org/sami.phar | php;
+
+	# get couscous if it does not exist.
+	# [ -e couscous.phar ] && echo "Couscous found\r\n" || curl -O http://couscous.io/couscous.phar | php;
+
+	# Remove the last deployment if it exists
+	rm -rf ./boodoc;
+
+	echo "Generating Documentation\r\n";
+
    	# Run the sami generator
 	# php sami.phar update ./sami.config.php -v;
 
