@@ -39,6 +39,7 @@ deploy_document(){
 
 
 	# copy the generated document folder into the empty github folder
+	echo "Staging documentation for deploy"
 	cp -rf ../public/docs/* ./;
 	cp -f ../public/img/logo.png ./images/logo.png
 
