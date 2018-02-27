@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    public function resturant()
+    public function restaurant()
     {
-        return $this->belongsToMany(Resturant::class);
+        return $this->belongsToMany(Restaurant::class);
     }
 
     public function ratings()

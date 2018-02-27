@@ -7,7 +7,7 @@
                 <div class="col-sm-8 col-sm-offset-2">
                     <div class="title-wrap">
                         <h2 class="title">Browse Items</h2>
-                        <p class="lead">Find meals from your favourite resturants on BooConnect.</p>
+                        <p class="lead">Find meals from your favourite restaurants on BooConnect.</p>
                     </div>
                 </div><!-- end col -->
             </div><!-- end row -->
@@ -25,16 +25,16 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="title-wrap">
-                        <h2 class="title lines">Browse Resturants</h2>
+                        <h2 class="title lines">Browse Restaurants</h2>
                     </div>
                 </div><!-- end col -->
             </div><!-- end row -->
 
             <div class="row column-4">
-                @include('component.resturants', compact('resturants'))
+                @include('component.restaurants', compact('restaurants'))
             </div><!-- end row -->
 
-            <button class="btn btn-primary center-block">Browse all resturants</button>
+            <button class="btn btn-primary center-block">Browse all restaurants</button>
 
         </div><!-- end container -->
     </section>

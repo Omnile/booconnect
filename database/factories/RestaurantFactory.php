@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Resturant::class, function (Faker $faker) {
+$factory->define(App\Restaurant::class, function (Faker $faker) {
     return [
         'name' => $faker->company,
         'phone' => $faker->phoneNumber,

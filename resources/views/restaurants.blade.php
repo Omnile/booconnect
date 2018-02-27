@@ -3,11 +3,11 @@
 @section('contents')
 
 	<div class="container">
-		@include('component.resturants')
+		@include('component.restaurants')
 
 
 		<div class="center-block">
-			{!! $resturants->links() !!}
+			{!! $restaurants->links() !!}
 		</div>
 
 	</div>

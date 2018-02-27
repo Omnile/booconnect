@@ -39,9 +39,9 @@ class User extends Authenticatable
         return $this->morphOne(Picture::class, 'imageable');
     }
 
-    public function resturant()
+    public function restaurant()
     {
-        return $this->hasOne(Resturant::class);
+        return $this->hasOne(Restaurant::class);
     }
 
     public function wishlist()

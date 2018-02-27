@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Rating\AddRating;
 use App\Item;
 use App\Rating;
-use App\Resturant;
+use App\Restaurant;
 use Illuminate\Http\Request;
 
 /**
@@ -18,20 +18,18 @@ class RatingController extends Controller
     /**
      * List all ratings
      *
-     * List ratings related to either an item or resturant
+     * List ratings related to either an item or restaurant
      *
      * @return \Illuminate\Http\Response
      */
     public function index(RatingsRequest $request)
     {
         if ($input->get('ratable_type') == 'item') {
-
             $ratings = Item::find($input->get('ratable_id'))->rating->paginate(20);
         }
 
-        if ($input->get('ratable_type') == 'resturant') {
-
-            $ratings = Resturant::find($input->get('ratable_id'))->rating->paginate(20);
+        if ($input->get('ratable_type') == 'restaurant') {
+            $ratings = Restaurant::find($input->get('ratable_id'))->rating->paginate(20);
         }
 
         if ($request->wantsJson()) {
@@ -44,7 +42,7 @@ class RatingController extends Controller
     /**
      * Add Rating
      *
-     * Add rating to an item or resturant
+     * Add rating to an item or restaurant
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -81,7 +79,7 @@ class RatingController extends Controller
     /**
      * Delete a rating review
      *
-     * Delete a rating for either an item or resturant
+     * Delete a rating for either an item or restaurant
      *
      * @param  \App\Rating  $rating
      * @return \Illuminate\Http\Response
@@ -106,7 +104,6 @@ class RatingController extends Controller
      */
     public function create()
     {
-
     }
 
     /**

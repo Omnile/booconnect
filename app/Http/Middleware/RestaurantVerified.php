@@ -5,14 +5,14 @@ namespace App\Http\Middleware;
 /**
  * This middleware should determine if a route can be accessed
  * based on the phone number verification status of a
- * requesting Resturant
+ * requesting Restaurant
  */
-class ResturantVerified extends UserVerified
+class RestaurantVerified extends UserVerified
 {
     /**
-     * Check the Verified attribute of the requesting resturant.
+     * Check the Verified attribute of the requesting restaurant.
      *
-     * All resturants on the BooConnect Network should
+     * All restaurants on the BooConnect Network should
      * have their phone verified. Unverified
      * accounts cannot use BooConnect
      *
@@ -21,8 +21,8 @@ class ResturantVerified extends UserVerified
      */
     public function verificationStatus(Request $request)
     {
-        if ($request->user->has('resturant') && !$request->user()->resturant->verified) {
-            $this->message = 'Please verify your resturant\'s phone number.';
+        if ($request->user->has('restaurant') && !$request->user()->restaurant->verified) {
+            $this->message = 'Please verify your restaurant\'s phone number.';
 
             return $this->message;
         }

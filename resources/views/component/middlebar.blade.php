@@ -15,7 +15,7 @@
                         </div><!-- end col -->
                         <div class="col-sm-3">
                             <select class="form-control input-lg" name="type">
-                                <option value="resturants">Resturants</option>
+                                <option value="restaurants">Restaurants</option>
                                 <option value="items">Items</option>
                             </select>
                         </div><!-- end col -->

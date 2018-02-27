@@ -10,16 +10,16 @@ class Transaction extends Model
      * Casts
      * @var [type]
      */
-    protected $casts = ['data'=> 'json'];
+    protected $casts = ['data' => 'json'];
 
     public function item()
     {
         return $this->hasMany(Item::class);
     }
 
-    public function resturants()
+    public function restaurants()
     {
-        return $this->belongsToMany(Resturant::class);
+        return $this->belongsToMany(Restaurant::class);
     }
 
     public function order()

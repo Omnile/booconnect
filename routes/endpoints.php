@@ -15,7 +15,7 @@ Route::resource('items', 'ItemController');
 
 Route::resource('cart', 'CartController');
 
-Route::resource('resturants', 'ResturantController');
+Route::resource('restaurants', 'RestaurantController');
 
 Route::group(['middleware' => 'auth'], function () {
 

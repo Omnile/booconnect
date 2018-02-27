@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateResturantsTable extends Migration
+class CreateRestaurantsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateResturantsTable extends Migration
      */
     public function up()
     {
-        Schema::create('resturants', function (Blueprint $table) {
+        Schema::create('restaurants', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('phone');
@@ -22,8 +22,8 @@ class CreateResturantsTable extends Migration
             $table->string('last_name');
             $table->string('user_id');
 
-            $table->string('image')->default('/images/resturant_default_image.svg');
-            $table->string('cover')->default('/images/resturant_default_cover.svg');
+            $table->string('image')->default('/images/restaurant_default_image.svg');
+            $table->string('cover')->default('/images/restaurant_default_cover.svg');
 
             $table->string('place');
             $table->string('city');
@@ -49,6 +49,6 @@ class CreateResturantsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resturants');
+        Schema::dropIfExists('restaurants');
     }
 }

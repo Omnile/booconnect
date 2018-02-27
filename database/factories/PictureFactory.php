@@ -1,7 +1,7 @@
 <?php
 
 use App\Item;
-use App\Resturant;
+use App\Restaurant;
 use App\User;
 use Faker\Generator as Faker;
 
@@ -11,7 +11,7 @@ $factory->define(App\Picture::class, function (Faker $faker) {
         'description' => $faker->realText($faker->numberBetween(10, 20)),
         'imageable_id' => rand(1, 100),
         'imageable_type' => array_random([
-            Resturant::class,
+            Restaurant::class,
             User::class,
             Item::class,
         ]),

@@ -3,7 +3,7 @@
 @section('contents')
 
 	<div class="container">
-		@include('component.resturant', compact('resturant'))
+		@include('component.restaurant', compact('restaurant'))
 
 	</div>
 @endsection

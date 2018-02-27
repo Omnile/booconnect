@@ -1,9 +1,9 @@
 <?php
 
-use App\Resturant;
+use App\Restaurant;
 use Illuminate\Database\Seeder;
 
-class ResturantTableSeeder extends Seeder
+class RestaurantTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class ResturantTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Resturant::class, config('booconnect.seed.max'))->create();
+        factory(Restaurant::class, config('booconnect.seed.max'))->create();
     }
 }

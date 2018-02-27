@@ -8,7 +8,7 @@ class Picture extends Model
 {
     protected $types = [
         'user' => User::class,
-        'staff' => Resturant::class,
+        'staff' => Restaurant::class,
         'item' => Item::class,
     ];
 

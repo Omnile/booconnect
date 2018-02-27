@@ -32,9 +32,9 @@ class Item extends Model implements Buyable
         return $this->price;
     }
 
-    public function resturant()
+    public function restaurant()
     {
-        return $this->belongsTo(Resturant::class);
+        return $this->belongsTo(Restaurant::class);
     }
 
     public function rating()
@@ -65,6 +65,5 @@ class Item extends Model implements Buyable
     public function wishlist()
     {
         return $this->hasMany(Wishlist::class);
-
     }
 }

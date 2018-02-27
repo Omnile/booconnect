@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         if (config('app.env') === 'local') {
             $this->call(UsersTableSeeder::class);
-            $this->call(ResturantTableSeeder::class);
+            $this->call(RestaurantTableSeeder::class);
             $this->call(ItemsTableSeeder::class);
             $this->call(RatingsTableSeeder::class);
             $this->call(TransactionsTableSeeder::class);

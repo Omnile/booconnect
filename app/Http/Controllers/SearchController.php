@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Search\SearchRequest;
 use App\Item;
-use App\Resturant;
+use App\Restaurant;
 use App\Search;
 
 /**
  * @resource Search
  *
- * Search for either Resturants or Items
+ * Search for either Restaurants or Items
  */
 class SearchController extends Controller
 {
@@ -30,7 +30,7 @@ class SearchController extends Controller
     /**
      * Search
      *
-     * This will allow the clients to seach for items, resturants
+     * This will allow the clients to seach for items, restaurants
      * or a combination of both.
      *
      * @return \Illuminate\Http\Response
@@ -47,18 +47,16 @@ class SearchController extends Controller
          * @var string
          */
         if ($type == 'items') {
-
             $this->result = Item::search($query)->paginate(12);
         }
 
         /**
-         * Check that the type passed in is 'resturants'
+         * Check that the type passed in is 'restaurants'
          *
          * @var string
          */
-        if ($type == 'resturants') {
-
-            $this->result = Resturant::search($query)->paginate(12);
+        if ($type == 'restaurants') {
+            $this->result = Restaurant::search($query)->paginate(12);
         }
 
         /**

@@ -6,10 +6,10 @@ use App\BooConnect\Search\Searchable;
 use App\Item;
 use Illuminate\Database\Eloquent\Model;
 
-class Resturant extends Model
+class Restaurant extends Model
 {
     use Searchable;
-    
+
     public function items()
     {
         return $this->hasMany(Item::class);

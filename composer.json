@@ -80,7 +80,8 @@
         "dploy": [
             "php artisan migrate:refresh --seed",
             "rm -rf public/docs",
-            "git clone http://github.com/omnile/boodoc.git public/docs",
+            "git clone http://github.com/omnile/boodoc.git/ public/docs",
+            "rm -rf public/docs/",
             "composer document",
             "cd public/docs; git add .; git commit -m 'Update Documentation 📒'; git push"
         ]

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Rating extends Model
 {
     protected $types = [
-        'resturant' => Resturant::class,
+        'restaurant' => Restaurant::class,
         'item' => Item::class,
     ];
 

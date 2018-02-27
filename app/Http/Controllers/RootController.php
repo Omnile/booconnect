@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Item;
-use App\Resturant;
+use App\Restaurant;
 use Illuminate\Http\Request;
 
 class RootController extends Controller
@@ -13,16 +13,16 @@ class RootController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, Item $items, Resturant $resturants)
+    public function index(Request $request, Item $items, Restaurant $restaurants)
     {
         $items = $items->get()->take(8);
-        $resturants = $resturants->get()->take(8);
+        $restaurants = $restaurants->get()->take(8);
 
         if ($request->wantsJson()) {
-            return compact('items', 'resturants');
+            return compact('items', 'restaurants');
         }
 
-        return view('welcome', compact('items', 'resturants'));
+        return view('welcome', compact('items', 'restaurants'));
     }
 
     /**

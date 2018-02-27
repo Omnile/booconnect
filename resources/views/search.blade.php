@@ -21,20 +21,20 @@
         </section>
         <!-- end section -->
 
-    @elseif($type == 'resturants' && $result->count())
+    @elseif($type == 'restaurants' && $result->count())
 
     <section class="section light-backgorund">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="title-wrap">
-                        <h2 class="title lines">Here are some resturants matching your search</h2>
+                        <h2 class="title lines">Here are some restaurants matching your search</h2>
                     </div>
                 </div><!-- end col -->
             </div><!-- end row -->
 
             <div class="row column-4">
-                @include('component.resturants',  ['resturants' => $result])
+                @include('component.restaurants',  ['restaurants' => $result])
             </div><!-- end row -->
 
             {!! $result->links() !!}

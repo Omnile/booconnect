@@ -15,7 +15,7 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('resturant_id');
+            $table->integer('restaurant_id');
             $table->boolean('debit')->default(true);
             $table->string('description');
             $table->integer('item_id');

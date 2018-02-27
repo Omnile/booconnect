@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 /**
  * @resource Items
  *
- * Items sold in resturants registered on BooConnect
+ * Items sold in restaurants registered on BooConnect
  */
 class ItemController extends Controller
 {

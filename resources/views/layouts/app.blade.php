@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="description" content="Booconnect. Order your meals today!">
     <meta name="author" content="Omnile Limited" />
-    <meta name="keywords" content="food, delivery, quick, fast, resturants" />
+    <meta name="keywords" content="food, delivery, quick, fast, restaurants" />
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />

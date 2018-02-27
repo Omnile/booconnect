@@ -16,7 +16,7 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('resturant_id');
+            $table->integer('restaurant_id');
             $table->string('image')->default('/images/item_default_image.svg');
             $table->string('description');
             $table->float('price');

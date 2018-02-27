@@ -15,7 +15,7 @@
                 <div id="navbar-collapse-3" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/resturants">Resturants</a></li>
+                        <li><a href="/restaurants">Restaurants</a></li>
                         <li><a href="/items">Meals</a></li>
                         <!-- Collections -->
                     </ul>
