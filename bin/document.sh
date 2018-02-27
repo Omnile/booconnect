@@ -42,6 +42,7 @@ deploy_document(){
 	echo "Staging documentation for deploy"
 	cp -rf ../public/docs/* ./;
 	cp -f ../public/img/logo.png ./images/logo.png
+	cp -f ./source/index.md ./README.md
 
 	# copy all files from the sami generated folder into the api folder
 	# mv  -v ../build/sami/* ./api/;
