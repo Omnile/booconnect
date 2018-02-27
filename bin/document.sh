@@ -1,19 +1,6 @@
 #!/bin/sh
 # bin/ci.sh
 
-# Check that the commits has been made
-if git diff-index --quiet HEAD --; then
-    if [[ "$(git push --porcelain)" == *"Done"* ]]
-	then
-		echo "Local changes were pushed."
-
-		deploy_document
-	fi
-else
-    echo "Please commit and push your changes first."
-fi
-
-
 deploy_document(){
 
 	echo ""
@@ -62,3 +49,16 @@ deploy_document(){
 	# Add all and commit to github if deploy was enabled
 	git add --all . && git add **/.* && git commit -m 'Update Documentation 📒' && git push origin gh-pages;
 }
+
+
+# Check that the commits has been made
+if git diff-index --quiet HEAD --; then
+    if [[ "$(git push --porcelain)" == *"Done"* ]]
+	then
+		echo "Local changes were pushed."
+
+		deploy_document
+	fi
+else
+    echo "Please commit and push your changes first."
+fi
