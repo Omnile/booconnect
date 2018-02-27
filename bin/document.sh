@@ -37,8 +37,10 @@ deploy_document(){
 	shopt -s dotglob nullglob;
 	rm -rf !*.git;
 
+
 	# copy the generated document folder into the empty github folder
-	mv  -v ../public/docs/* ./;
+	cp -f ../public/docs/* ./;
+	cp -f ../public/img/logo.png ./images/logo.png
 
 	# copy all files from the sami generated folder into the api folder
 	# mv  -v ../build/sami/* ./api/;
