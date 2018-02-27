@@ -39,7 +39,7 @@ deploy_document(){
 
 
 	# copy the generated document folder into the empty github folder
-	cp -f ../public/docs/* ./;
+	cp -rf ../public/docs/* ./;
 	cp -f ../public/img/logo.png ./images/logo.png
 
 	# copy all files from the sami generated folder into the api folder
