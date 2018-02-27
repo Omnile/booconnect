@@ -35,7 +35,7 @@ deploy_document(){
 	# Remove all files from the
 	shopt -s extglob;
 	shopt -s dotglob nullglob;
-	rm -rf !('*.git');
+	rm -rf !*.git;
 
 	# copy the generated document folder into the empty github folder
 	mv  -rfv ../public/docs/* ./;
