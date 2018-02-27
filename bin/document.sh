@@ -38,7 +38,7 @@ deploy_document(){
 	rm -rf !*.git;
 
 	# copy the generated document folder into the empty github folder
-	mv  -rfv ../public/docs/* ./;
+	mv  -v ../public/docs/* ./;
 
 	# copy all files from the sami generated folder into the api folder
 	# mv  -v ../build/sami/* ./api/;
