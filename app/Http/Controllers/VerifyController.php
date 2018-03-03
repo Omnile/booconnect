@@ -23,7 +23,7 @@ class VerifyController extends Controller
      * NOTE: This will display the verification form
      * if accessed from a web browser
      */
-    public function index()
+    public function index(Request $request)
     {
         if ($request->wantsJson()) {
             return ['verification_status' => auth()->user()->phone_verified];
