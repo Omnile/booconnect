@@ -18,9 +18,9 @@ class Rating extends Model
         'item' => Item::class,
     ];
 
-    public function setRateableTypeAttribute($type)
+    public function setRateableTypeAttribute()
     {
-        $this->attributes['rateable_type'] = 'App\\' . ucwords($type);
+        $this->attributes['rateable_type'] = 'App\\' . ucwords($this->type);
     }
 
     public function getRateableTypeAttribute($type)
