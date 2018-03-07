@@ -109,7 +109,7 @@
             <div class="col-sm-12">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs style1 text-center" role="tablist">
-                    <li role="presentation" ><a href="#additional_info" aria-controls="tab" role="tab" data-toggle="tab">Additional Info</a></li>
+                    {{-- <li role="presentation" ><a href="#additional_info" aria-controls="tab" role="tab" data-toggle="tab">Additional Info</a></li> --}}
                     <li role="presentation" class="active"><a href="#reviews" aria-controls="profile" role="tab" data-toggle="tab">Reviews ({{ $item->rating->count() }})</a></li>
                 </ul><!-- end nav-tabs -->
 
