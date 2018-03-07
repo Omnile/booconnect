@@ -51,7 +51,7 @@
 
         <div class="row text-center">
             <div class="col-sm-12">
-                <p class="text-sm">&COPY; 2017. Made with <i class="fa fa-heart text-danger"></i> by <a href="javascript:void(0);">DiamondCreative.</a></p>
+                <p class="text-sm">&COPY; 2018. Made with <i class="fa fa-heart text-danger"></i> by <a href="http://www.omnile.com">Tech Omnile.</a></p>
             </div><!-- end col -->
         </div><!-- end row -->
     </div><!-- end container -->

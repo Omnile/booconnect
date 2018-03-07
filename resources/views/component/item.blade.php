@@ -70,34 +70,15 @@
                         <input type="hidden" name="item_id" value="{{ $item->id }}">
                         <div class="col-sm-12">
                             <p>{{ $item->description }}</p>
-                            {{-- <ul class="list alt-list">
-                                <li><i class="fa fa-check"></i> Lorem Ipsum dolor sit amet</li>
-                                <li><i class="fa fa-check"></i> Cras aliquet venenatis sapien fringilla.</li>
-                                <li><i class="fa fa-check"></i> Duis luctus erat vel pharetra aliquet.</li>
-                            </ul> --}}
                             <hr class="spacer-15">
                             <div class="row">
-                                {{-- <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <select class="form-control" name="select">
-                                        <option value="" selected>Size</option>
-                                        @foreach ($item->sizes as $element)
-                                        @endforeach
-                                        <option value="red">Red</option>
-                                        <option value="green">Green</option>
-                                        <option value="blue">Blue</option>
-                                    </select>
-                                </div><!-- end col --> --}}
-                                {{-- <div class="col-md-4 col-sm-6 col-xs-12">
-                                    <select class="form-control" name="select">
-                                        <option value="">Size</option>
-                                        <option value="">S</option>
-                                        <option value="">M</option>
-                                        <option value="">L</option>
-                                        <option value="">XL</option>
-                                        <option value="">XXL</option>
-                                    </select>
-                                </div><!-- end col --> --}}
-                                <input type="number" name="qty" value="{{ $item->qty }}" class="form-control" style="width: 100px; margin-left: 50px;">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input type="number" name="qty" class="form-control" value="1">
+                                </div><!-- end col -->
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <h6><a href="/cart">{{ $item->qty }} in cart.</a></h6>
+                                </div><!-- end col -->
+
                             </div><!-- end row -->
                             <hr class="spacer-15">
 
