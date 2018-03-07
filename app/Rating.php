@@ -18,6 +18,16 @@ class Rating extends Model
         'item' => Item::class,
     ];
 
+    public function setRateableTypeAttribute($type)
+    {
+        $this->attributes['rateable_type'] = 'App\\' . ucwords($type);
+    }
+
+    public function getRateableTypeAttribute($type)
+    {
+        return str_replace('app\\', '', strtolower($type));
+    }
+
     public function ratable()
     {
         return $this->morphTo();
@@ -26,5 +36,18 @@ class Rating extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    private function getMorphClassName($reference)
+    {
+        // transform to lower case
+
+        $type = strtolower($reference);
+
+        // to make sure this returns value from the array
+        return array_get($this->types, $reference, $reference);
+
+        // which is always safe, because new 'class'
+        // will work just the same as new 'Class'
     }
 }

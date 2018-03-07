@@ -4,7 +4,7 @@ namespace App\Http\Requests\Rating;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AddRating extends FormRequest
+class ListRatings extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,6 @@ class AddRating extends FormRequest
      */
     public function authorize()
     {
-
         return true;
     }
 
@@ -25,10 +24,7 @@ class AddRating extends FormRequest
     public function rules()
     {
         return [
-            'rating' => 'required|numeric|min:1|max:5',
-            'rateable_id' => 'required|numeric',
-            'rateable_type' => 'string|in:item,restaurant',
-            'comment' => 'nullable|string',
+            'rateable_type' => 'in:item,restaurant|required',
         ];
     }
 }

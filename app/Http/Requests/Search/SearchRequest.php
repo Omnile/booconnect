@@ -25,7 +25,7 @@ class SearchRequest extends FormRequest
     {
         return [
             'query' => 'required|string|max:255',
-            'type' => 'nullable',
+            'type' => 'nullable|in:items,resturants',
         ];
     }
 }

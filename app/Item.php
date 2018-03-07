@@ -28,7 +28,7 @@ class Item extends Model implements Buyable
 
     public function getInCartAttribute()
     {
-        if ($this->cart) {
+        if ($this->cart->count()) {
             return (boolean) $this->cart->first()->qty;
         }
 

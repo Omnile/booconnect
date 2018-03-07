@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Rating\AddRating;
+use App\Http\Requests\Rating\ListRatings;
 use App\Item;
 use App\Rating;
 use App\Restaurant;
@@ -23,21 +24,23 @@ class RatingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(ListRatings $request)
     {
-        if ($request->input('rateable_type') == 'item') {
+        // $ratings = [];
+
+        if ($request->rateable_type == 'item') {
             $ratings = Item::find($request->input('ratable_id'))->rating->paginate(20);
         }
 
-        if ($request->input('rateable_type') == 'restaurant') {
+        if ($request->rateable_type == 'restaurant') {
             $ratings = Restaurant::find($request->input('ratable_id'))->rating->paginate(20);
         }
 
         if ($request->wantsJson()) {
-            return $items;
+            return $ratings;
         }
 
-        return view('ratings', compact('items'));
+        return view('ratings', compact('ratings'));
     }
 
     /**
@@ -50,7 +53,6 @@ class RatingController extends Controller
      */
     public function store(AddRating $request)
     {
-
         $rating = Auth::user()->ratings()->create($request->all());
 
         if ($request->wantsJson()) {
@@ -68,7 +70,7 @@ class RatingController extends Controller
      * @param  \App\Rating  $rating
      * @return \Illuminate\Http\Response
      */
-    public function show(Rating $rating)
+    public function show(Request $request, Rating $rating)
     {
         if ($request->wantsJson()) {
             return $rating;

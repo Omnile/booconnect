@@ -40,7 +40,7 @@
         </div><!-- end form-group -->
         <div class="form-group">
             <input type="hidden" name="rateable_id" value="{{ $ratable->id }}">
-            <input type="hidden" name="rateable_type" value="App\{{ class_basename($ratable) }}">
+            <input type="hidden" name="rateable_type" value="{{ strtolower(class_basename($ratable)) }}">
             <input type="submit" class="btn btn-default round btn-md" >
         </div><!-- end form-group -->
 
