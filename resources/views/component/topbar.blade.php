@@ -1,4 +1,7 @@
-<!-- start topBar -->
+@php
+    $cart = \App\Cart::content();
+@endphp
+
 <div class="topBar">
     <div class="container">
         <ul class="topBarNav pull-right">
@@ -39,7 +42,7 @@
                 <a href="javascript:void(0);">
                     <i class="fa fa-shopping-basket mr-5"></i>
                     <span class="hidden-xs">
-                        Cart<sup class="text-primary">(3)</sup>
+                        Cart <sup class="text-primary">({{ $cart->count() }})</sup>
                         <i class="fa fa-angle-down ml-5"></i>
                     </span>
                 </a>
@@ -47,48 +50,22 @@
                     <li>
                         <div class="cart-items">
                             <ol class="items">
-                                <li>
-                                    <a href="/items/1" class="product-image">
-                                        <img src="/img/products/men_06.jpg" alt="Sample Product ">
-                                    </a>
-                                    <div class="product-details">
-                                        <div class="close-icon">
-                                            <a href="javascript:void(0);"><i class="fa fa-close"></i></a>
-                                        </div>
-                                        <p class="product-name">
-                                            <a href="/items/1">Lorem Ipsum dolor sit</a>
-                                        </p>
-                                        <strong>1</strong> x <span class="price text-primary">$59.99</span>
-                                    </div><!-- end product-details -->
-                                </li><!-- end item -->
-                                <li>
-                                    <a href="/items/1" class="product-image">
-                                        <img src="/img/products/shoes_01.jpg" alt="Sample Product ">
-                                    </a>
-                                    <div class="product-details">
-                                        <div class="close-icon">
-                                            <a href="javascript:void(0);"><i class="fa fa-close"></i></a>
-                                        </div>
-                                        <p class="product-name">
-                                            <a href="/items/1">Lorem Ipsum dolor sit</a>
-                                        </p>
-                                        <strong>1</strong> x <span class="price text-primary">$39.99</span>
-                                    </div><!-- end product-details -->
-                                </li><!-- end item -->
-                                <li>
-                                    <a href="/items/1" class="product-image">
-                                        <img src="/img/products/bags_07.jpg" alt="Sample Product ">
-                                    </a>
-                                    <div class="product-details">
-                                        <div class="close-icon">
-                                            <a href="javascript:void(0);"><i class="fa fa-close"></i></a>
-                                        </div>
-                                        <p class="product-name">
-                                            <a href="/items/1">Lorem Ipsum dolor sit</a>
-                                        </p>
-                                        <strong>1</strong> x <span class="price text-primary">$29.99</span>
-                                    </div><!-- end product-details -->
-                                </li><!-- end item -->
+                                @foreach ($cart as $item)
+                                    <li>
+                                        <a href="/items/{{ $item->model->id }}" class="product-image">
+                                            <img src="{{ $item->model->image }}" alt="Sample Product ">
+                                        </a>
+                                        <div class="product-details">
+                                            <div class="close-icon">
+                                                <a href="javascript:void(0);"><i class="fa fa-close"></i></a>
+                                            </div>
+                                            <p class="product-name">
+                                                <a href="/items/{{ $item->model->id }}">{{ $item->name }}</a>
+                                            </p>
+                                            <strong>{{ $item->qty }}</strong> x <span class="price text-primary">{{ $item->model->formatted_price }}</span>
+                                        </div><!-- end product-details -->
+                                    </li>
+                                @endforeach
                             </ol>
                         </div>
                     </li>

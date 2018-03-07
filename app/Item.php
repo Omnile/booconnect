@@ -10,11 +10,36 @@ class Item extends Model implements Buyable
 {
     use Searchable;
 
-    protected $appends = ['formatted_price'];
+    protected $appends = ['formatted_price', 'cart', 'qty', 'in_cart'];
 
     public function getFormattedPriceAttribute()
     {
         return config('booconnect.currency') . ' ' . number_format($this->attributes['price'], 2);
+    }
+
+    public function getQtyAttribute()
+    {
+        if ($this->cart) {
+            return (int) $this->cart->first()->qty;
+        }
+
+        return 1;
+    }
+
+    public function getInCartAttribute()
+    {
+        if ($this->cart) {
+            return (boolean) $this->cart->first()->qty;
+        }
+
+        return false;
+    }
+
+    public function getCartAttribute()
+    {
+        return Cart::search(function ($cartItem, $rowId) {
+            return $cartItem->id === $this->id;
+        });
     }
 
     public function getBuyableIdentifier($options = null)

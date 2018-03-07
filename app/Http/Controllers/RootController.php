@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\Item;
 use App\Restaurant;
 use Illuminate\Http\Request;
@@ -16,6 +17,9 @@ class RootController extends Controller
     public function index(Request $request, Item $items, Restaurant $restaurants)
     {
         $items = $items->get()->take(8);
+
+        $cart = Cart::content();
+
         $restaurants = $restaurants->get()->take(8);
 
         if ($request->wantsJson()) {

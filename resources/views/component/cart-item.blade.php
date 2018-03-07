@@ -13,13 +13,7 @@
             <span>{{ $item->model->formatted_price }}</span>
         </td>
         <td>
-            <select class="form-control" name="select">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
+            <input type="number" name="qty" value="{{ $item->qty }}" class="form-control" >
         </td>
         <td>
             <span class="text-primary">{{ config('booconnect.currency') . ' ' . number_format($item->subtotal, 2) }}</span>
