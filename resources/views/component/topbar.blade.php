@@ -20,7 +20,10 @@
                     </span>
                 </a>
                 <ul class="w-150">
-                    <li><a href="/wishlist">Wishlist (5)</a></li>
+                    @if (Auth::check())
+                        <li><a href="/wishlist">Wishlist (5)</a></li>
+                    @endif
+
                     <li><a href="/cart">My Cart</a></li>
                     <li><a href="/checkout">Checkout</a></li>
                     <li><a href="/orders">Orders</a></li>
