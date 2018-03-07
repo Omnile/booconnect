@@ -24,10 +24,10 @@ class AddRating extends FormRequest
     public function rules()
     {
         return [
-
             'rating' => 'required|numeric|min:1|max:5',
             'ratable_id' => 'required|numeric',
             'rateable_type' => 'string',
+            'comment' => 'nullable|string',
         ];
     }
 }

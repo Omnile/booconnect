@@ -40,7 +40,7 @@ class ItemController extends Controller
      */
     public function show(Request $request, Item $item)
     {
-        $item = $item->load('pictures');
+        $item = $item->load('pictures', 'rating');
 
         if ($request->wantsJson()) {
             return $item;

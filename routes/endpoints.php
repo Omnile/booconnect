@@ -13,6 +13,8 @@ Route::resource('search', 'SearchController');
 
 Route::resource('items', 'ItemController');
 
+Route::resource('ratings', 'RatingController');
+
 Route::resource('cart', 'CartController');
 
 Route::resource('restaurants', 'RestaurantController');

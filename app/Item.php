@@ -19,11 +19,11 @@ class Item extends Model implements Buyable
 
     public function getQtyAttribute()
     {
-        if ($this->cart) {
+        if ($this->cart->count()) {
             return (int) $this->cart->first()->qty;
         }
 
-        return 1;
+        return 0;
     }
 
     public function getInCartAttribute()
@@ -64,7 +64,7 @@ class Item extends Model implements Buyable
 
     public function rating()
     {
-        return $this->morphMany(Rating::class, 'ratable');
+        return $this->morphMany(Rating::class, 'rateable');
     }
 
     public function transactions()
