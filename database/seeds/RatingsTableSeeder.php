@@ -1,5 +1,6 @@
 <?php
 
+use App\Rating;
 use Illuminate\Database\Seeder;
 
 class RatingsTableSeeder extends Seeder
@@ -11,6 +12,6 @@ class RatingsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(Rating::class, config('booconnect.seed.max'))->create();
     }
 }
