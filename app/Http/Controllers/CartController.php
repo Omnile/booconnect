@@ -24,10 +24,10 @@ class CartController extends Controller
      */
     public function index(Request $request)
     {
-        $cart_items = Cart::content();
+        $items = Cart::content();
 
         if ($request->wantsJson()) {
-            return $cart_items;
+            return $items;
         }
 
         return view('cart', compact('items'));
