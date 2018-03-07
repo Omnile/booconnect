@@ -7,6 +7,7 @@ use App\Item;
 use App\Rating;
 use App\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * @resource Rating
@@ -22,14 +23,14 @@ class RatingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(RatingsRequest $request)
+    public function index(Request $request)
     {
-        if ($input->get('ratable_type') == 'item') {
-            $ratings = Item::find($input->get('ratable_id'))->rating->paginate(20);
+        if ($request->input('rateable_type') == 'item') {
+            $ratings = Item::find($request->input('ratable_id'))->rating->paginate(20);
         }
 
-        if ($input->get('ratable_type') == 'restaurant') {
-            $ratings = Restaurant::find($input->get('ratable_id'))->rating->paginate(20);
+        if ($request->input('rateable_type') == 'restaurant') {
+            $ratings = Restaurant::find($request->input('ratable_id'))->rating->paginate(20);
         }
 
         if ($request->wantsJson()) {
@@ -50,13 +51,13 @@ class RatingController extends Controller
     public function store(AddRating $request)
     {
 
-        $rating = Rating::create($request->all());
+        $rating = Auth::user()->ratings()->create($request->all());
 
         if ($request->wantsJson()) {
             return $rating;
         }
 
-        return redirect($input->get('ratable_type') . '/' . $input->get('ratable_id'))->back();
+        return back();
     }
 
     /**

@@ -9,9 +9,8 @@ class Rating extends Model
     protected $fillable = [
         'rating',
         'comment',
-        'ratable_id',
-        'ratable_id',
-        'ratable_type',
+        'rateable_id',
+        'rateable_type',
     ];
 
     protected $types = [

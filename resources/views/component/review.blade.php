@@ -8,11 +8,11 @@
         <div class="comment-content-head">
             <ul class="list list-inline comment-meta">
                 <li>
-                    <i class="fa fa-star text-warning"></i>
-                    <i class="fa fa-star text-warning"></i>
-                    <i class="fa fa-star text-warning"></i>
-                    <i class="fa fa-star-half-empty text-warning"></i>
-                    <i class="fa fa-star-o text-warning"></i>
+                   @for ($i = 0; $i < $review->rating; $i++)
+                        <i class="fa fa-star text-warning"></i>
+                    @endfor
+                    {{-- <i class="fa fa-star-half-empty text-warning"></i> --}}
+                    {{-- <i class="fa fa-star-o text-warning"></i> --}}
                 </li>
             </ul>
         </div><!-- end comment-content-head -->

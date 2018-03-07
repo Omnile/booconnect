@@ -13,7 +13,8 @@ class AddRating extends FormRequest
      */
     public function authorize()
     {
-        return false;
+
+        return true;
     }
 
     /**
@@ -25,7 +26,7 @@ class AddRating extends FormRequest
     {
         return [
             'rating' => 'required|numeric|min:1|max:5',
-            'ratable_id' => 'required|numeric',
+            'rateable_id' => 'required|numeric',
             'rateable_type' => 'string',
             'comment' => 'nullable|string',
         ];

@@ -146,9 +146,9 @@
                             </div><!-- end col -->
                         </div><!-- end row -->
                     </div><!-- end tab-pane --> --}}
-                    <div role="tabpanel" class="tab-pane fade" id="reviews">
+                    <div role="tabpanel" class="tab-pane active" id="reviews">
 
-                        @include('component.reviews', ['reviews' => $item->rating])
+                        @include('component.reviews', ['reviews' => $item->rating, 'ratable' => $item])
 
                     </div><!-- end tab-pane -->
                 </div><!-- end tab-content -->
