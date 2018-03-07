@@ -67,6 +67,7 @@
                 <div class="row">
                     <form method="POST" action="/cart">
                         @csrf
+                        <input type="hidden" name="item_id" value="{{ $item->id }}">
                         <div class="col-sm-12">
                             <p>{{ $item->description }}</p>
                             {{-- <ul class="list alt-list">
@@ -97,15 +98,15 @@
                                     </select>
                                 </div><!-- end col --> --}}
                                 <div class="col-md-6 col-sm-12">
-                                    <select class="form-control" name="quantity">
-                                        <option value="" selected>QTY</option>
-                                        <option value="">1</option>
-                                        <option value="">2</option>
-                                        <option value="">3</option>
-                                        <option value="">4</option>
-                                        <option value="">5</option>
-                                        <option value="">6</option>
-                                        <option value="">7</option>
+                                    <select class="form-control" name="qty">
+                                        <option value="1" selected>QTY</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
                                     </select>
                                 </div><!-- end col -->
                             </div><!-- end row -->
