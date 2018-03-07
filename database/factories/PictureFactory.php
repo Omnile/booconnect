@@ -9,7 +9,7 @@ $factory->define(App\Picture::class, function (Faker $faker) {
     return [
         'path' => $faker->imageUrl(150, 150, 'food'),
         'description' => $faker->realText($faker->numberBetween(10, 20)),
-        'imageable_id' => rand(1, config('booconnect.seed.max')),,
+        'imageable_id' => rand(1, config('booconnect.seed.max')),
         'imageable_type' => array_random([
             Restaurant::class,
             User::class,
