@@ -65,63 +65,66 @@
                 <hr class="spacer-5"><hr class="spacer-10 no-border">
 
                 <div class="row">
-                    <div class="col-sm-12">
-                        <p>{{ $item->description }}</p>
-                        {{-- <ul class="list alt-list">
-                            <li><i class="fa fa-check"></i> Lorem Ipsum dolor sit amet</li>
-                            <li><i class="fa fa-check"></i> Cras aliquet venenatis sapien fringilla.</li>
-                            <li><i class="fa fa-check"></i> Duis luctus erat vel pharetra aliquet.</li>
-                        </ul> --}}
-                        <hr class="spacer-15">
-                        <div class="row">
-                            {{-- <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select class="form-control" name="select">
-                                    <option value="" selected>Size</option>
-                                    @foreach ($item->sizes as $element)
-                                    @endforeach
-                                    <option value="red">Red</option>
-                                    <option value="green">Green</option>
-                                    <option value="blue">Blue</option>
-                                </select>
-                            </div><!-- end col --> --}}
-                            {{-- <div class="col-md-4 col-sm-6 col-xs-12">
-                                <select class="form-control" name="select">
-                                    <option value="">Size</option>
-                                    <option value="">S</option>
-                                    <option value="">M</option>
-                                    <option value="">L</option>
-                                    <option value="">XL</option>
-                                    <option value="">XXL</option>
-                                </select>
-                            </div><!-- end col --> --}}
-                            <div class="col-md-6 col-sm-12">
-                                <select class="form-control" name="select">
-                                    <option value="" selected>QTY</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
-                                    <option value="">6</option>
-                                    <option value="">7</option>
-                                </select>
-                            </div><!-- end col -->
-                        </div><!-- end row -->
-                        <hr class="spacer-15">
+                    <form method="POST" action="/cart">
+                        @csrf
+                        <div class="col-sm-12">
+                            <p>{{ $item->description }}</p>
+                            {{-- <ul class="list alt-list">
+                                <li><i class="fa fa-check"></i> Lorem Ipsum dolor sit amet</li>
+                                <li><i class="fa fa-check"></i> Cras aliquet venenatis sapien fringilla.</li>
+                                <li><i class="fa fa-check"></i> Duis luctus erat vel pharetra aliquet.</li>
+                            </ul> --}}
+                            <hr class="spacer-15">
+                            <div class="row">
+                                {{-- <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <select class="form-control" name="select">
+                                        <option value="" selected>Size</option>
+                                        @foreach ($item->sizes as $element)
+                                        @endforeach
+                                        <option value="red">Red</option>
+                                        <option value="green">Green</option>
+                                        <option value="blue">Blue</option>
+                                    </select>
+                                </div><!-- end col --> --}}
+                                {{-- <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <select class="form-control" name="select">
+                                        <option value="">Size</option>
+                                        <option value="">S</option>
+                                        <option value="">M</option>
+                                        <option value="">L</option>
+                                        <option value="">XL</option>
+                                        <option value="">XXL</option>
+                                    </select>
+                                </div><!-- end col --> --}}
+                                <div class="col-md-6 col-sm-12">
+                                    <select class="form-control" name="quantity">
+                                        <option value="" selected>QTY</option>
+                                        <option value="">1</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                        <option value="">4</option>
+                                        <option value="">5</option>
+                                        <option value="">6</option>
+                                        <option value="">7</option>
+                                    </select>
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                            <hr class="spacer-15">
 
-                        <ul class="list list-inline">
-                            <li><button type="button" class="btn btn-default btn-lg round"><i class="fa fa-shopping-basket mr-5"></i>Add to Cart</button></li>
-                            <li><button type="button" class="btn btn-gray btn-lg round"><i class="fa fa-heart mr-5"></i>Add to Wishlist</button></li>
-                            <li>Share this product: </li>
-                            <li>
-                                <ul class="social-icons style1">
-                                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div><!-- end col -->
+                            <ul class="list list-inline">
+                                <li><button type="submit" class="btn btn-default btn-lg round"><i class="fa fa-shopping-basket mr-5"></i>Add to Cart</button></li>
+                                <li><button type="button" class="btn btn-gray btn-lg round"><i class="fa fa-heart mr-5"></i>Add to Wishlist</button></li>
+                                <li>Share this product: </li>
+                                <li>
+                                    <ul class="social-icons style1">
+                                        <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div><!-- end col -->
+                    </form>
                 </div><!-- end row -->
             </div><!-- end col -->
         </div><!-- end row -->

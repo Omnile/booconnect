@@ -24,7 +24,7 @@ class AddItem extends FormRequest
     public function rules()
     {
         return [
-            'row_id' => 'required|string|max:255',
+            'item_id' => 'required|string|max:255',
             'qty' => 'required|numeric|min:1',
         ];
     }
