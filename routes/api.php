@@ -15,6 +15,6 @@ Route::group(array('prefix' => 'v1', 'middleware' => []), function () {
     include 'business-endpoints.php';
 });
 
-Route::group(array('prefix' => 'v1', 'middleware' => []), function () {
+Route::group(array('prefix' => 'b/v1', 'middleware' => []), function () {
     include 'customer-endpoints.php';
 });
