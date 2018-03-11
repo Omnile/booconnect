@@ -8,21 +8,6 @@
 | These routes are shared between the web and API routes.
 |
  */
-Route::get('/restaurant', function () {
-    return view('restaurant.dashboard');
-});
-Route::get('add-product', function () {
-    return view('restaurant.add-product');
-});
-Route::get('products', function () {
-    return view('restaurant.products');
-});
-Route::get('order-history', function () {
-    return view('restaurant.order-history');
-});
-Route::get('pending-order', function () {
-    return view('restaurant.pending-order');
-});
 
 include 'business-endpoints.php';
 
