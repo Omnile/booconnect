@@ -2,74 +2,116 @@
 
 namespace App\Http\Controllers\Restaurant;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Business\Items\DeleteItem;
+use App\Http\Requests\Business\Items\ShowItem;
+use App\Http\Requests\Business\Items\UpdateItem;
+use App\Http\Requests\Items\AddItem;
+use App\Item;
+use Illuminate\Http\Request;
 
+/**
+ * @resource Items
+ *
+ * Manage Items (Products)
+ */
 class ItemController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Query All Items (Products)
+     * Get a list of paginated items.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $items = auth()->user()->restaurant()->items()->paginate(20);
+
+        if ($request->wantsJson()) {
+            return $items;
+        }
+
+        return view('business.items', compact('items'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Create Item Form (Product)
+     * Show the form for creating a new item.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        return view('business.items.create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Create a new Item (Product)
+     * Store a newly created Item in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AddItem $request)
     {
-        //
+        $item = auth()->user()->restaurant()->items()->create($request->all());
+
+        if ($request->wantsJson()) {
+            return $item;
+        }
+
+        return back();
     }
 
     /**
-     * Display the specified resource.
+     * Get Item
+     * Get a single Item
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(ShowItem $request, Item $item)
     {
-        //
+        if ($request->wantsJson()) {
+            return $item;
+        }
+
+        return view('business.items.item');
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show Form for Editing Item
+     * Edit an Item
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ShowItem $request, Item $item)
     {
-        //
+        if ($request->wantsJson()) {
+            return $item;
+        }
+
+        return view('business.items.edit');
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update Item
+     * Update an item.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateItem $request, Item $item)
     {
-        //
+        $item->update($request->all());
+
+        if ($request->wantsJson()) {
+            return $item;
+        }
+
+        return back();
     }
 
     /**
@@ -78,8 +120,14 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(DeleteItem $request, Item $item)
     {
-        //
+        $item->delete();
+
+        if ($request->wantsJson()) {
+            return $item;
+        }
+
+        return back();
     }
 }
