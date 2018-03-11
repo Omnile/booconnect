@@ -32,11 +32,11 @@ Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business'], fu
 
     Route::get('register', 'RegisterController@showRegistrationForm');
 
-    Route::resource('order', 'PendingOrderController', ['prefix' => 'pending']);
-
     Route::group(['middleware' => ['auth', 'business', 'verify']], function () {
 
         Route::resource('dashboard', 'DashboardController');
+
+        Route::resource('order', 'PendingOrderController', ['prefix' => 'pending']);
 
         Route::resource('order', 'CompletedOrderController', ['prefix' => 'completed']);
 

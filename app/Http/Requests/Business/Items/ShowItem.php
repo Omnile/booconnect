@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Business\Items;
 
+use App\Item;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ShowItem extends FormRequest
@@ -13,7 +14,17 @@ class ShowItem extends FormRequest
      */
     public function authorize()
     {
-        return false;
+
+        return
+
+        (int) $this->user()->restaurant()->id
+
+        ===
+
+        (int) Item::find(
+            $this->route()->paremeters($item)
+        )
+            ->restaurant_id;
     }
 
     /**
