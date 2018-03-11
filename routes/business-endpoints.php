@@ -32,7 +32,7 @@ Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business'], fu
 
     Route::get('register', 'RegisterController@showRegistrationForm');
 
-    Route::group(['middleware' => ['business', 'auth']], function () {
+    Route::group(['middleware' => ['auth', 'business', 'verify']], function () {
 
         Route::resource('dashboard', 'DashboardController');
 
