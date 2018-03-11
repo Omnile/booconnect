@@ -30,7 +30,7 @@ Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business'], fu
 
     Route::get('login', 'LoginController@showLoginForm');
 
-    Route::get('register', 'LoginController@showRegistrationForm');
+    Route::get('register', 'RegisterController@showRegistrationForm');
 
     Route::group(['middleware' => ['business', 'auth']], function () {
 

@@ -27,8 +27,8 @@
                                         <input type="text" name="username" class="form-control" placeholder="User Name">
                                     </div>
                                     <div class="form-group col-lg-6">
-                                        <label>Password</label>
-                                        <input type="password" name="password" class="form-control" placeholder="Password">
+                                        <label>Business Registration Number</label>
+                                        <input type="text" name="registrationNumber" class="form-control" placeholder="business registration number">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -43,8 +43,13 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-lg-6">
-                                        <label>Business Registration Number</label>
-                                        <input type="text" name="registrationNumber" class="form-control" placeholder="business registration number">
+                                        <label>Password</label>
+                                        <input type="password" name="password" class="form-control" placeholder="Password">
+                                    </div>
+
+                                    <div class="form-group col-lg-6">
+                                        <label>Password Confirmation</label>
+                                        <input type="password" name="password_confirmation" class="form-control" placeholder="Password Confirmation">
                                     </div>
                                 </div>
                                     <div class="checkbox">
@@ -58,7 +63,7 @@
                                 </div>
                                 </div>
                                     <div class="register-link m-t-15 text-center">
-                                        <p>Already have account ? <a href="logins"> Sign in</a></p>
+                                        <p>Already have account ? <a href="login"> Sign in</a></p>
                                     </div>
                                 </form>
                             </div>
