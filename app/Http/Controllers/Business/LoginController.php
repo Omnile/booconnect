@@ -1,85 +1,38 @@
 <?php
 
-namespace App\Http\Controllers\Restaurant;
+namespace App\Http\Controllers\Business;
 
+use App\Http\Controllers\Auth\LoginController as Controller;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Show the application's login form.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function showLoginForm()
     {
-        //
+        return view('business.auth.login');
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
+     * Once the user has been authenticated, check
+     * that this user infact has a restaurant.
+     * If this user does not have a one,
+     * log out the user flash errors
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  mixed  $user
+     * @return mixed
      */
-    public function store(Request $request)
+    protected function authenticated(Request $request, $user)
     {
-        //
-    }
+        if ($user->has('restaurant')) {
+            return;
+        }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return $this->logout();
     }
 }

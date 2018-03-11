@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Restaurant;
+namespace App\Http\Controllers\Business;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Business\Items\DeleteItem;
@@ -38,6 +38,8 @@ class ItemController extends Controller
      * Create Item Form (Product)
      * Show the form for creating a new item.
      *
+     * @hideFromAPIDocumentation
+     *
      * @return \Illuminate\Http\Response
      */
     public function create()
@@ -67,7 +69,7 @@ class ItemController extends Controller
      * Get Item
      * Get a single Item
      *
-     * @param  int  $id
+     * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
     public function show(ShowItem $request, Item $item)
@@ -83,7 +85,9 @@ class ItemController extends Controller
      * Show Form for Editing Item
      * Edit an Item
      *
-     * @param  int  $id
+     * @hideFromAPIDocumentation
+     *
+     * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
     public function edit(ShowItem $request, Item $item)
@@ -100,7 +104,7 @@ class ItemController extends Controller
      * Update an item.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateItem $request, Item $item)
@@ -115,9 +119,10 @@ class ItemController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete an Item
+     * Remove an Item from the Items in this store.
      *
-     * @param  int  $id
+     * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
     public function destroy(DeleteItem $request, Item $item)

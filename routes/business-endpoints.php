@@ -27,14 +27,10 @@ Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business'], fu
     Route::get('pending-order', function () {
         return view('business.pending-order');
     });
-    Route::get('logins', function () {
-        return view('business.auth.login');
-    });
-    Route::get('registers', function () {
-        return view('business.auth.register');
-    });
 
-    Route::resource('signup', 'SignupController');
+    Route::get('login', 'LoginController@showLoginForm');
+
+    Route::get('register', 'LoginController@showRegistrationForm');
 
     Route::group(['middleware' => ['business', 'auth']], function () {
 
