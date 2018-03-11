@@ -14,37 +14,37 @@
                                 	<div class="row">
                                     <div class="form-group col-lg-6">
                                         <label>First Name</label>
-                                        <input type="text" class="form-control" placeholder="First Name">
+                                        <input type="text" name="firstName" class="form-control" placeholder="First Name">
                                     </div>
                                     <div class="form-group col-lg-6">
                                         <label>Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Last Name">
+                                        <input type="text" name="lastName" class="form-control" placeholder="Last Name">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-lg-6">
                                         <label>User Name</label>
-                                        <input type="text" class="form-control" placeholder="User Name">
+                                        <input type="text" name="username" class="form-control" placeholder="User Name">
                                     </div>
                                     <div class="form-group col-lg-6">
                                         <label>Password</label>
-                                        <input type="password" class="form-control" placeholder="Password">
+                                        <input type="password" name="password" class="form-control" placeholder="Password">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-lg-6">
                                         <label>Restaurant Name</label>
-                                        <input type="text" class="form-control" placeholder="Restaurant Name">
+                                        <input type="text" name="restaurantName" class="form-control" placeholder="Restaurant Name">
                                     </div>
                                     <div class="form-group col-lg-6">
                                         <label>Phone number</label>
-                                        <input type="text" class="form-control" placeholder="phone number">
+                                        <input type="text" name="phone" class="form-control" placeholder="phone number">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-lg-6">
                                         <label>Business Registration Number</label>
-                                        <input type="text" class="form-control" placeholder="business registration number">
+                                        <input type="text" name="registrationNumber" class="form-control" placeholder="business registration number">
                                     </div>
                                 </div>
                                     <div class="checkbox">
