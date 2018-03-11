@@ -8,15 +8,8 @@
 | These routes are shared between the web and API routes.
 |
  */
-Route::get('/restaurant', function () {
-    return view('restaurant.dashboard');
-});
-Route::get('add-product', function () {
-    return view('restaurant.add-product');
-});
-Route::get('products', function () {
-    return view('restaurant.products');
-});
+
+include 'business-endpoints.php';
 
 Route::resource('search', 'SearchController');
 
