@@ -76,12 +76,12 @@
             "@php artisan dusk"
         ],
         "document": [
-            "php artisan api:generate --routePrefix='api/v1/*' --header='Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBmNWRhOGM4ZDg1Y2Q3OTcwNTM' --force --actAsUserId=1 --useMiddlewares --bindings='restaurant,1|item,1|ratable_id,1|rateable_type,item|item_id,1|rating,1|qty,1|query,a|type,item|phone,0553577261|token,1902'",
-            "php artisan api:generate --routePrefix='api/v1/*' --header='Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBmNWRhOGM4ZDg1Y2Q3OTcwNTM' --force --actAsUserId=1 --useMiddlewares --bindings='restaurant,1|item,1|ratable_id,1|rateable_type,item|item_id,1|rating,1|qty,1|query,a|type,item|phone,0553577261|token,1902' --env=business"
+            "php artisan api:generate --routePrefix='api/v1/*' --header='Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBmNWRhOGM4ZDg1Y2Q3OTcwNTM' --force --actAsUserId=1 --useMiddlewares --bindings='restaurant,1|item,1|ratable_id,1|rateable_type,item|item_id,1|rating,1|qty,1|query,a|type,item|phone,0553577261|token,1902' --public/docs/customers",
+            "php artisan api:generate --routePrefix='api/v1/*' --header='Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBmNWRhOGM4ZDg1Y2Q3OTcwNTM' --force --actAsUserId=1 --useMiddlewares --bindings='restaurant,1|item,1|ratable_id,1|rateable_type,item|item_id,1|rating,1|qty,1|query,a|type,item|phone,0553577261|token,1902' --env=business --public/docs/business"
         ],
         "dploy": [
             "bin/document.sh",
-            "bin/document-business.sh",
+            "bin/document-business.sh"
         ]
     },
     "config": {
