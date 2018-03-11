@@ -10,46 +10,47 @@
                             <div class="login-form">
                                 <h4>REGISTER</h4>
                                 <hr>
-                                <form>
+                                <form action="/login" method="POST">
+                                    @csrf
                                 	<div class="row">
                                     <div class="form-group col-lg-6">
                                         <label>First Name</label>
-                                        <input type="text" name="firstName" class="form-control" placeholder="First Name">
+                                        <input required type="text" name="firstname" class="form-control" placeholder="First Name">
                                     </div>
                                     <div class="form-group col-lg-6">
                                         <label>Last Name</label>
-                                        <input type="text" name="lastName" class="form-control" placeholder="Last Name">
+                                        <input required type="text" name="lastname" class="form-control" placeholder="Last Name">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-lg-6">
                                         <label>User Name</label>
-                                        <input type="text" name="username" class="form-control" placeholder="User Name">
+                                        <input required type="text" name="username" class="form-control" placeholder="User Name">
                                     </div>
                                     <div class="form-group col-lg-6">
                                         <label>Business Registration Number</label>
-                                        <input type="text" name="registrationNumber" class="form-control" placeholder="business registration number">
+                                        <input required type="text" name="registration_number" class="form-control" placeholder="business registration number">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-lg-6">
                                         <label>Restaurant Name</label>
-                                        <input type="text" name="restaurantName" class="form-control" placeholder="Restaurant Name">
+                                        <input required type="text" name="restaurantname" class="form-control" placeholder="Restaurant Name">
                                     </div>
                                     <div class="form-group col-lg-6">
                                         <label>Phone number</label>
-                                        <input type="text" name="phone" class="form-control" placeholder="phone number">
+                                        <input required type="text" name="phone" class="form-control" placeholder="phone number">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-lg-6">
                                         <label>Password</label>
-                                        <input type="password" name="password" class="form-control" placeholder="Password">
+                                        <input required type="password" name="password" class="form-control" placeholder="Password">
                                     </div>
 
                                     <div class="form-group col-lg-6">
                                         <label>Password Confirmation</label>
-                                        <input type="password" name="password_confirmation" class="form-control" placeholder="Password Confirmation">
+                                        <input required type="password" name="password_confirmation" class="form-control" placeholder="Password Confirmation">
                                     </div>
                                 </div>
                                     <div class="checkbox">

@@ -15,6 +15,10 @@ class Business
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if ($request->user()->has('restaurant')) {
+            return $next($request);
+        }
+
+        return redirect('/');
     }
 }
