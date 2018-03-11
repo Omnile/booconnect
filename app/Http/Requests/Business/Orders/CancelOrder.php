@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Business\Orders;
 
+use App\Order;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CancelOrder extends FormRequest
@@ -13,7 +14,17 @@ class CancelOrder extends FormRequest
      */
     public function authorize()
     {
-        return false;
+
+        return
+
+        (int) $this->user()->restaurant()->id
+
+        ===
+
+        (int) Order::find(
+            $this->route()->paremeters($item)
+        )
+            ->restaurant_id;
     }
 
     /**
