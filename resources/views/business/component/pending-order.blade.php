@@ -14,42 +14,24 @@
 <!-- Container fluid  -->
 <div class="container-fluid">
     <!-- Start Page Content -->
-    <div class="col-lg-10 offset-1">
-                        <div class="card">
-                            <div class="card-title">
-                                <h4>Pending Order </h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Name</th>
-                                                <th>Product</th>
-                                                <th>quantity</th>
-                                                <th>Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-                                            <tr>
-                                                <td>
-                                                    <div class="round-img">
-                                                        <a href=""><img src="images/avatar/4.jpg" alt=""></a>
-                                                    </div>
-                                                </td>
-                                                <td>John Abraham</td>
-                                                <td><span>iBook</span></td>
-                                                <td><span>456 pcs</span></td>
-                                                <td><span class="badge badge-warning">Pending</span></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="col-sm-6 col-md-8">
+        <h3>Item Name</h3>
+        <p>Customer Name: <br> customer name</p>
+        <p>Quantity: <br> Quantity</p>
+        <p>Price: <br> Price</p>
+        <p>Status: <br> Status</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+        <p>Description: <br> Description</p>
+    
+</div>
 <!-- End PAge Content -->
 </div>
 <!-- End Container fluid  -->

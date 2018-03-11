@@ -14,40 +14,21 @@
 <!-- Container fluid  -->
 <div class="container-fluid">
     <!-- Start Page Content -->
-    <div class="col-lg-10 offset-1">
-                        <div class="card">
-                            <div class="card-title">
-                                <h4>Items </h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Product</th>
-                                                <th>quantity</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-                                            @foreach()
-                                            <tr>
-                                                <td>
-                                                    1
-                                                </td>
-                                                <td><span>iBook</span></td>
-                                                <td><span>456 pcs</span></td>
-                                            </tr>
-                                            @endforeach()
-
-                                            
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="row">
+        @foreach()
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3>Item Name</h3>
+        <p>Quantity: <br> Quantity</p>
+        <p>Price: <br> Price</p>
+        <p><a href="#" class="btn btn-primary" role="button">More</a></p>
+      </div>
+    </div>
+  </div>
+  @endforeach()
+</div>
 <!-- End PAge Content -->
 </div>
 <!-- End Container fluid  -->
