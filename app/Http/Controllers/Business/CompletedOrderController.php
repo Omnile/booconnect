@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
  *
  * View order history
  */
-class OrderController extends Controller
+class CompletedOrderController extends Controller
 {
     /**
      * List Completed Orders
