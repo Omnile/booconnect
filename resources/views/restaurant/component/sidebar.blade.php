@@ -7,7 +7,7 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Restaurant</li>
-                        <li> <a class="" href="restaurant" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>{{-- 
+                        <li> <a class="" href="/" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>{{--
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="restaurant">Ecommerce </a></li>
                             </ul> --}}
@@ -23,7 +23,7 @@
                         <li class="nav-label">Account Management</li>
                                 <li><a href="#"><i class="fa fa-user"></i><span class="hide-menu">Profile</span></a></li>
                                 <li><a href="#"><i class="fa fa-money"></i><span class="hide-menu">Wallet</span></a></li>
-                                
+
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
