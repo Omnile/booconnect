@@ -12,7 +12,3 @@
  */
 
 include 'endpoints.php';
-
-Route::resource('/', 'RootController');
-
-Auth::routes();

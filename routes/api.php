@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,24 +11,10 @@ use Illuminate\Http\Request;
 |
  */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(array('prefix' => 'v1', 'middleware' => []), function () {
+    include 'business-endpoints.php';
 });
 
-
-
-Route::post('/customer', [
-            'uses' => 'CustomerController@create'
-        ]);
-
-Route::get('/customer/{customer}', [
-            'uses' => 'CustomerController@show'
-        ]);
-
-//Activation route
-Route::post('/customer/activation/{id}', [
-            'uses' => 'CustomerController@activate'
-        ]);
 Route::group(array('prefix' => 'v1', 'middleware' => []), function () {
-    include 'endpoints.php';
+    include 'customer-endpoints.php';
 });

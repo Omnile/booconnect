@@ -11,9 +11,9 @@
 
 Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business'], function () {
 
-    // Route::get('/', function () {
-    //     return view('business.dashboard');
-    // });
+    Route::get('/', function () {
+        return view('business.dashboard');
+    });
 
     // Route::get('add-product', function () {
     //     return view('business.add-product');
