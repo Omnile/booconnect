@@ -25,7 +25,7 @@ deploy_document(){
 	php artisan migrate:refresh --seed;
 
 	# Run the api documentation generator
-	composer document;
+	composer document_customer;
 
 	# clone the current documentation and climb into the directory
 	git clone http://github.com/omnile/boodoc.git;
