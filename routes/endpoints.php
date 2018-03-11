@@ -24,6 +24,8 @@ Route::get('pending-order', function () {
     return view('restaurant.pending-order');
 });
 
+include 'business-endpoints.php';
+
 Route::resource('search', 'SearchController');
 
 Route::resource('items', 'ItemController');

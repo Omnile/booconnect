@@ -13,6 +13,6 @@
 
 Auth::routes();
 
-Route::resource('/', 'RootController');
-
 include 'endpoints.php';
+
+Route::resource('/', 'RootController');
