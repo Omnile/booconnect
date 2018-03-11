@@ -12,20 +12,26 @@
 Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business'], function () {
 
     Route::get('/', function () {
-        return view('restaurant.dashboard');
+        return view('business.dashboard');
     });
 
     Route::get('add-product', function () {
-        return view('restaurant.add-product');
+        return view('business.add-product');
     });
     Route::get('products', function () {
-        return view('restaurant.products');
+        return view('business.products');
     });
     Route::get('order-history', function () {
-        return view('restaurant.order-history');
+        return view('business.order-history');
     });
     Route::get('pending-order', function () {
-        return view('restaurant.pending-order');
+        return view('business.pending-order');
+    });
+    Route::get('logins', function () {
+        return view('business.auth.login');
+    });
+    Route::get('registers', function () {
+        return view('business.auth.register');
     });
 
     Route::resource('signup', 'SignupController');
