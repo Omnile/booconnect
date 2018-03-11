@@ -88,7 +88,7 @@
 
     <script src="js/lib/owl-carousel/owl.carousel.min.js"></script>
     <script src="js/lib/owl-carousel/owl.carousel-init.js"></script>
-    <script src="js/scripts.js"></script>
+    {{-- <script src="js/scripts.js"></script> --}}
     <!-- scripit init-->
 
     <script src="js/custom.min.js"></script>

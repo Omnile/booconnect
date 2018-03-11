@@ -2,7 +2,7 @@
 <!-- Bread crumb -->
 <div class="row page-titles">
     <div class="col-md-5 align-self-center">
-        <h3 class="text-primary">Dashboard</h3> </div>
+        <h3 class="text-primary">Add Product</h3> </div>
     <div class="col-md-7 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
@@ -15,7 +15,7 @@
 <div class="container-fluid">
     <!-- Start Page Content -->
     <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-10 offset-1">
                         <div class="card">
                             <div class="card-body">
                                 <div class="basic-elements">

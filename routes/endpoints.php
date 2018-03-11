@@ -17,6 +17,12 @@ Route::get('add-product', function () {
 Route::get('products', function () {
     return view('restaurant.products');
 });
+Route::get('order-history', function () {
+    return view('restaurant.order-history');
+});
+Route::get('pending-order', function () {
+    return view('restaurant.pending-order');
+});
 
 Route::resource('search', 'SearchController');
 
