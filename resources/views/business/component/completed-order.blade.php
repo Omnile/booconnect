@@ -2,11 +2,11 @@
 <!-- Bread crumb -->
 <div class="row page-titles">
     <div class="col-md-5 align-self-center">
-        <h3 class="text-primary">Pending Order</h3> </div>
+        <h3 class="text-primary">Order History</h3> </div>
     <div class="col-md-7 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-            <li class="breadcrumb-item active">Pending Order</li>
+            <li class="breadcrumb-item active">Order History</li>
         </ol>
     </div>
 </div>
@@ -17,7 +17,7 @@
     <div class="col-lg-10 offset-1">
                         <div class="card">
                             <div class="card-title">
-                                <h4>Pending Order </h4>
+                                <h4>Recent Order </h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -42,7 +42,7 @@
                                                 <td>John Abraham</td>
                                                 <td><span>iBook</span></td>
                                                 <td><span>456 pcs</span></td>
-                                                <td><span class="badge badge-warning">Pending</span></td>
+                                                <td><span class="badge badge-success">Done</span></td>
                                             </tr>
                                         </tbody>
                                     </table>

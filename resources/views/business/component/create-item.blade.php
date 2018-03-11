@@ -2,11 +2,11 @@
 <!-- Bread crumb -->
 <div class="row page-titles">
     <div class="col-md-5 align-self-center">
-        <h3 class="text-primary">Add Product</h3> </div>
+        <h3 class="text-primary">Create Item</h3> </div>
     <div class="col-md-7 align-self-center">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-            <li class="breadcrumb-item active">Add Product</li>
+            <li class="breadcrumb-item active">Create Item</li>
         </ol>
     </div>
 </div>
@@ -50,7 +50,7 @@
                                         </div>
 
                                                 <div class="float-right">
-                                                	<button type="submit" class="btn btn-primary">Add Product</button>
+                                                	<button type="submit" class="btn btn-primary">Add Item</button>
                                                 </div>
                                     </form>
                                 </div>

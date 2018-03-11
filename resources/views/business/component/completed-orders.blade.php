@@ -33,6 +33,7 @@
                                         </thead>
                                         <tbody>
 
+                                            @foreach()
                                             <tr>
                                                 <td>
                                                     <div class="round-img">
@@ -44,39 +45,8 @@
                                                 <td><span>456 pcs</span></td>
                                                 <td><span class="badge badge-success">Done</span></td>
                                             </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="round-img">
-                                                        <a href=""><img src="images/avatar/2.jpg" alt=""></a>
-                                                    </div>
-                                                </td>
-                                                <td>John Abraham</td>
-                                                <td><span>iPhone</span></td>
-                                                <td><span>456 pcs</span></td>
-                                                <td><span class="badge badge-success">Done</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="round-img">
-                                                        <a href=""><img src="images/avatar/3.jpg" alt=""></a>
-                                                    </div>
-                                                </td>
-                                                <td>John Abraham</td>
-                                                <td><span>iMac</span></td>
-                                                <td><span>456 pcs</span></td>
-                                                <td><span class="badge badge-success">Done</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="round-img">
-                                                        <a href=""><img src="images/avatar/4.jpg" alt=""></a>
-                                                    </div>
-                                                </td>
-                                                <td>John Abraham</td>
-                                                <td><span>iBook</span></td>
-                                                <td><span>456 pcs</span></td>
-                                                <td><span class="badge badge-success">Done</span></td>
-                                            </tr>
+                                            @endforeach()
+                                            
                                         </tbody>
                                     </table>
                                 </div>
