@@ -2,6 +2,6 @@
 
 @section('contents')
 
-        @include('business.component.add-product')
+        @include('business.component.edit-item')
 
 @endsection

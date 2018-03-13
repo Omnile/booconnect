@@ -2,6 +2,6 @@
 
 @section('contents')
 
-        @include('business.component.order-history')
+        @include('business.component.completed-orders')
 
 @endsection

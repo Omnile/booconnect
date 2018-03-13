@@ -12,13 +12,13 @@
                                 <li><a href="restaurant">Ecommerce </a></li>
                             </ul> --}}
                         </li>
-                        <li class="nav-label">Products</li>
-                                <li><a href="add-product"><i class="fa fa-plus"></i><span class="hide-menu">Add Product</span></a></li>
-                                <li><a href="products"><i class="fa fa-coffee"></i><span class="hide-menu">Products </span></a></li>
+                        <li class="nav-label">Items</li>
+                                <li><a href="add-product"><i class="fa fa-plus"></i><span class="hide-menu">Create Item</span></a></li>
+                                <li><a href="products"><i class="fa fa-coffee"></i><span class="hide-menu">Items </span></a></li>
 
-                        <li class="nav-label">Order</li>
-                                <li><a href="pending-order" aria-expanded="false"><i class="fa fa-gift"></i><span class="hide-menu">Pending Order</span></a></li>
-                                <li><a href="order-history" aria-expanded="false"><i class="fa fa-cart-arrow-down"></i><span class="hide-menu">Order History</span></a></li>
+                        <li class="nav-label">Orders</li>
+                                <li><a href="pending-order" aria-expanded="false"><i class="fa fa-gift"></i><span class="hide-menu">Pending Orders</span></a></li>
+                                <li><a href="order-history" aria-expanded="false"><i class="fa fa-cart-arrow-down"></i><span class="hide-menu">Completed Orders </span></a></li>
 
                         <li class="nav-label">Account Management</li>
                                 <li><a href="#"><i class="fa fa-user"></i><span class="hide-menu">Profile</span></a></li>
