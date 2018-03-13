@@ -32,16 +32,16 @@ Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business'], fu
 
     Route::get('register', 'RegisterController@showRegistrationForm');
 
-    Route::group(['middleware' => ['auth', 'business', 'verify']], function () {
+    // Route::group(['middleware' => ['auth', 'business', 'verify']], function () {
 
-        Route::resource('dashboard', 'DashboardController');
+    Route::resource('dashboard', 'DashboardController');
 
-        Route::resource('pending-order', 'PendingOrderController');
+    Route::resource('pending-orders', 'PendingOrderController');
 
-        Route::resource('completed-order', 'CompletedOrderController');
+    Route::resource('completed-orders', 'CompletedOrderController');
 
-        Route::resource('item', 'ItemController');
+    Route::resource('items', 'ItemController');
 
-        Route::resource('account', 'AccountController');
-    });
+    Route::resource('account', 'AccountController');
+    // });
 });

@@ -20,20 +20,20 @@ class PendingOrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $orders =
+        $orders = [];
 
-        auth()->user()
-            ->restaurant()
-            ->orders()->where('pending', true)
-            ->paginate(20);
+        // auth()->user()
+        //     ->restaurant()
+        //     ->orders()->where('pending', true)
+        //     ->paginate(20);
 
         if ($request->wantsJson()) {
             return $orders;
         }
 
-        return view('business.pending-orders', compact('orders'));
+        return view('business.pending-orders.index', compact('orders'));
     }
 
     /**

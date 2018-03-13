@@ -2,6 +2,6 @@
 
 @section('contents')
 
-        @include('business.component.pending-orders')
+        @include('business.component.pending-orders', compact('orders'))
 
 @endsection

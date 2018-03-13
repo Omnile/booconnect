@@ -23,15 +23,17 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $items = auth()->user()->restaurant()->items()->paginate(20);
+        $items = [];
+
+        // auth()->user()->restaurant()->items()->paginate(20);
 
         if ($request->wantsJson()) {
             return $items;
         }
 
-        return view('business.items', compact('items'));
+        return view('business.items.index', compact('items'));
     }
 
     /**
