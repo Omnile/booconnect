@@ -36,9 +36,9 @@ Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business'], fu
 
         Route::resource('dashboard', 'DashboardController');
 
-        Route::resource('order', 'PendingOrderController', ['prefix' => 'pending']);
+        Route::resource('pending-order', 'PendingOrderController');
 
-        Route::resource('order', 'CompletedOrderController', ['prefix' => 'completed']);
+        Route::resource('completed-order', 'CompletedOrderController');
 
         Route::resource('item', 'ItemController');
 
