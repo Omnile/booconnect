@@ -10,6 +10,7 @@ use App\Http\Requests\Items\AddItem;
 use App\Item;
 use App\Restaurant;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 /**
  * @resource Items
@@ -66,7 +67,16 @@ class ItemController extends Controller
         $item->user()->associate($user);
         $item->restaurant()->associate($user->restaurant);
 
-        $item->image = $request->file('image')->store('images');
+        $item->image = '/images/' . str_random(50) . '.jpg';
+
+        Image::make($request->file('image'))
+            ->fit(300, 300)
+            ->save(
+                storage_path(
+                    "/app/public/{$item->image}"
+                )
+            )
+        ;
 
         $item->save();
 

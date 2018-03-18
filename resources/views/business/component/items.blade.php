@@ -15,16 +15,17 @@
   <!-- Start Page Content -->
   <div class="row">
     @foreach($items as $item)
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-4 offset-sm-1 col-md-3 offset-md-1 text-center">
       <div class="thumbnail">
-        <img src="..." alt="...">
+        <img src="{{ $item->image }}" alt="{{ $item->name }}" class="img-responsive">
         <div class="caption">
-          <h3>Item Name</h3>
-          <p>Quantity: <br> Quantity</p>
-          <p>Price: <br> Price</p>
+          <h3>{{ $item->name }}</h3>
+          <p>Quantity:  {{ $item->quantity }}</p>
+          <p>Price: {{ $item->price }}</p>
           <p><a href="#" class="btn btn-primary" role="button">More</a></p>
         </div>
       </div>
+      <br>
     </div>
     @endforeach()
   </div>

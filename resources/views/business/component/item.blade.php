@@ -17,7 +17,7 @@
     <div class="row">
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <img src="..." alt="...">
+      <img src="{{ $item->image }}" alt="...">
       <div class="col-sm-6 col-md-8">
         <h3>Item Name</h3>
         <p>Quantity: <br> Quantity</p>
@@ -28,7 +28,7 @@
 </div>
 <div class="row">
         <p>Description: <br> Description</p>
-    
+
 </div>
 <!-- End PAge Content -->
 </div>
