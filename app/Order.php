@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+
+    protected $appends = ['formatted_price'];
+
+    public function getFormattedPriceAttribute()
+    {
+        return config('booconnect.currency') . ' ' . number_format($this->attributes['price'], 2);
+    }
+
     public function restaurant()
     {
         return $this->belongsToMany(Restaurant::class);
@@ -26,8 +34,13 @@ class Order extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function items()
+    public function item()
     {
-        return $this->hasMany(Item::class);
+        return $this->belongsTo(Item::class);
+    }
+
+    public function customer()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }

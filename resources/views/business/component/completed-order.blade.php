@@ -15,18 +15,27 @@
 <div class="container-fluid">
     <!-- Start Page Content -->
         <div class="row">
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <img src="..." alt="...">
-              <div class="col-sm-6 col-md-8">
-                <h3>Item Name</h3>
-                <p>Customer Name: <br> customer name</p>
-                <p>Quantity: <br> Quantity</p>
-                <p>Price: <br> Price</p>
-                <p>Status: <br> Status</p>
+            @foreach($orders as $order)
+              <div class="col-sm-6 col-md-4 text-center">
+                <div class="thumbnail" style="border: 1px dotted grey; border-radius: 10px;">
+                  <img src="{{ $order->item->image }}" alt="{{ $order->item->name }}">
+                  <div class="caption">
+                    <h3>{{ $order->item->name }}</h3>
+                    <p>Quantity: {{ $order->quantity }}</p>
+                    <p>Price: {{ $order->formatted_price }}</p>
+                    <p>Status: {{ $order->status }}</p>
+                    <p><a href="#" class="btn btn-primary" role="button">More</a></p>
+                    <div class="well well-sm" style="border-radius: 10px; border: 1px dotted grey; margin: 10px;">
+                        <p><b>Customer Information</b></p>
+                        <hr>
+                        <p>Customer Name: {{ $order->customer->name }}</p>
+                        <p>Customer Phone: {{ $order->customer->phone }}</p>
+                        <p>Customer Address: {{ $order->customer->address }}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            @endforeach
         </div>
         <div class="row">
         <p>Description: <br> Description</p>
