@@ -19,6 +19,7 @@
         <link href="/css/lib/owl.theme.default.min.css" rel="stylesheet" />
         <link href="/css/helper.css" rel="stylesheet">
         <link href="/css/style.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/css/sweetalert2.css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
         <!--[if lt IE 9]>
@@ -32,6 +33,7 @@
             <svg class="circular" viewBox="25 25 50 50">
             <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
         </div>
+
         <!-- Main wrapper  -->
         <div id="main-wrapper">
             <!-- header header  -->
@@ -80,5 +82,8 @@
         {{-- <script src="/js/scripts.js"></script> --}}
         <!-- scripit init-->
         <script src="/js/custom.min.js"></script>
+        <script src="/js/sweetalert2.js"></script>
+        @include('vendor.flash')
+
     </body>
 </html>

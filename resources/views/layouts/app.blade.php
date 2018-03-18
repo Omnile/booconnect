@@ -25,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="/css/owl.theme.default.min.css" />
     <link rel="stylesheet" type="text/css" href="/css/animate.css" />
     <link rel="stylesheet" type="text/css" href="/css/swiper.css" />
+    <link rel="stylesheet" type="text/css" href="/css/sweetalert2.css">
 
     <!-- this is default skin you can replace that with: dark.css, yellow.css, red.css ect -->
     <link id="pagestyle" rel="stylesheet" type="text/css" href="/css/default.css" />
@@ -50,7 +51,6 @@
 
 </head>
 <body>
-
     @yield('content')
 
 
@@ -69,6 +69,7 @@
     <script type="text/javascript" src="/js/gmaps.js"></script>
     <script type="text/javascript" src="/js/swiper.min.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
+    <script src="/js/sweetalert2.js"></script>
 
     <!-- Initialize Swiper slide -->
     <script>
@@ -91,5 +92,7 @@
         });
     </script>
     <script src="{{ asset('js/app.js') }}"></script>
+    @include('vendor.flash')
+
 </body>
 </html>
