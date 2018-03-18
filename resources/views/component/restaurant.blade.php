@@ -4,7 +4,7 @@
 <div class="row">
 		<img src="{{ $restaurant->image }}"
 	style="
-		box-shadow: -1px 4px 120px 20px rgba(0,0,0,1);
+		box-shadow: -1px 1px 50px 1px rgba(0,0,0,1);
 		border-radius: 20px;
 		display: block;
 		margin: auto;
