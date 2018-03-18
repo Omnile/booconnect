@@ -59,14 +59,22 @@ class ItemController extends Controller
      */
     public function store(AddItem $request)
     {
+        $user = auth()->user();
 
-        $restaurantId = auth()->user()->restaurant_id;
+        $item = new Item($request->all());
 
-        $item = Restaurant::find($restaurantId)->items()->create($request->all());
+        $item->user()->associate($user);
+        $item->restaurant()->associate($user->restaurant);
+
+        $item->image = $request->file('image')->store('images');
+
+        $item->save();
 
         if ($request->wantsJson()) {
             return $item;
         }
+
+        flash()->titleAs('Success')->withMessage('Item added successfuly')->createFlash('success');
 
         return back();
     }

@@ -26,8 +26,9 @@ class AddItem extends FormRequest
         return [
             'name' => 'required|string',
             'price' => 'required|numeric|min:1',
-            'image' => 'required|image|mimes:jpg,png|max:1000',
-            'quantity_daily' => 'required|numeric|min:1',
+            'image' => 'required|image|mimes:jpeg,jpg,png|max:1000',
+            'quantity' => 'required|numeric|min:1',
+            'description' => 'required|string',
             'measurement' => 'required|string',
         ];
     }

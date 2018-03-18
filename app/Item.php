@@ -10,6 +10,15 @@ class Item extends Model implements Buyable
 {
     use Searchable;
 
+    protected $fillable = [
+        'name',
+        'price',
+        'image',
+        'quantity',
+        'description',
+        'measurement',
+    ];
+
     protected $appends = ['formatted_price', 'cart', 'qty', 'in_cart'];
 
     public function getFormattedPriceAttribute()
