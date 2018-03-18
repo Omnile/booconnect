@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Business;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Business\Orders\ShowOrder;
 use App\Order;
+use App\Restaurant;
 use Illuminate\Http\Request;
 
 /**
@@ -22,12 +23,15 @@ class CompletedOrderController extends Controller
      */
     public function index(Request $request)
     {
-        $orders = [];
 
-        // auth()->user()
-        //     ->restaurant()
-        //     ->orders()->where('pending', false)
-        //     ->paginate(20);
+        $restaurantId = auth()->user()->restaurant_id;
+
+        $orders = Restaurant::find($restaurantId)
+
+            ->orders()
+            ->where('status', '<>', 'pending')
+            ->paginate(20)
+        ;
 
         if ($request->wantsJson()) {
             return $orders;

@@ -9,24 +9,37 @@
 |
  */
 
-Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business'], function () {
+Route::group(['domain' => '{subdomain}.' . config('booconnect.domain'), 'namespace' => 'Business'], function () {
 
-    Route::view('/', 'business.dashboard');
+    Auth::login(App\User::find(1));
+    Route::view('', 'business.dashboard');
 
-    Route::get('login', 'LoginController@showLoginForm');
+    Route::get('login', 'LoginController@showLoginForm')->name('login');
 
     Route::get('register', 'RegisterController@showRegistrationForm');
 
-    // Route::group(['middleware' => ['auth', 'business', 'verify']], function () {
+    /**
+     * To access this routes, the user must:
+     *
+     * 1. Be logged in,
+     * 2. Be a business account,
+     * 3. Be verified
+     *
+     * The middlewares protecting these
+     * routes are sorted accordingly.
+     */
+    Route::group(['middleware' => []], function () {
 
-    Route::resource('dashboard', 'DashboardController');
+        Auth::login(\App\User::find(1));
 
-    Route::resource('pending-orders', 'PendingOrderController');
+        Route::resource('items', 'ItemController');
 
-    Route::resource('completed-orders', 'CompletedOrderController');
+        Route::resource('account', 'AccountController');
 
-    Route::resource('items', 'ItemController');
+        Route::resource('dashboard', 'DashboardController');
 
-    Route::resource('account', 'AccountController');
-    // });
+        Route::resource('pending-orders', 'PendingOrderController');
+
+        Route::resource('completed-orders', 'CompletedOrderController');
+    });
 });

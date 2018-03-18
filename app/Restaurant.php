@@ -25,13 +25,18 @@ class Restaurant extends Model
         return $this->belongsToMany(Transaction::class);
     }
 
-    public function user()
+    public function users()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(User::class);
     }
 
     public function pictures()
     {
         return $this->morphOne(Picture::class, 'imageable');
+    }
+
+    public function orders()
+    {
+        return $this->hasManyThrough(Order::class, Item::class);
     }
 }

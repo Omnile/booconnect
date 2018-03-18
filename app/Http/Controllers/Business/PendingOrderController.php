@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Business\Orders\CancelOrder;
 use App\Http\Requests\Business\Orders\ShowOrder;
 use App\Order;
+use App\Restaurant;
 use Illuminate\Http\Request;
 
 /**
@@ -22,12 +23,14 @@ class PendingOrderController extends Controller
      */
     public function index(Request $request)
     {
-        $orders = [];
+        $restaurantId = auth()->user()->restaurant_id;
 
-        // auth()->user()
-        //     ->restaurant()
-        //     ->orders()->where('pending', true)
-        //     ->paginate(20);
+        $orders = Restaurant::find($restaurantId)
+
+            ->orders()
+            ->where('status', '=', 'pending')
+            ->paginate(20)
+        ;
 
         if ($request->wantsJson()) {
             return $orders;

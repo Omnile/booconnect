@@ -8,6 +8,7 @@ use App\Http\Requests\Business\Items\ShowItem;
 use App\Http\Requests\Business\Items\UpdateItem;
 use App\Http\Requests\Items\AddItem;
 use App\Item;
+use App\Restaurant;
 use Illuminate\Http\Request;
 
 /**
@@ -25,9 +26,9 @@ class ItemController extends Controller
      */
     public function index(Request $request)
     {
-        $items = [];
+        $restaurantId = auth()->user()->restaurant_id;
 
-        // auth()->user()->restaurant()->items()->paginate(20);
+        $items = Restaurant::find($restaurantId)->items()->paginate(20);
 
         if ($request->wantsJson()) {
             return $items;
@@ -58,7 +59,10 @@ class ItemController extends Controller
      */
     public function store(AddItem $request)
     {
-        $item = auth()->user()->restaurant()->items()->create($request->all());
+
+        $restaurantId = auth()->user()->restaurant_id;
+
+        $item = Restaurant::find($restaurantId)->items()->create($request->all());
 
         if ($request->wantsJson()) {
             return $item;

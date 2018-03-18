@@ -41,7 +41,7 @@ class User extends Authenticatable
 
     public function restaurant()
     {
-        return $this->hasOne(Restaurant::class);
+        return $this->belongsTo(Restaurant::class);
     }
 
     public function wishlist()

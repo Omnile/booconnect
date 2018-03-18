@@ -25,6 +25,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('gender');
 
+            $table->integer('restaurant_id')->nullable()->unsigned();
+
             $table->boolean('phone_verified')->default(false);
             $table->boolean('email_verified')->default(false);
 

@@ -9,7 +9,7 @@
 |
  */
 
-Route::group(['domain' => 'booconnect.{tld}'], function () {
+Route::group(['domain' => config('booconnect.domain')], function () {
 
     Auth::routes();
 
