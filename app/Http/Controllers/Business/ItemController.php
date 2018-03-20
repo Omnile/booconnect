@@ -8,6 +8,7 @@ use App\Http\Requests\Business\Items\ShowItem;
 use App\Http\Requests\Business\Items\UpdateItem;
 use App\Http\Requests\Items\AddItem;
 use App\Item;
+use App\Picture;
 use App\Restaurant;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -67,17 +68,7 @@ class ItemController extends Controller
         $item->user()->associate($user);
         $item->restaurant()->associate($user->restaurant);
 
-        $item->image = '/images/' . str_random(50) . '.jpg';
-
-        Image::make($request->file('image'))
-            ->fit(300, 300)
-            ->save(
-                storage_path(
-                    "/app/public/{$item->image}"
-                )
-            )
-        ;
-
+        $item->image = Picture::storeImage($item->id, $request->image, Item::class)->path;
         $item->save();
 
         if ($request->wantsJson()) {
@@ -137,17 +128,7 @@ class ItemController extends Controller
         $item->update($request->all());
 
         if ($request->has('image')) {
-            $item->image = '/images/' . str_random(50) . '.jpg';
-
-            Image::make($request->file('image'))
-                ->fit(300, 300)
-                ->save(
-                    storage_path(
-                        "/app/public/{$item->image}"
-                    )
-                )
-            ;
-
+            $item->image = Picture::storeImage($item->id, $request->image, Item::class)->path;
             $item->save();
         }
 
