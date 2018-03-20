@@ -99,10 +99,10 @@ class ItemController extends Controller
     public function show(ShowItem $request, Item $item)
     {
         if ($request->wantsJson()) {
-            return $item;
+            return $item->load('rating', 'orders', 'pictures', 'wishlist');
         }
 
-        return view('business.items.item');
+        return view('business.items.item', compact('item'));
     }
 
     /**
@@ -120,7 +120,7 @@ class ItemController extends Controller
             return $item;
         }
 
-        return view('business.items.edit');
+        return view('business.items.edit', compact('item'));
     }
 
     /**
@@ -133,7 +133,23 @@ class ItemController extends Controller
      */
     public function update(UpdateItem $request, Item $item)
     {
+
         $item->update($request->all());
+
+        if ($request->has('image')) {
+            $item->image = '/images/' . str_random(50) . '.jpg';
+
+            Image::make($request->file('image'))
+                ->fit(300, 300)
+                ->save(
+                    storage_path(
+                        "/app/public/{$item->image}"
+                    )
+                )
+            ;
+
+            $item->save();
+        }
 
         if ($request->wantsJson()) {
             return $item;
