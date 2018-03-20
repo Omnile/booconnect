@@ -28,7 +28,7 @@ Route::group(['domain' => '{subdomain}.' . config('booconnect.domain'), 'namespa
      * The middlewares protecting these
      * routes are sorted accordingly.
      */
-    Route::group(['middleware' => []], function () {
+    Route::group(['middleware' => ['clean-subdomain']], function () {
 
         Auth::login(\App\User::find(1));
 
