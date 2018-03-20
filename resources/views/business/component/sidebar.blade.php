@@ -34,15 +34,23 @@
                         <i class="fa fa-cart-arrow-down"></i><span class="hide-menu">Completed Orders </span>
                     </a>
                 </li>
-                <li class="nav-label">Account Management</li>
+
+                <li class="nav-label">Transactions</li>
+
                 <li>
-                    <a href="/#">
-                        <i class="fa fa-user"></i><span class="hide-menu">Profile</span>
+                    <a href="/transactions">
+                        <i class="fa fa-money"></i><span class="hide-menu">Transactions</span>
+                    </a>
+                </li>
+                <li class="nav-label">Settings</li>
+                <li>
+                    <a href="/account">
+                        <i class="fa fa-user"></i><span class="hide-menu">Account Settings</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/#">
-                        <i class="fa fa-money"></i><span class="hide-menu">Wallet</span>
+                    <a href="/settings">
+                        <i class="fa fa-gear"></i><span class="hide-menu">Admin Settings</span>
                     </a>
                 </li>
 
