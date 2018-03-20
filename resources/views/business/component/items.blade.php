@@ -16,13 +16,16 @@
   <div class="row">
     @foreach($items as $item)
     <div class="col-sm-4 offset-sm-1 col-md-3 offset-md-1 text-center">
-      <div class="thumbnail">
+      <div class="thumbnail"  style="border: 1px dotted grey; border-radius: 10px; padding: 10px">
         <img src="{{ $item->image }}" alt="{{ $item->name }}" class="img-responsive">
         <div class="caption">
           <h3>{{ $item->name }}</h3>
           <p>Quantity:  {{ $item->quantity }}</p>
           <p>Price: {{ $item->price }}</p>
-          <p><a href="#" class="btn btn-primary" role="button">More</a></p>
+          <p>
+            <a href="/items/{{ $item->id }}" class="btn btn-primary" role="button">More</a>
+            <a href="/items/{{ $item->id }}/edit" class="btn btn-default" role="button">Edit</a>
+          </p>
         </div>
       </div>
       <br>
