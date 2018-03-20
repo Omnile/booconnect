@@ -32,14 +32,14 @@
     </div>
     <!-- Main wrapper  -->
     <div id="main-wrapper">
-        <!-- header header  -->
-        @include('business.component.header')
+        <!-- header header  -->{{-- 
+        @include('business.component.header') --}}
 
                 @yield('contents')
                 
             
-            <!-- footer -->
-            <footer class="footer"> © 2018 All rights reserved. Template designed by <a href="https://colorlib.com">Colorlib</a></footer>
+            <!-- footer -->{{-- 
+            <footer class="footer"> © 2018 All rights reserved. Template designed by <a href="https://colorlib.com">Colorlib</a></footer> --}}
             <!-- End footer -->
     </div>
     <!-- End Wrapper -->
