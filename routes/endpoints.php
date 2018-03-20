@@ -19,3 +19,7 @@ Route::get('logout', function () {
 
     return back();
 });
+
+Route::get('{path?}', function ($path) {
+    return redirect("/");
+})->where("path", ".*");
