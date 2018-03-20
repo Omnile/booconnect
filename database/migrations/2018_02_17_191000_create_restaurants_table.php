@@ -18,21 +18,19 @@ class CreateRestaurantsTable extends Migration
             $table->string('name');
             $table->string('phone');
             $table->string('registration_no');
-            $table->string('first_name');
-            $table->string('last_name');
             $table->string('user_id');
 
             $table->string('image')->default('/images/restaurant_default_image.svg');
             $table->string('cover')->default('/images/restaurant_default_cover.svg');
 
-            $table->string('place');
-            $table->string('city');
-            $table->string('state');
-            $table->string('country');
-            $table->string('address');
+            $table->string('place')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('country')->nullable();
+            $table->string('address')->nullable();
 
             $table->string('website')->nullable();
-            $table->string('description');
+            $table->string('description')->nullable();
 
             $table->boolean('phone_verified')->default(false);
             $table->boolean('email_verified')->default(false);

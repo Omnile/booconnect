@@ -50,7 +50,7 @@
                 </li>
                 <li>
                     <a href="/settings">
-                        <i class="fa fa-gear"></i><span class="hide-menu">Admin Settings</span>
+                        <i class="fa fa-gear"></i><span class="hide-menu">Business Settings</span>
                     </a>
                 </li>
 

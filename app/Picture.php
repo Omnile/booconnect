@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Intervention\Image\Facades\Image;
 
 class Picture extends Model
 {
@@ -15,6 +16,43 @@ class Picture extends Model
     public function imageable()
     {
         return $this->morphTo();
+    }
+
+    /**
+     * This is a helper method for saving an image
+     * in the database and creating a
+     * relationship between an
+     * image and an imagable.
+     *
+     * @param  int    $id          This will be the ID of the item
+     *                             that this image belong to.
+     * @param  string $image       This is the image input that
+     *                             was sent from the form.
+     * @param  string $class       This is the imagable class.
+     * @param  string $description This is the descripton of the image.
+     * @return App\Picture         This is the picture object.
+     */
+    public static function storeImage(int $id, string $image, string $class, $description = null)
+    {
+        $picture = new self;
+
+        $picture->imageable_id = $id;
+        $picture->imageable_type = $class;
+        $picture->description = $description;
+        $picture->path = '/images/' . str_random(50) . '.jpg';
+
+        Image::make($image)
+            ->fit(300, 300)
+            ->save(
+                storage_path(
+                    "/app/public/{$picture->path}"
+                )
+            )
+        ;
+
+        $picture->save();
+
+        return $picture;
     }
 
     // public function getImageableTypeAttribute($type)

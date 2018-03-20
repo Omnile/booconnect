@@ -11,7 +11,6 @@
 
 Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business', 'as' => 'account.'], function () {
 
-    Auth::login(App\User::find(1));
     Route::view('', 'business.dashboard');
 
     Route::get('login', 'LoginController@showLoginForm')->name('login');
@@ -30,11 +29,11 @@ Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business', 'as
      */
     Route::group(['middleware' => ['clean-params']], function () {
 
-        Auth::login(\App\User::find(1));
-
         Route::resource('items', 'ItemController');
 
         Route::resource('account', 'AccountController');
+
+        Route::resource('settings', 'SettingsController');
 
         Route::resource('dashboard', 'DashboardController');
 
