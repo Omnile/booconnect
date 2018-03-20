@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 /**
  * @resource Account
- * Manage Resturant Account
+ * Manage Resturant Admin Account
  */
 class AccountController extends Controller
 {
@@ -21,7 +21,9 @@ class AccountController extends Controller
     public function index(Request $request)
     {
         /**
-         * Get the account of the authenticated user
+         * Get Account
+         * Get the account details of the authenticated user
+         *
          * @var App\User
          */
         $account = auth()->user();
@@ -34,17 +36,8 @@ class AccountController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
+     * Update Account
+     * Update the authenticated user account.
      *
      * @param  \Illuminate\Http\UpdateAccount  $request
      * @return \Illuminate\Http\Response
@@ -66,10 +59,15 @@ class AccountController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * @hideFromAPIDocumentation
      */
     public function show(User $user)
     {
@@ -77,10 +75,7 @@ class AccountController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function edit(User $user)
     {
@@ -88,11 +83,7 @@ class AccountController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function update(Request $request, User $user)
     {
@@ -100,10 +91,7 @@ class AccountController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function destroy(User $user)
     {

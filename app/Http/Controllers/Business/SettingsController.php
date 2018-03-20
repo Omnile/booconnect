@@ -8,6 +8,10 @@ use App\Picture;
 use App\Restaurant;
 use Illuminate\Http\Request;
 
+/**
+ * @resource Restaurant Settings
+ * Manage Resturant Settings
+ */
 class SettingsController extends Controller
 {
     /**
@@ -18,8 +22,8 @@ class SettingsController extends Controller
     public function index(Request $request)
     {
         /**
-         * Get all the data from the
-         * current restaurant
+         * Get restaurant configuration
+         * Get all the data from the current restaurant
          *
          * @var App\Restaurant::class
          */
@@ -33,17 +37,8 @@ class SettingsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
+     * Update Business Settings.
+     * Update the Business (restaurant) configurations
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -73,10 +68,15 @@ class SettingsController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * @hideFromAPIDocumentation
      */
     public function show($id)
     {
@@ -84,10 +84,7 @@ class SettingsController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function edit($id)
     {
@@ -95,11 +92,7 @@ class SettingsController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function update(Request $request, $id)
     {
@@ -107,10 +100,7 @@ class SettingsController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function destroy($id)
     {
