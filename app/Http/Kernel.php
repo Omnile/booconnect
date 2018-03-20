@@ -64,6 +64,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \App\Http\Middleware\UserVerified::class,
         'business' => \App\Http\Middleware\Business::class,
-        'clean-subdomain' => \App\Http\Middleware\RemoveSubdomainParameter::class,
+        'clean-params' => \App\Http\Middleware\CleanParameters::class,
     ];
 }

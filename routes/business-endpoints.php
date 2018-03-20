@@ -9,14 +9,14 @@
 |
  */
 
-Route::group(['domain' => '{subdomain}.' . config('booconnect.domain'), 'namespace' => 'Business'], function () {
+Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business', 'as' => 'account.'], function () {
 
     Auth::login(App\User::find(1));
     Route::view('', 'business.dashboard');
 
     Route::get('login', 'LoginController@showLoginForm')->name('login');
 
-    Route::get('register', 'RegisterController@showRegistrationForm');
+    Route::get('register', 'RegisterController@showRegistrationForm')->name('dashboard');
 
     /**
      * To access this routes, the user must:
@@ -28,7 +28,7 @@ Route::group(['domain' => '{subdomain}.' . config('booconnect.domain'), 'namespa
      * The middlewares protecting these
      * routes are sorted accordingly.
      */
-    Route::group(['middleware' => ['clean-subdomain']], function () {
+    Route::group(['middleware' => ['clean-params']], function () {
 
         Auth::login(\App\User::find(1));
 
