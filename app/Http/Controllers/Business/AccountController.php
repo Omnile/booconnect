@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Business;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Account\UpdateAccount;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -17,8 +18,19 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        /**
+         * Get the account of the authenticated user
+         * @var App\User
+         */
+        $account = auth()->user();
+
+        if ($request->wantsJson()) {
+            return $account;
+        }
+
+        return view('business.account', compact('account'));
     }
 
     /**
@@ -34,12 +46,23 @@ class AccountController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\UpdateAccount  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UpdateAccount $request)
     {
-        //
+
+        if ($request->get('password') == '') {
+            $account = auth()->user()->update($request->except('password'));
+        } else {
+            $account = auth()->user()->update($request->all());
+        }
+
+        if ($request->wantsJson()) {
+            return $account;
+        }
+
+        return back();
     }
 
     /**

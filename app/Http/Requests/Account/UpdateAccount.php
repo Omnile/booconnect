@@ -26,10 +26,10 @@ class UpdateAccount extends FormRequest
         return [
             'firstname' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
-            'password' => 'required|string|min:6|confirmed',
             'username' => 'required|string|min:4',
             'gender' => 'required|string|min:4',
             'phone' => 'required|string|min:4',
+            'password' => 'nullable|string|min:6|confirmed',
         ];
     }
 }
