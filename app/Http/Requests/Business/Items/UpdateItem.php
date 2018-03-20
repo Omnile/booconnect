@@ -17,12 +17,12 @@ class UpdateItem extends FormRequest
 
         return
 
-        (int) $this->user()->restaurant()->id
+        (int) $this->route()->parameters()['item']->restaurant->id
 
         ===
 
         (int) Item::find(
-            $this->route()->paremeters($item)
+            $this->route()->parameters['item']->id
         )
             ->restaurant_id;
     }
@@ -35,7 +35,13 @@ class UpdateItem extends FormRequest
     public function rules()
     {
         return [
-            //
+
+            'name' => 'required|string',
+            'price' => 'required|numeric|min:1',
+            'image' => 'nullable|image|mimes:jpeg,jpg,png|max:1000',
+            'quantity' => 'required|numeric|min:1',
+            'description' => 'required|string',
+            'measurement' => 'required|string',
         ];
     }
 }

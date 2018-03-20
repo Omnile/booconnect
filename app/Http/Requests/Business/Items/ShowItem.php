@@ -14,15 +14,14 @@ class ShowItem extends FormRequest
      */
     public function authorize()
     {
-
         return
 
-        (int) $this->user()->restaurant()->id
+        (int) $this->route()->parameters()['item']->restaurant->id
 
         ===
 
         (int) Item::find(
-            $this->route()->paremeters($item)
+            $this->route()->parameters['item']->id
         )
             ->restaurant_id;
     }
