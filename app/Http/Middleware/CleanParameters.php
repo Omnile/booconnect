@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class RemoveSubdomainParameter
+class CleanParameters
 {
     /**
      * Handle an incoming request.
@@ -16,6 +16,7 @@ class RemoveSubdomainParameter
     public function handle($request, Closure $next)
     {
         $request->route()->forgetParameter('subdomain');
+        $request->route()->forgetParameter('domain');
 
         return $next($request);
     }

@@ -9,7 +9,7 @@
 |
  */
 
-Route::group(['domain' => config('booconnect.domain')], function () {
+Route::group(['domain' => '{domain}', 'middleware' => ['clean-params']], function () {
 
     Auth::routes();
 
