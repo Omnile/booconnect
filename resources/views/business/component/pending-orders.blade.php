@@ -26,7 +26,10 @@
                 <p>Status: {{ $order->status }}</p>
                 <p>Time of order: {{ $order->created_at->diffForHumans() }}</p>
                 <p>{{ $order->created_at }}</p>
-                <p><a href="#" class="btn btn-primary" role="button">More</a></p>
+                <p>
+                    <a href="#" class="btn btn-primary" role="button">More</a>
+                    <a href="#" class="btn btn-danger" role="button">Cancel</a>
+                </p>
                 <div class="well well-sm" style="border-radius: 10px; border: 1px dotted grey; margin: 10px;">
                     <p><b>Customer Information</b></p>
                     <hr>
