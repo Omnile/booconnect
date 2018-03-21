@@ -9,9 +9,7 @@
 |
  */
 
-Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business', 'as' => 'account.'], function () {
-
-    Route::view('', 'business.dashboard');
+Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business'], function () {
 
     Route::get('login', 'LoginController@showLoginForm')->name('login');
 
@@ -28,6 +26,8 @@ Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business', 'as
      * routes are sorted accordingly.
      */
     Route::group(['middleware' => ['clean-params']], function () {
+
+        Route::view('', 'business.dashboard');
 
         Route::resource('items', 'ItemController');
 
