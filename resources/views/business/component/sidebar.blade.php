@@ -36,7 +36,7 @@
                 </li>
                 <li class="nav-label">Account Management</li>
                 <li>
-                    <a href="/#">
+                    <a href="/profile">
                         <i class="fa fa-user"></i><span class="hide-menu">Profile</span>
                     </a>
                 </li>

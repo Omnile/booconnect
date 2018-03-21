@@ -84,6 +84,7 @@
         <script src="/js/custom.min.js"></script>
         <script src="/js/sweetalert2.js"></script>
         @include('vendor.flash')
+        @yield('js')
 
     </body>
 </html>
