@@ -11,6 +11,8 @@
 |
  */
 
+$this->_auth_middleware = 'auth:api';
+
 Route::group(array('prefix' => 'b/v1', 'middleware' => []), function () {
     include 'business-endpoints.php';
 });

@@ -22,7 +22,7 @@ class AccountController extends Controller
     public function index()
     {
 
-        $account = auth()->user();
+        $account = anyAuth()->user();
 
         if ($request->wantsJson()) {
             return $account;

@@ -6,7 +6,7 @@
 
 @section('auth-form')
 
-    <form method="POST" action="{{ route('login') }}" class="form-horizontal">
+    <form method="POST" action="/login" class="form-horizontal">
         @csrf
 
         <div class="form-group row">

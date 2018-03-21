@@ -89,7 +89,7 @@ class RatingController extends Controller
      */
     public function destroy(Rating $rating)
     {
-        if ($rating->user_id !== auth()->user()->id) {
+        if ($rating->user_id !== anyAuth()->user()->id) {
             return response(402);
         }
 

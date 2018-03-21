@@ -9,7 +9,7 @@
 |
  */
 
-Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business', 'as' => 'account.'], function () {
+Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business'], function () {
 
 
     Route::view('profile', 'business.profile');
@@ -17,7 +17,7 @@ Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business', 'as
     Auth::login(App\User::find(1));
     Route::view('', 'business.dashboard');
 
-    Route::get('login', 'LoginController@showLoginForm')->name('login');
+    Route::get('login', 'LoginController@showLoginForm');
 
     Route::get('register', 'RegisterController@showRegistrationForm')->name('dashboard');
 
@@ -31,7 +31,9 @@ Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business', 'as
      * The middlewares protecting these
      * routes are sorted accordingly.
      */
-    Route::group(['middleware' => ['clean-params']], function () {
+    Route::group(['middleware' => ['clean-params', $this->_auth_middleware]], function () {
+
+        Route::view('', 'business.dashboard');
 
         Route::resource('items', 'ItemController');
 

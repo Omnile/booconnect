@@ -10,7 +10,7 @@
         @csrf
 
         <p class="text-center">To use the services on {{ config('app.name') }}, it is required that you verify your phone number.</p>
-        <p class="text-center"> Please provide the code we sent to {{ auth()->user()->phone }}</p>
+        <p class="text-center"> Please provide the code we sent to {{ anyAuth()->user()->phone }}</p>
 
         <br>
 

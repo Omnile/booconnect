@@ -64,7 +64,7 @@ class Business extends UserVerified
      */
     public function isBusiness(Request $request)
     {
-        if ($request->user() && $request->user->has('restaurant')) {
+        if (anyAuth()->user() && anyAuth()->user()->has('restaurant')) {
             return false;
         }
 

@@ -23,7 +23,7 @@ class WishlistController extends Controller
      */
     public function index(Request $request, Wishlist $wishlist)
     {
-        $items = $request->user()->wishlist->paginate(20);
+        $items = anyAuth()->user()->wishlist->paginate(20);
 
         if ($request->wantsJson()) {
             return $items;

@@ -23,7 +23,7 @@ class PendingOrderController extends Controller
      */
     public function index(Request $request)
     {
-        $restaurantId = auth()->user()->restaurant_id;
+        $restaurantId = anyAuth()->user()->restaurant_id;
 
         $orders = Restaurant::find($restaurantId)
 
