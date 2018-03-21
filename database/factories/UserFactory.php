@@ -23,7 +23,7 @@ $factory->define(App\User::class, function (Faker $faker) {
         'username' => $faker->unique()->username,
         'gender' => array_random(['male', 'female']),
         'restaurant_id' => array_random([null, rand(1, config('booconnect.seed.max'))]),
-        'password' => Hash::make(str_random(10)), // secret
+        'password' => Hash::make('google'), // secret
         'remember_token' => str_random(10),
         'phone_verified' => rand(0, 1),
         'email_verified' => rand(0, 1),
