@@ -15,7 +15,7 @@
 <div class="container-fluid">
     <!-- Start Page Content -->
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="card p-30">
             <div class="media">
                 <div class="media-left meida media-middle">
@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="card p-30">
             <div class="media">
                 <div class="media-left meida media-middle">
@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>{{-- 
     <div class="col-md-3">
         <div class="card p-30">
             <div class="media">
@@ -53,8 +53,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-3">
+    </div> --}}
+    <div class="col-md-4">
         <div class="card p-30">
             <div class="media">
                 <div class="media-left meida media-middle">
@@ -68,7 +68,7 @@
         </div>
     </div>
 </div>
-
+{{-- 
 <div class="row bg-white m-l-0 m-r-0 box-shadow ">
 
     <!-- column -->
@@ -114,12 +114,13 @@
         </div>
     </div>
     <!-- column -->
-</div>
+</div> --}}
 <div class="row">
+
     <div class="col-lg-12">
         <div class="card">
             <div class="card-title">
-                <h4>Recent Orders </h4>
+                <h4>New Orders </h4>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -127,10 +128,11 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Name</th>
+                                <th>Customer</th>
                                 <th>Product</th>
-                                <th>quantity</th>
-                                <th>Status</th>
+                                <th>Measurement Unit</th>
+                                <th>Quantity</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -142,9 +144,10 @@
                                     </div>
                                 </td>
                                 <td>John Abraham</td>
-                                <td><span>iBook</span></td>
-                                <td><span>456 pcs</span></td>
-                                <td><span class="badge badge-success">Done</span></td>
+                                <td><span>Jollof</span></td>
+                                <td><span>Plate</span></td>
+                                <td><span>456 </span></td>
+                                <td><button class="btn btn-sm btn-danger">Cancel</button> <button class="btn btn-sm btn-success">Process</button></td>
                             </tr>
                             <tr>
                                 <td>
@@ -152,10 +155,11 @@
                                         <a href=""><img src="images/avatar/2.jpg" alt=""></a>
                                     </div>
                                 </td>
-                                <td>John Abraham</td>
-                                <td><span>iPhone</span></td>
-                                <td><span>456 pcs</span></td>
-                                <td><span class="badge badge-success">Done</span></td>
+                                <td>James Newton</td>
+                                <td><span>Fufu</span></td>
+                                <td><span>Bowl</span></td>
+                                <td><span>456 </span></td>
+                                <td><button class="btn btn-sm btn-danger">Cancel</button> <button class="btn btn-sm btn-success">Process</button></td>
                             </tr>
                             <tr>
                                 <td>
@@ -163,10 +167,11 @@
                                         <a href=""><img src="images/avatar/3.jpg" alt=""></a>
                                     </div>
                                 </td>
-                                <td>John Abraham</td>
-                                <td><span>iMac</span></td>
-                                <td><span>456 pcs</span></td>
-                                <td><span class="badge badge-warning">Pending</span></td>
+                                <td>Micheal Jones</td>
+                                <td><span>Banku n Tilapia</span></td>
+                                <td><span>Plate</span></td>
+                                <td><span>456 </span></td>
+                                <td><button class="btn btn-sm btn-danger">Cancel</button> <button class="btn btn-sm btn-success">Process</button></td>
                             </tr>
                             <tr>
                                 <td>
@@ -174,10 +179,11 @@
                                         <a href=""><img src="images/avatar/4.jpg" alt=""></a>
                                     </div>
                                 </td>
-                                <td>John Abraham</td>
-                                <td><span>iBook</span></td>
-                                <td><span>456 pcs</span></td>
-                                <td><span class="badge badge-success">Done</span></td>
+                                <td>Frank Dayson</td>
+                                <td><span>Speciality</span></td>
+                                <td><span>Bowl</span></td>
+                                <td><span>456 </span></td>
+                                <td><button class="btn btn-sm btn-danger">Cancel</button> <button class="btn btn-sm btn-success">Process</button></td>
                             </tr>
                         </tbody>
                     </table>

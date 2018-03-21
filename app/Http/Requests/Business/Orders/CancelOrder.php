@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests\Business\Orders;
 
-use App\Order;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CancelOrder extends FormRequest
@@ -17,12 +16,12 @@ class CancelOrder extends FormRequest
 
         return
 
-        (int) $this->user()->restaurant()->id
+        (int) $this->route()->parameters()['item']->restaurant->id
 
         ===
 
-        (int) Order::find(
-            $this->route()->paremeters($item)
+        (int) Item::find(
+            $this->route()->parameters['item']->id
         )
             ->restaurant_id;
     }

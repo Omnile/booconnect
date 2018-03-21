@@ -22,7 +22,7 @@ deploy_document(){
 	# composer document;
 
 	# Seed the database for the api documentation
-	php artisan migrate:refresh --seed;
+	# php artisan migrate:refresh --seed;
 
 	# Run the api documentation generator
 	composer document_business;

@@ -10,6 +10,19 @@ class Restaurant extends Model
 {
     use Searchable;
 
+    protected $fillable = [
+        'name',
+        'phone',
+        'registration_no',
+        'place',
+        'city',
+        'state',
+        'country',
+        'address',
+        'website',
+        'description',
+    ];
+
     public function items()
     {
         return $this->hasMany(Item::class);
