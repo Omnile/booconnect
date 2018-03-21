@@ -21,7 +21,7 @@ class RestaurantVerified extends UserVerified
      */
     public function verificationStatus(Request $request)
     {
-        if ($request->user->has('restaurant') && !$request->user()->restaurant->verified) {
+        if (anyAuth()->user()->has('restaurant') && !anyAuth()->user()->restaurant->verified) {
             $this->message = 'Please verify your restaurant\'s phone number.';
 
             return $this->message;

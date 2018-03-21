@@ -39,8 +39,8 @@ class UserVerified
     {
         if ($this->notSignedIn($request) ?: $this->verificationStatus($request)) {
             /**
-             * This should be self eplanatory. 
-             * It checks if the user is requesting 
+             * This should be self eplanatory.
+             * It checks if the user is requesting
              * a json response or has Application/Json
              * and gives a json response
              */
@@ -52,7 +52,7 @@ class UserVerified
                 );
             }
             /**
-             * Redirect the user to the verification 
+             * Redirect the user to the verification
              * page if the user is not verified
              */
             return redirect('verify');
@@ -73,7 +73,7 @@ class UserVerified
      */
     public function notSignedIn()
     {
-        if (Auth::check()) {
+        if (anyAyth()->check()) {
             $this->message = 'Unauthenticated Request.';
             $this->statusCode = 401;
 
@@ -95,7 +95,7 @@ class UserVerified
      */
     public function verificationStatus(Request $request)
     {
-        if ($request->user() && $request->user->verified) {
+        if (anyAuth()->user() && anyAuth()->user()->verified) {
             $this->message = 'Please verify the phone number in your account.';
 
             return $this->message;

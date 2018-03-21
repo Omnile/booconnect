@@ -26,7 +26,7 @@ class AccountController extends Controller
          *
          * @var App\User
          */
-        $account = auth()->user();
+        $account = anyAuth()->user();
 
         if ($request->wantsJson()) {
             return $account;
@@ -46,9 +46,9 @@ class AccountController extends Controller
     {
 
         if ($request->get('password') == '') {
-            $account = auth()->user()->update($request->except('password'));
+            $account = anyAuth()->user()->update($request->except('password'));
         } else {
-            $account = auth()->user()->update($request->all());
+            $account = anyAuth()->user()->update($request->all());
         }
 
         if ($request->wantsJson()) {

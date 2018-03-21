@@ -26,7 +26,7 @@ class VerifyController extends Controller
     public function index(Request $request)
     {
         if ($request->wantsJson()) {
-            return ['verification_status' => auth()->user()->phone_verified];
+            return ['verification_status' => anyAuth()->user()->phone_verified];
         }
 
         return view('auth.verify');
@@ -81,7 +81,7 @@ class VerifyController extends Controller
      */
     public function update(SendCode $request, $id)
     {
-        $user = auth()->user();
+        $user = anyAuth()->user();
 
         $user->phone = $request->input('phone');
 

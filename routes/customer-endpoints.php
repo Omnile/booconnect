@@ -36,7 +36,7 @@ Route::group(['domain' => '{domain}', 'middleware' => ['clean-params']], functio
  * So basically here, we use the verified middleware.
  * Only routes specified here requires verification.
  */
-    Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::group(['middleware' => [$this->_auth_middleware, 'verified']], function () {
 
         Route::resource('account', 'AccountController');
 

@@ -11,6 +11,8 @@
 |
  */
 
+$this->_auth_middleware = 'auth';
+
 Route::get('loginas/{id}', function ($id) {
     Auth::login(\App\User::find($id));
 });

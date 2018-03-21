@@ -28,7 +28,7 @@ class ItemController extends Controller
      */
     public function index(Request $request)
     {
-        $restaurantId = auth()->user()->restaurant_id;
+        $restaurantId = anyAuth()->user()->restaurant_id;
 
         $items = Restaurant::find($restaurantId)->items()->paginate(20);
 
@@ -61,7 +61,7 @@ class ItemController extends Controller
      */
     public function store(AddItem $request)
     {
-        $user = auth()->user();
+        $user = anyAuth()->user();
 
         $item = new Item($request->all());
 

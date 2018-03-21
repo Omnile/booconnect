@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
@@ -28,6 +30,11 @@ class User extends Authenticatable
     ];
 
     protected $appends = ['name'];
+
+    public function findForPassport($username)
+    {
+        return $this->where('username', $username)->first();
+    }
 
     public function getNameAttribute()
     {

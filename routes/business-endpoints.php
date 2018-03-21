@@ -11,7 +11,7 @@
 
 Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business'], function () {
 
-    Route::get('login', 'LoginController@showLoginForm')->name('login');
+    Route::get('login', 'LoginController@showLoginForm');
 
     Route::get('register', 'RegisterController@showRegistrationForm')->name('dashboard');
 
@@ -25,7 +25,7 @@ Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business'], fu
      * The middlewares protecting these
      * routes are sorted accordingly.
      */
-    Route::group(['middleware' => ['clean-params']], function () {
+    Route::group(['middleware' => ['clean-params', $this->_auth_middleware]], function () {
 
         Route::view('', 'business.dashboard');
 
