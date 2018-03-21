@@ -137,6 +137,7 @@
                         </thead>
                         <tbody>
 
+                            @foreach()
                             <tr>
                                 <td>
                                     <div class="round-img">
@@ -149,6 +150,7 @@
                                 <td><span>456 </span></td>
                                 <td><button class="btn btn-sm btn-danger">Cancel</button> <button class="btn btn-sm btn-success">Process</button></td>
                             </tr>
+                            @endforeach()
                             <tr>
                                 <td>
                                     <div class="round-img">
@@ -185,6 +187,7 @@
                                 <td><span>456 </span></td>
                                 <td><button class="btn btn-sm btn-danger">Cancel</button> <button class="btn btn-sm btn-success">Process</button></td>
                             </tr>
+                            
                         </tbody>
                     </table>
                 </div>
