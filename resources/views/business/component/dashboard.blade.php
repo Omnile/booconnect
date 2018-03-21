@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-    </div>{{-- 
+    </div>{{--
     <div class="col-md-3">
         <div class="card p-30">
             <div class="media">
@@ -68,7 +68,7 @@
         </div>
     </div>
 </div>
-{{-- 
+{{--
 <div class="row bg-white m-l-0 m-r-0 box-shadow ">
 
     <!-- column -->
@@ -137,7 +137,7 @@
                         </thead>
                         <tbody>
 
-                            @foreach()
+                            @foreach(collect([1,2,3]) as $something)
                             <tr>
                                 <td>
                                     <div class="round-img">
@@ -151,43 +151,8 @@
                                 <td><button class="btn btn-sm btn-danger">Cancel</button> <button class="btn btn-sm btn-success">Process</button></td>
                             </tr>
                             @endforeach()
-                            <tr>
-                                <td>
-                                    <div class="round-img">
-                                        <a href=""><img src="images/avatar/2.jpg" alt=""></a>
-                                    </div>
-                                </td>
-                                <td>James Newton</td>
-                                <td><span>Fufu</span></td>
-                                <td><span>Bowl</span></td>
-                                <td><span>456 </span></td>
-                                <td><button class="btn btn-sm btn-danger">Cancel</button> <button class="btn btn-sm btn-success">Process</button></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="round-img">
-                                        <a href=""><img src="images/avatar/3.jpg" alt=""></a>
-                                    </div>
-                                </td>
-                                <td>Micheal Jones</td>
-                                <td><span>Banku n Tilapia</span></td>
-                                <td><span>Plate</span></td>
-                                <td><span>456 </span></td>
-                                <td><button class="btn btn-sm btn-danger">Cancel</button> <button class="btn btn-sm btn-success">Process</button></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="round-img">
-                                        <a href=""><img src="images/avatar/4.jpg" alt=""></a>
-                                    </div>
-                                </td>
-                                <td>Frank Dayson</td>
-                                <td><span>Speciality</span></td>
-                                <td><span>Bowl</span></td>
-                                <td><span>456 </span></td>
-                                <td><button class="btn btn-sm btn-danger">Cancel</button> <button class="btn btn-sm btn-success">Process</button></td>
-                            </tr>
-                            
+
+
                         </tbody>
                     </table>
                 </div>

@@ -11,12 +11,6 @@
 
 Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business'], function () {
 
-
-    Route::view('profile', 'business.profile');
-
-    Auth::login(App\User::find(1));
-    Route::view('', 'business.dashboard');
-
     Route::get('login', 'LoginController@showLoginForm');
 
     Route::get('register', 'RegisterController@showRegistrationForm')->name('dashboard');
