@@ -13,6 +13,17 @@ return [
 
     'domain' => (string) env('BOOCONNECT_DOMAIN', 'booconnect.run'),
 
+    'subdomain' => (function ($status) {
+
+        if ((boolean) $status) {
+
+            return ['domain' => '{subdomain}.{domain}'];
+        }
+
+        return ['domain' => '{domain}'];
+
+    })(env('BOOCONNECT_USE_SUBDOMAIN', false)),
+
     /*
     |--------------------------------------------------------------------------
     | Default Currency

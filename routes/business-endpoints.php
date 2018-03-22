@@ -9,11 +9,11 @@
 |
  */
 
-Route::group(['domain' => '{subdomain}.{domain}', 'namespace' => 'Business'], function () {
+Route::group(['namespace' => 'Business', 'as' => 'business.'] + config('booconnect.subdomain'), function () {
 
     Route::get('login', 'LoginController@showLoginForm');
 
-    Route::get('register', 'RegisterController@showRegistrationForm')->name('dashboard');
+    Route::get('register', 'RegisterController@showRegistrationForm');
 
     /**
      * To access this routes, the user must:
