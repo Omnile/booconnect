@@ -47,6 +47,10 @@ class PendingOrderController extends Controller
      */
     public function show(ShowOrder $request, Order $order)
     {
+        if ($request->wantsJson()) {
+            return $order;
+        }
+
         return view('business.pending-orders.order', compact('order'));
     }
 

@@ -49,6 +49,11 @@ class CompletedOrderController extends Controller
      */
     public function show(ShowOrder $request, Order $order)
     {
+
+        if ($request->wantsJson()) {
+            return $order;
+        }
+
         return view('business.completed-orders.order', compact('order'));
     }
 
