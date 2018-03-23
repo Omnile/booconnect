@@ -43,6 +43,11 @@ class Restaurant extends Model
         return $this->hasMany(User::class);
     }
 
+    public function owner()
+    {
+        return $this->belongsTo(User::class, 'owner_id');
+    }
+
     public function pictures()
     {
         return $this->morphOne(Picture::class, 'imageable');
