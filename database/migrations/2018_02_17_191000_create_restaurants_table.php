@@ -18,7 +18,7 @@ class CreateRestaurantsTable extends Migration
             $table->string('name');
             $table->string('phone');
             $table->string('registration_no');
-            $table->string('user_id');
+            $table->string('owner_id');
 
             $table->string('image')->default('/images/restaurant_default_image.svg');
             $table->string('cover')->default('/images/restaurant_default_cover.svg');
