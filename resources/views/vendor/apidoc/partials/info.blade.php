@@ -218,7 +218,6 @@ $.ajax(settings).done(function (response) {
 
 Parameter | Type | Status | Description
 ---------|-------|-------|-------|-----------
-
     firstname | string | required | The first name of the user
     lastname | string | required | The last name of the user
     gender | string | retuired | The gender of the user `male` or `female`,
@@ -300,7 +299,6 @@ $.ajax(settings).done(function (response) {
 
 Parameter | Type | Status | Description
 ---------|-------|-------|-------|-----------
-
     firstname | string | required | The first name of the user
     lastname | string | required | The last name of the user
     gender | string | retuired | The gender of the user `male` or `female`,
