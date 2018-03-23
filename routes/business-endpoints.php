@@ -15,6 +15,8 @@ Route::group(['namespace' => 'Business', 'as' => 'business.'] + config('booconne
 
     Route::get('register', 'RegisterController@showRegistrationForm');
 
+    Route::post('register', 'RegisterController@register');
+
     /**
      * To access this routes, the user must:
      *
