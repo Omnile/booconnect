@@ -6,7 +6,7 @@
 
 @section('auth-form')
 
-    <form method="POST" action="{{ route('register') }}" class="form-horizontal">
+    <form method="POST" action="\register" class="form-horizontal">
         @csrf
 
         <div class="form-group row">
