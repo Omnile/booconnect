@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Business;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Business\Orders\ShowOrder;
+use App\Http\Requests\Business\Orders\CompletedOrder;
 use App\Order;
 use App\Restaurant;
 use Illuminate\Http\Request;
@@ -26,7 +26,7 @@ class CompletedOrderController extends Controller
 
         $restaurantId = anyAuth()->user()->restaurant_id;
 
-        $orders = Restaurant::find($restaurantId)
+        $completed_orders = Restaurant::find($restaurantId)
 
             ->orders()
             ->where('status', '<>', 'pending')
@@ -34,27 +34,27 @@ class CompletedOrderController extends Controller
         ;
 
         if ($request->wantsJson()) {
-            return $orders;
+            return $completed_orders;
         }
 
-        return view('business.completed-orders.index', compact('orders'));
+        return view('business.completed-orders.index', ['orders' => $completed_orders]);
     }
 
     /**
      * Get completed order
      * Get a completed order form storage
      *
-     * @param  \App\Order  $order
+     * @param  \App\Order  $completed_order
      * @return \Illuminate\Http\Response
      */
-    public function show(ShowOrder $request, Order $order)
+    public function show(CompletedOrder $request, Order $completed_order)
     {
 
         if ($request->wantsJson()) {
-            return $order;
+            return $completed_order;
         }
 
-        return view('business.completed-orders.order', compact('order'));
+        return view('business.completed-orders.order', ['order' => $completed_order]);
     }
 
     /**
@@ -76,7 +76,7 @@ class CompletedOrderController extends Controller
     /**
      * @hideFromAPIDocumentation
      */
-    public function edit($order)
+    public function edit($completed_order)
     {
         //
     }
@@ -84,7 +84,7 @@ class CompletedOrderController extends Controller
     /**
      * @hideFromAPIDocumentation
      */
-    public function update(Request $request, $order)
+    public function update(Request $request, $completed_order)
     {
         //
     }
@@ -92,7 +92,7 @@ class CompletedOrderController extends Controller
     /**
      * @hideFromAPIDocumentation
      */
-    public function destroy($order)
+    public function destroy($completed_order)
     {
         //
     }

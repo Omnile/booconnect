@@ -19,6 +19,7 @@ class RegisterController extends Controller
      * Show the application registration form.
      *
      * @return \Illuminate\Http\Response
+     * @hideFromAPIDocumentation
      */
     public function showRegistrationForm()
     {
@@ -43,7 +44,6 @@ class RegisterController extends Controller
 
             $user->restaurant()->associate($restaurant);
             $user->save();
-
         });
 
         return $user;

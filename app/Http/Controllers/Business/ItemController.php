@@ -143,6 +143,8 @@ class ItemController extends Controller
      * Delete an Item
      * Remove an Item from the Items in this store.
      *
+     * @response {}
+     *
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */

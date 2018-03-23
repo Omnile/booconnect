@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Business;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Business\Orders\CancelOrder;
-use App\Http\Requests\Business\Orders\ShowOrder;
+use App\Http\Requests\Business\Orders\PendingOrder;
 use App\Order;
 use App\Restaurant;
 use Illuminate\Http\Request;
@@ -25,7 +24,7 @@ class PendingOrderController extends Controller
     {
         $restaurantId = anyAuth()->user()->restaurant_id;
 
-        $orders = Restaurant::find($restaurantId)
+        $pending_orders = Restaurant::find($restaurantId)
 
             ->orders()
             ->where('status', '=', 'pending')
@@ -33,25 +32,25 @@ class PendingOrderController extends Controller
         ;
 
         if ($request->wantsJson()) {
-            return $orders;
+            return $pending_orders;
         }
 
-        return view('business.pending-orders.index', compact('orders'));
+        return view('business.pending-orders.index', ['orders' => $pending_orders]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Order  $order
+     * @param  \App\Order  $pending_order
      * @return \Illuminate\Http\Response
      */
-    public function show(ShowOrder $request, Order $order)
+    public function show(PendingOrder $request, Order $pending_order)
     {
         if ($request->wantsJson()) {
-            return $order;
+            return $pending_order;
         }
 
-        return view('business.pending-orders.order', compact('order'));
+        return view('business.pending-orders.order', ['order' => $pending_order]);
     }
 
     /**
@@ -59,15 +58,17 @@ class PendingOrderController extends Controller
      * Cancel an order that was placed.
      * This option is only available within first 5 mins from time of order.
      *
-     * @param  \App\Order  $order
+     * @response {}
+     *
+     * @param  \App\Order  $pending_order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CancelOrder $request, Order $order)
+    public function destroy(PendingOrder $request, Order $pending_order)
     {
-        $order->delete();
+        $pending_order->delete();
 
         if ($request->wantsJson()) {
-            return $order;
+            return $pending_order;
         }
 
         return back();
@@ -92,7 +93,7 @@ class PendingOrderController extends Controller
     /**
      * @hideFromAPIDocumentation
      */
-    public function edit(Order $order)
+    public function edit(Order $pending_order)
     {
         //
     }
@@ -100,7 +101,7 @@ class PendingOrderController extends Controller
     /**
      * @hideFromAPIDocumentation
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $request, Order $pending_order)
     {
         //
     }

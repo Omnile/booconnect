@@ -44,6 +44,15 @@ class RegisterController extends Controller
     }
 
     /**
+     * {@inheritDoc}
+     * @hideFromAPIDocumentation
+     */
+    public function register()
+    {
+        return parent::register();
+    }
+
+    /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
