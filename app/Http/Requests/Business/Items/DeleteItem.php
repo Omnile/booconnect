@@ -16,7 +16,7 @@ class DeleteItem extends FormRequest
     {
         return
 
-        (int) $this->route()->parameters()['item']->restaurant->id
+        (int) anyAuth()->user()->restaurant_id
 
         ===
 

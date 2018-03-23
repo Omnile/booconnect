@@ -2,11 +2,12 @@
 
 namespace App\Http\Requests\Business\Orders;
 
-use App\Order;
+use App\Item;
 use Illuminate\Foundation\Http\FormRequest;
 
-class CancelOrder extends FormRequest
+class CompletedOrder extends FormRequest
 {
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -14,15 +15,14 @@ class CancelOrder extends FormRequest
      */
     public function authorize()
     {
-
         return
 
-        (int) $this->route()->parameters()['order']->restaurant->id
+        (int) anyAuth()->user()->restaurant_id
 
         ===
 
-        (int) Order::find(
-            $this->route()->parameters['order']->id
+        (int) Item::find(
+            $this->route()->parameters()['completed_order']->item_id
         )
             ->restaurant_id;
     }

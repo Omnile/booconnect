@@ -14,15 +14,14 @@ class ShowOrder extends FormRequest
      */
     public function authorize()
     {
-
         return
 
-        (int) $this->route()->parameters()['item']->restaurant->id
+        (int) anyAuth()->user()->restaurant_id
 
         ===
 
         (int) Item::find(
-            $this->route()->parameters['item']->id
+            $this->route()->parameters()['order']->item_id
         )
             ->restaurant_id;
     }
