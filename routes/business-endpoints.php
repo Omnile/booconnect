@@ -28,6 +28,7 @@ Route::group(['namespace' => 'Business', 'as' => 'business.'] + config('booconne
      * routes are sorted accordingly.
      */
     Route::group(['middleware' => ['clean-params', $this->_auth_middleware]], function () {
+        Route::view('transactions', 'business.transactions.index');
 
         Route::view('', 'business.dashboard');
 
