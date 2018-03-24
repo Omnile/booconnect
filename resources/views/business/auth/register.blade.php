@@ -10,16 +10,16 @@
                             <div class="login-form">
                                 <h4>REGISTER</h4>
                                 <hr>
-                                <form action="/login" method="POST">
+                                <form action="/register" method="POST">
                                     @csrf
                                     <div class="row">
                                         <div class="form-group col-lg-6">
                                             <label>First Name</label>
-                                            <input required type="text" name="firstname" class="form-control" placeholder="First Name">
+                                            <input required type="text" name="firstname" class="form-control" placeholder="First Name" value="{{ old('firstname') }}">
                                         </div>
                                         <div class="form-group col-lg-6">
                                             <label>Last Name</label>
-                                            <input required type="text" name="lastname" class="form-control" placeholder="Last Name">
+                                            <input required type="text" name="lastname" class="form-control" placeholder="Last Name"  value="{{ old('lastname') }}">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -28,39 +28,42 @@
 
                                             <select required name="gender" class="form-control" placeholder="Select gender">
                                                 <option value="">Select Gender</option>
-                                                <option value="male">Male</option>
-                                                <option value="female">Female</option>
+                                                <option value="male"
+                                                {{ old('gender') === 'male' ? 'selected' : null}}>Male</option>
+                                                <option value="female"
+                                                {{ old('gender') === 'female' ? 'selected': null}}>Female</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-lg-6">
                                             <label>Address</label>
-                                            <input required type="text" name="address" class="form-control" placeholder="Address">
+                                            <input required type="text" name="address" class="form-control" placeholder="Address" value="{{ old('address') }}">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-lg-6">
                                             <label>User Name</label>
-                                            <input required type="text" name="username" class="form-control" placeholder="User Name">
+                                            <input required type="text" name="username" class="form-control" placeholder="User Name" value="{{ old('username') }}">
                                         </div>
                                         <div class="form-group col-lg-6">
                                             <label>Phone number</label>
-                                            <input required type="text" name="phone" class="form-control" placeholder="phone number">
+                                            <input required type="text" name="phone" class="form-control" placeholder="phone number" value="{{ old('phone') }}">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-lg-6">
                                             <label>Business Name</label>
-                                            <input required type="text" name="name" class="form-control" placeholder="Restaurant Name">
+                                            <input required type="text" name="name" class="form-control" placeholder="Restaurant Name"  value="{{ old('name') }}">
                                         </div>
                                         <div class="form-group col-lg-6">
                                             <label>Business Registration Number</label>
-                                            <input required type="text" name="registration_no" class="form-control" placeholder="business registration number">
+                                            <input required type="text" name="registration_no" class="form-control" placeholder="business registration number"
+                                             value="{{ old('registration_no') }}">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-lg-6">
                                             <label>Password</label>
-                                            <input required type="password" name="password" class="form-control" placeholder="Password">
+                                            <input required type="password" name="password" class="form-control" placeholder="Password" >
                                         </div>
 
                                         <div class="form-group col-lg-6">

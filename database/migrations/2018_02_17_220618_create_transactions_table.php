@@ -13,15 +13,18 @@ class CreateTransactionsTable extends Migration
      */
     public function up()
     {
+
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('restaurant_id');
-            $table->boolean('debit')->default(true);
-            $table->string('description');
-            $table->integer('item_id');
-            $table->integer('user_id');
-            $table->float('amount');
+
             $table->text('data');
+            $table->float('value');
+            $table->string('channel');
+            $table->integer('owner_id');
+            $table->string('owner_type');
+            $table->string('description');
+            $table->string('type')->enum(['credit', 'debit']);
+
             $table->softDeletes();
             $table->timestamps();
         });

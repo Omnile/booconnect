@@ -2,14 +2,16 @@
 
 namespace App;
 
+use App\Traits\HasWallet;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements WalletOwnerInterface
 {
     use Notifiable;
     use HasApiTokens;
+    use HasWallet;
 
     /**
      * The attributes that are mass assignable.
@@ -63,7 +65,7 @@ class User extends Authenticatable
 
     public function transactions()
     {
-        return $this->hasMany(Transaction::class);
+        return $this->morphMany(Transaction::class, 'owner');
     }
 
     public function ratings()

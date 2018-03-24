@@ -4,11 +4,14 @@ namespace App;
 
 use App\BooConnect\Search\Searchable;
 use App\Item;
+use App\Traits\HasWallet;
+use App\WalletOwnerInterface;
 use Illuminate\Database\Eloquent\Model;
 
-class Restaurant extends Model
+class Restaurant extends Model implements WalletOwnerInterface
 {
     use Searchable;
+    use HasWallet;
 
     protected $fillable = [
         'name',
@@ -35,7 +38,7 @@ class Restaurant extends Model
 
     public function transactions()
     {
-        return $this->belongsToMany(Transaction::class);
+        return $this->morphMany(Transaction::class, 'owner');
     }
 
     public function users()
@@ -50,7 +53,7 @@ class Restaurant extends Model
 
     public function pictures()
     {
-        return $this->morphOne(Picture::class, 'imageable');
+        return $this->morphMany(Picture::class, 'imageable');
     }
 
     public function orders()

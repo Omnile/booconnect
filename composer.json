@@ -28,7 +28,7 @@
         "laravel/passport": "^5.0",
         "laravel/tinker": "~1.0",
         "mpociot/laravel-apidoc-generator": "dev-master",
-        "ovac/laravel-hubtel-payment": "^1.0",
+        "ovac/laravel-hubtel-payment": "dev-master",
         "ovac/laravel-hubtel-sms": "~1.0"
     },
     "require-dev": {
@@ -43,7 +43,8 @@
     "autoload": {
         "classmap": [
             "database/seeds",
-            "database/factories"
+            "database/factories",
+            "app/Traits"
         ],
         "files": [
           "app/helpers.php"

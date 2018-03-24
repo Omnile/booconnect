@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Search;
+namespace App\Http\Requests\Business\Transactions;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SearchRequest extends FormRequest
+class GetTransaction extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class SearchRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,8 +24,7 @@ class SearchRequest extends FormRequest
     public function rules()
     {
         return [
-            'query' => 'required|string|max:255',
-            'type' => 'nullable|in:items,restaurants',
+            //
         ];
     }
 }
