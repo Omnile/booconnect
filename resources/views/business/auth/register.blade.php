@@ -51,8 +51,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-lg-6">
-                                            <label>Business Name</label>
-                                            <input required type="text" name="name" class="form-control" placeholder="Restaurant Name"  value="{{ old('name') }}">
+                                            <label>Restaurant Name (Business Name)</label>
+                                            <input required type="text" name="restaurant_name" class="form-control" placeholder="Restaurant Name"  value="{{ old('restaurant_name') }}">
                                         </div>
                                         <div class="form-group col-lg-6">
                                             <label>Business Registration Number</label>
