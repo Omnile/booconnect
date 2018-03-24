@@ -2,6 +2,6 @@
 
 @section('contents')
 
-        @include('business.component.transactions')
+        @include('business.component.transaction')
 
 @endsection

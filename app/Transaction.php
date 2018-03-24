@@ -6,6 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model
 {
+    protected $types = [
+        'user' => User::class,
+        'restaurant' => Restaurant::class,
+    ];
+
+    public function owner()
+    {
+        return $this->morphTo();
+    }
+
     /**
      * Casts
      * @var [type]

@@ -39,8 +39,18 @@ Route::group(['namespace' => 'Business', 'as' => 'business.'] + config('booconne
 
         Route::resource('dashboard', 'DashboardController');
 
+        Route::resource('transactions', 'TransactionController');
+
         Route::resource('pending-orders', 'PendingOrderController');
 
         Route::resource('completed-orders', 'CompletedOrderController');
+
+        Route::group(['middleware' => [], 'prefix' => 'wallet'], function () {
+
+            Route::get('balance', 'WalletController@balance');
+
+            Route::post('cashout', 'WalletController@cashout');
+
+        });
     });
 });

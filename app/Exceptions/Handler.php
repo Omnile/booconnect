@@ -5,6 +5,7 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use OVAC\HubtelPayment\Exception\MissingParameterException;
 
 class Handler extends ExceptionHandler
 {
@@ -64,5 +65,30 @@ class Handler extends ExceptionHandler
         return $request->expectsJson()
         ? response()->json(['message' => $exception->getMessage()], 401)
         : redirect()->guest('/login');
+    }
+
+    /**
+     * Prepare exception for rendering.
+     *
+     * @param  \Exception  $e
+     * @return \Exception
+     */
+    protected function prepareException(Exception $e)
+    {
+        if ($e instanceof MissingParameterException) {
+
+            $instance = new MissingParameterException(
+                $e->getMessage() . ' ' . $e->getMissingParameter(), 401
+            );
+
+            $instance->setErrorCode(401);
+            $instance->setErrorType(MissingParameterException::class);
+            $instance->setMissingParameter($e->getMissingParameter());
+            $instance->setRawOutput($e->getRawOutput());
+
+            return $instance;
+        }
+
+        return parent::prepareException($e);
     }
 }

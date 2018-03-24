@@ -1,15 +1,21 @@
 <?php
 
+use App\Restaurant;
+use App\User;
 use Faker\Generator as Faker;
 
 $factory->define(App\Transaction::class, function (Faker $faker) {
     return [
-        'restaurant_id' => rand(1, config('booconnect.seed.max')),
-        'item_id' => rand(1, config('booconnect.seed.max')),
-        'user_id' => rand(1, config('booconnect.seed.max')),
-        'amount' => rand(1.00, 100.00),
+        'type' => array_random(['credit', 'debit']),
+        'value' => rand(1.00, 100.00),
         'description' => $faker->sentence(),
-        'data' => json_encode(['hello' => 'hi']),
-        'debit' => rand(0, 1),
+        'channel' => array_random(['mtn-gh', 'bank']),
+
+        'data' => $faker->sentence(),
+        'owner_type' => array_random([
+            Restaurant::class,
+            User::class,
+        ]),
+        'owner_id' => rand(1, config('booconnect.seed.max')),
     ];
 });
