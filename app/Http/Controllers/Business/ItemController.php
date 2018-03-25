@@ -67,9 +67,10 @@ class ItemController extends Controller
 
         $item->user()->associate($user);
         $item->restaurant()->associate($user->restaurant);
-
-        $item->image = Picture::storeImage($item->id, $request->image, Item::class)->path;
         $item->save();
+        $item->update([
+            'picture' => Picture::storeImage($item->id, $request->image, Item::class)->path,
+        ]);
 
         if ($request->wantsJson()) {
             return $item;
