@@ -55,6 +55,7 @@
     <!-- scripit init-->
 
     <script src="js/custom.min.js"></script>
+    @yield('js')
 
 </body>
 

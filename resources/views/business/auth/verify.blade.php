@@ -14,10 +14,29 @@
 
                             <br>
 
-                            <p class="text-center">or <br><br> <button class="btn-primary">Request a new code</button></p>
+                            
+                            <p class="text-center">or <br><br> <button class="btn-primary" id="request">Request a new code</button></p>
 
                             <hr>
 
+                            <div id="phone-code" style="display: none;">
+                            <div class="form-group row">
+                                <label for="phone" class="col-md-4 col-form-label text-md-right control-label">Request a new code</label>
+                                <div class="col-md-6">
+                                    <input id="phone" type="text" class="form-control" placeholder="Enter phone number" name="phone"  required autofocus >
+                                </div>
+                            </div>
+
+                            <div class="form-group row mb-0">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary float-right">
+                                        Send
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                            <div id="verify-code">
                             <div class="form-group row">
                                 <label for="code" class="col-md-4 col-form-label text-md-right control-label">Verification code</label>
                                 <div class="col-md-6">
@@ -32,6 +51,7 @@
                                     </button>
                                 </div>
                             </div>
+                        </div>
                         </form>
                     </div>
                 </div>
@@ -40,3 +60,12 @@
             </div>
 
 @endsection
+
+@section('js')
+<script type="text/javascript">
+    document.getElementById('request').onclick = function () {
+        document.getElementById('verify-code').style.display = 'none';
+        document.getElementById('phone-code').style.display = 'block';
+    }
+</script>
+@endsection()
