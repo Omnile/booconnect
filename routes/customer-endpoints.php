@@ -30,6 +30,8 @@ Route::group(['domain' => '{domain}', 'middleware' => ['clean-params']], functio
         Route::resource('verify', 'VerifyController');
 
         Route::resource('checkout', 'CheckoutController');
+
+        Route::view('invoice', 'invoice');
     });
 
 /**
