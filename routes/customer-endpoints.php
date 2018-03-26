@@ -32,6 +32,8 @@ Route::group(['domain' => '{domain}', 'middleware' => ['clean-params']], functio
         Route::resource('checkout', 'CheckoutController');
 
         Route::view('invoice', 'invoice');
+
+        Route::view('invoices', 'invoices');
     });
 
 /**

@@ -15,6 +15,9 @@
                                     <a href="/wishlist">Wishlist <span class="text-primary">(5)</span></a>
                                 </li>
                                 <li>
+                                    <a href="/invoices">Invoices <span class="text-primary">(5)</span></a>
+                                </li>
+                                <li>
                                     <a href="user-information.html">Settings</a>
                                 </li>
                             </ul>
