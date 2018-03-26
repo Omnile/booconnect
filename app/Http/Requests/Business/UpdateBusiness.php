@@ -25,22 +25,22 @@ class UpdateBusiness extends FormRequest
     {
         return [
 
-            'name' => 'sometimes|string',
-            'phone' => 'sometimes|numeric',
-            'registration_no' => 'sometimes|numeric',
+            'name' => 'sometimes|required|string',
+            'phone' => 'sometimes|required|numeric',
+            'registration_no' => 'sometimes|required|numeric',
 
-            'image' => 'sometimes|image|mimes:jpeg,jpg,png|max:1000',
-            'cover' => 'sometimes|image|mimes:jpeg,jpg,png|max:1000',
+            'image' => 'sometimes|required|image|mimes:jpeg,jpg,png|max:1000',
+            'cover' => 'sometimes|required|image|mimes:jpeg,jpg,png|max:1000',
 
-            'place' => 'sometimes|string',
-            'city' => 'sometimes|string',
-            'state' => 'sometimes|string',
-            'country' => 'sometimes|string',
-            'address' => 'sometimes|string',
+            'place' => 'sometimes|required|string',
+            'city' => 'sometimes|required|string',
+            'state' => 'sometimes|required|string',
+            'country' => 'sometimes|required|string',
+            'address' => 'sometimes|required|string',
 
-            'website' => 'sometimes|string',
+            'website' => 'sometimes|required|string',
 
-            'description' => 'sometimes|string',
+            'description' => 'sometimes|required|string',
         ];
     }
 }

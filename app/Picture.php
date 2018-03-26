@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Intervention\Image\Facades\Image;
+use \Cloudinary\Uploader;
 
 class Picture extends Model
 {
@@ -32,27 +33,48 @@ class Picture extends Model
      * @param  string $description This is the descripton of the image.
      * @return App\Picture         This is the picture object.
      */
-    public static function storeImage(int $id, string $image, string $class, $description = null)
+    public static function storeImage(int $id, string $image, string $class, $description = null, $size = 300)
     {
         $picture = new self;
 
         $picture->imageable_id = $id;
         $picture->imageable_type = $class;
         $picture->description = $description;
-        $picture->path = '/images/' . str_random(50) . '.jpg';
-
-        Image::make($image)
-            ->fit(300, 300)
-            ->save(
-                storage_path(
-                    "/app/public/{$picture->path}"
-                )
-            )
-        ;
+        $picture->path = self::upload($image, $size);
 
         $picture->save();
 
         return $picture;
+    }
+
+    /**
+     * This method will upload the image to wither cloudinary
+     * or local storage depending on the booconnect's
+     * use-cloudinary option.
+     *
+     * @param  blob   $image This must be a valid file
+     *                       input or image url
+     * @param  number $size  This will be the size of the image. (height)
+     * @return string        This method will return the path/url for the uploaded image.
+     */
+    protected static function upload($image, $size)
+    {
+        if (config('booconnect.use-cloudinary')) {
+            return Uploader::upload($image, array('height' => $size))['secure_url'];
+        }
+
+        $imagePath = '/images/' . str_random(50) . '.jpg';
+
+        Image::make($image)
+            ->fit($size, $size)
+            ->save(
+                storage_path(
+                    "/app/public/{$imagePath}"
+                )
+            )
+        ;
+
+        return $imagePath;
     }
 
     // public function getImageableTypeAttribute($type)
