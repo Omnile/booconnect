@@ -37,6 +37,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Use Cloudinary for Image Manipulation and upload
+    |--------------------------------------------------------------------------
+    |
+    | Determine weather to use cloudinary or local image manipulation.
+    | 'True' will switch to Cloudinary
+    |
+     */
+
+    'use-cloudinary' => (bool) env('BOOCONNECT_USE_CLOUDINARY', false),
+
+    /*
+    |--------------------------------------------------------------------------
     | Seeder Settings
     |--------------------------------------------------------------------------
     |
