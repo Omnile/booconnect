@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@include('component.topBar')
+@include('component.topbar')
 
 <section class="section white-backgorund">
     <div class="container">
