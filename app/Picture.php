@@ -47,6 +47,16 @@ class Picture extends Model
         return $picture;
     }
 
+    /**
+     * This method will upload the image to wither cloudinary
+     * or local storage depending on the booconnect's
+     * use-cloudinary option.
+     *
+     * @param  blob   $image This must be a valid file
+     *                       input or image url
+     * @param  number $size  This will be the size of the image. (height)
+     * @return string        This method will return the path/url for the uploaded image.
+     */
     protected static function upload($image, $size)
     {
         if (config('booconnect.use-cloudinary')) {
