@@ -11,6 +11,7 @@ use App\Item;
 use App\Picture;
 use App\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 
 /**
@@ -61,16 +62,20 @@ class ItemController extends Controller
      */
     public function store(AddItem $request)
     {
-        $user = anyAuth()->user();
+        $item = DB::transaction(function () use ($request) {
+            $user = anyAuth()->user();
 
-        $item = new Item($request->all());
+            $item = new Item($request->all());
 
-        $item->user()->associate($user);
-        $item->restaurant()->associate($user->restaurant);
-        $item->save();
-        $item->update([
-            'picture' => Picture::storeImage($item->id, $request->image, Item::class)->path,
-        ]);
+            $item->user()->associate($user);
+            $item->restaurant()->associate($user->restaurant);
+            $item->save();
+
+            $item->image = Picture::storeImage($item->id, $request->image, Item::class)->path;
+            $item->save();
+
+            return $item;
+        });
 
         if ($request->wantsJson()) {
             return $item;
