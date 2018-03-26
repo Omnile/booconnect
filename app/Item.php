@@ -13,7 +13,6 @@ class Item extends Model implements Buyable
     protected $fillable = [
         'name',
         'price',
-        'image',
         'quantity',
         'description',
         'measurement',
