@@ -47,9 +47,10 @@
 
     <div class="col-md-9 offset-1">
         <div class="card">
-            <div class="card-title">
+            <div class="card-title m-b-0">
                 <h4>Cashout </h4>
             </div>
+            <hr>
             <div class="card-body">
                 <form>
                     <div class="form-group">
