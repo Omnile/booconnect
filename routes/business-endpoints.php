@@ -11,8 +11,6 @@
 
 Route::group(['namespace' => 'Business', 'as' => 'business.'] + config('booconnect.subdomain'), function () {
 
-    Route::view('verify', 'business.auth.verify');
-
     Route::get('login', 'LoginController@showLoginForm');
 
     Route::get('register', 'RegisterController@showRegistrationForm');
