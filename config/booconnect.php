@@ -7,7 +7,7 @@ return [
     | Domain name Root
     |--------------------------------------------------------------------------
     |
-    | Booconnect Default display currency
+    | Booconnect Default domain and subdomain config
     |
      */
 
