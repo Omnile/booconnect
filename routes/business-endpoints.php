@@ -11,6 +11,7 @@
 
 Route::group(['namespace' => 'Business', 'as' => 'business.'] + config('booconnect.subdomain'), function () {
     Route::view('verify', 'business.auth.verify');
+    Route::view('cashout', 'business.cashout');
 
     Route::get('login', 'LoginController@showLoginForm');
 

@@ -42,6 +42,11 @@
                         <i class="fa fa-money"></i><span class="hide-menu">Transactions</span>
                     </a>
                 </li>
+                <li>
+                    <a href="/cashout">
+                        <i class="ti-wallet"></i><span class="hide-menu">Cashout</span>
+                    </a>
+                </li>
                 <li class="nav-label">Settings</li>
                 <li>
                     <a href="/account">
