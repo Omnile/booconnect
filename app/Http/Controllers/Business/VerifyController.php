@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Business;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Verify\SendCode;
 use App\Http\Requests\Verify\VerifyCode;
 use Illuminate\Http\Request;
@@ -29,7 +30,7 @@ class VerifyController extends Controller
             return ['verification_status' => anyAuth()->user()->phone_verified];
         }
 
-        return view('auth.verify');
+        return view('business.auth.verify');
     }
 
     /**
@@ -83,12 +84,14 @@ class VerifyController extends Controller
     {
         $user = anyAuth()->user();
 
-        $user->phone = $request->input('phone');
+        $user->restaurant->phone = $request->input('phone');
 
-        $user->sendOTP();
+        $user->restaurant->sendOTP();
+
+        $user->save();
 
         if ($request->wantsJson()) {
-            return ['message' => 'verification code sent to ' . $user->phone];
+            return ['message' => 'verification code sent to ' . $user->restaurant->phone];
         }
 
         return redirect('verify');

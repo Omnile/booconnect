@@ -10,6 +10,7 @@
  */
 
 Route::group(['namespace' => 'Business', 'as' => 'business.'] + config('booconnect.subdomain'), function () {
+
     Route::view('verify', 'business.auth.verify');
     Route::view('cashout', 'business.cashout');
 
@@ -18,6 +19,8 @@ Route::group(['namespace' => 'Business', 'as' => 'business.'] + config('booconne
     Route::get('register', 'RegisterController@showRegistrationForm');
 
     Route::post('register', 'RegisterController@register');
+
+    Route::resource('verify', 'VerifyController');
 
     /**
      * To access this routes, the user must:
@@ -29,7 +32,8 @@ Route::group(['namespace' => 'Business', 'as' => 'business.'] + config('booconne
      * The middlewares protecting these
      * routes are sorted accordingly.
      */
-    Route::group(['middleware' => ['clean-params', $this->_auth_middleware]], function () {
+    Route::group(['middleware' => ['clean-params', $this->_auth_middleware, 'business-verified']], function () {
+
         Route::view('transactions', 'business.transactions.index');
 
         Route::view('', 'business.dashboard');

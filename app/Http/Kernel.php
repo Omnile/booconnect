@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'verified' => \App\Http\Middleware\UserVerified::class,
         'business' => \App\Http\Middleware\Business::class,
         'clean-params' => \App\Http\Middleware\CleanParameters::class,
+        'business-verified' => \App\Http\Middleware\RestaurantVerified::class,
     ];
 }
