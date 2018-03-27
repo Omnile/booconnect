@@ -2,6 +2,8 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Http\Request;
+
 /**
  * This middleware should determine if a route can be accessed
  * based on the phone number verification status of a

@@ -73,7 +73,7 @@ class UserVerified
      */
     public function notSignedIn()
     {
-        if (anyAyth()->check()) {
+        if (anyAuth()->check()) {
             $this->message = 'Unauthenticated Request.';
             $this->statusCode = 401;
 
