@@ -34,4 +34,5 @@
     </div><!-- end container -->
 </section>
 
+ @yield('js')
 @include('component.footer')

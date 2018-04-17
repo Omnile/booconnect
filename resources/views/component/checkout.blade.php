@@ -1,7 +1,7 @@
 <div class="row">
                             <div class="col-sm-12">
                                 <ul class="nav nav-pills style2 nav-justified">
-                                    <li class="">
+                                    <li class="active">
                                         <a href="#shopping-cart" data-toggle="tab" aria-expanded="false">
                                             1. Shopping Cart
                                             <div class="icon">
@@ -20,7 +20,7 @@
                                 </ul>
 
                                 <div class="tab-content pills">
-                                    <div class="tab-pane" id="shopping-cart">
+                                    <div class="tab-pane active" id="shopping-cart">
                                         <div class="table-responsive">
                                             <table class="table table-striped">
                                                 <thead>
@@ -32,93 +32,9 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <a href="javascript:void(0);">
-                                                                <img width="60px" src="img/products/men_06.jpg" alt="product">
-                                                            </a>
-                                                        </td>
-                                                        <td>
-                                                            <h6 class="regular"><a href="javascript:void(0);">Lorem Ipsum</a></h6>
-                                                            <p>Sed aliquam tincidunt tempus</p>
-                                                        </td>
-                                                        <td>
-                                                            <span>$59.99</span>
-                                                        </td>
-                                                        <td>
-                                                            <select class="form-control" name="select">
-                                                                <option>1</option>
-                                                                <option>2</option>
-                                                                <option>3</option>
-                                                                <option>4</option>
-                                                                <option>5</option>
-                                                            </select>
-                                                        </td>
-                                                        <td>
-                                                            <span class="text-primary">$59.99</span>
-                                                        </td>
-                                                        <td>
-                                                            <button type="button" class="close">×</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <a href="javascript:void(0);">
-                                                                <img width="60px" src="img/products/shoes_01.jpg" alt="product">
-                                                            </a>
-                                                        </td>
-                                                        <td>
-                                                            <h6 class="regular"><a href="javascript:void(0);">Lorem Ipsum</a></h6>
-                                                            <p>Sed aliquam tincidunt tempus</p>
-                                                        </td>
-                                                        <td>
-                                                            <span>$39.99</span>
-                                                        </td>
-                                                        <td>
-                                                            <select class="form-control" name="select">
-                                                                <option>1</option>
-                                                                <option>2</option>
-                                                                <option>3</option>
-                                                                <option>4</option>
-                                                                <option>5</option>
-                                                            </select>
-                                                        </td>
-                                                        <td>
-                                                            <span class="text-primary">$39.99</span>
-                                                        </td>
-                                                        <td>
-                                                            <button type="button" class="close">×</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <a href="javascript:void(0);">
-                                                                <img width="60px" src="img/products/bags_07.jpg" alt="product">
-                                                            </a>
-                                                        </td>
-                                                        <td>
-                                                            <h6 class="regular"><a href="javascript:void(0);">Lorem Ipsum</a></h6>
-                                                            <p>Sed aliquam tincidunt tempus</p>
-                                                        </td>
-                                                        <td>
-                                                            <span>$29.99</span>
-                                                        </td>
-                                                        <td>
-                                                            <select class="form-control" name="select">
-                                                                <option>1</option>
-                                                                <option>2</option>
-                                                                <option>3</option>
-                                                                <option>4</option>
-                                                                <option>5</option>
-                                                            </select>
-                                                        </td>
-                                                        <td>
-                                                            <span class="text-primary">$29.99</span>
-                                                        </td>
-                                                        <td>
-                                                            <button type="button" class="close">×</button>
-                                                        </td>
-                                                    </tr>
+                                                    @foreach ($items as $item)
+                                                        @include('component.checkout-item', compact('item'))
+                                                    @endforeach
                                                 </tbody>
                                             </table><!-- end table -->
                                         </div><!-- end table-responsive -->

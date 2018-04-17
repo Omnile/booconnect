@@ -3,9 +3,8 @@
 @section('contents')
 
 	<div class="container">
-		@include('component.checkout')
+		@include('component.checkout', compact('items'))
 
-		{!! $items->links() !!}
 	</div>
 
 @endsection

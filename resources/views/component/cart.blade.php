@@ -28,9 +28,8 @@
                 </div><!-- end table-responsive -->
 
                 <hr class="spacer-10 no-border">
-
-                <a href="shop-sidebar-left.html" class="btn btn-light semi-circle btn-md pull-left">
-                    <i class="fa fa-arrow-left mr-5"></i> Continue shopping
+                <a href="shop-sidebar-left.html" class="btn btn-light semi-circle btn-md pull-left" style="margin-bottom: 30px;">
+                    <i class="/items"></i> Continue shopping
                 </a>
 
                 <a href="/checkout" class="btn btn-default semi-circle btn-md pull-right">

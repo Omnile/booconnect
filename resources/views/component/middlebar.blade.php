@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row display-table">
             <div class="col-sm-3 vertical-align text-left hidden-xs">
-                <a href="javascript:void(0);">
+                <a href="/">
                     {{-- <img width="160" src="img/logo-big.png" alt=""> --}}
                     <h2>BooConnect</h2>
                 </a>

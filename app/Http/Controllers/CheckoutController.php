@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\Item;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,8 @@ class CheckoutController extends Controller
      */
     public function index(Request $request, Item $items)
     {
-        $items = $items->paginate(20);
+       // $items = $items->paginate(20);
+        $items = Cart::content();
 
         if ($request->wantsJson()) {
             return $items;
